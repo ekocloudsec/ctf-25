@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Challenge 1 - GCP Cloud Storage</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4285f4, #34a853);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            margin: 20px;
+        }
+        .gcp-logo {
+            font-size: 48px;
+            color: #4285f4;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #202124;
+            margin-bottom: 30px;
+        }
+        .challenge-info {
+            background: #f8f9fa;
+            border-left: 4px solid #4285f4;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .hint {
+            background: #fef7e0;
+            border: 1px solid #fbbc04;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #202124;
+        }
+        .footer {
+            margin-top: 30px;
+            color: #5f6368;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gcp-logo">☁️</div>
+        <h1>CTF Challenge 1: GCP Cloud Storage Misconfiguration</h1>
+        
+        <div class="challenge-info">
+            <h3>🎯 Objective</h3>
+            <p>Locate the hidden flag in this misconfigured Google Cloud Storage bucket.</p>
+            
+            <h3>📋 Description</h3>
+            <p>This Cloud Storage bucket has been configured with public access, 
+            granting the "allUsers" role storage.objectViewer permissions.</p>
+            
+            <h3>🔍 What to look for</h3>
+            <ul>
+                <li>Publicly accessible bucket objects</li>
+                <li>Bucket listing capabilities</li>
+                <li>Direct object access via URLs</li>
+            </ul>
+        </div>
+        
+        <div class="hint">
+            <strong>💡 Hint:</strong> Google Cloud Storage objects can be accessed directly. 
+            Check what other objects might be stored in this bucket alongside the website files.
+        </div>
+        
+        <div class="footer">
+            <p>🏆 CTF-25 Multi-Cloud Security Challenge</p>
+            <p>GCP Challenge #1 - Public Storage Misconfiguration</p>
+        </div>
+    </div>
+</body>
+</html>

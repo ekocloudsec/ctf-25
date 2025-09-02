@@ -1,0 +1,13 @@
+# Example Terraform variables file for Challenge 1
+# Copy this file to terraform.tfvars and update with your values
+
+# GCP Configuration (Required)
+gcp_project_id = "your-gcp-project-id"
+
+# Optional: Override default regions/locations
+# aws_region      = "us-west-2"
+# azure_location  = "West US 2"
+# gcp_region      = "us-west1"
+
+# Optional: Override project name
+# project_name  = "ctf-25"
