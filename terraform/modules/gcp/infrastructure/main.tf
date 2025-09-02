@@ -17,14 +17,11 @@ resource "google_storage_bucket" "website" {
   name     = "${var.project_name}-website-${random_id.suffix.hex}"
   location = var.region
 
-  # Enable uniform bucket-level access
+  # Enable uniform bucket-level access (required by org policy)
   uniform_bucket_level_access = true
 
-  # Website configuration
-  website {
-    main_page_suffix = "index.html"
-    not_found_page   = "error.html"
-  }
+  # Note: Website configuration removed due to org restrictions
+  # Objects will be accessible via direct storage URLs
 
   # Prevent deletion for safety
   lifecycle {
@@ -36,11 +33,18 @@ resource "google_storage_bucket" "website" {
   })
 }
 
-# Make bucket publicly readable (intentionally misconfigured for CTF)
-resource "google_storage_bucket_iam_member" "public_read" {
+# Note: Organization policy prevents allUsers access
+# This creates a private bucket - for CTF, you'll need to manually make objects public
+# or provide authenticated access
+
+# Make bucket publicly readable for CTF challenge
+resource "google_storage_bucket_iam_binding" "public_read" {
   bucket = google_storage_bucket.website.name
   role   = "roles/storage.objectViewer"
-  member = "allUsers"
+
+  members = [
+    "allUsers",
+  ]
 }
 
 # Upload index.html
@@ -50,8 +54,6 @@ resource "google_storage_bucket_object" "index" {
   source = var.index_html_path
 
   content_type = "text/html"
-
-  depends_on = [google_storage_bucket_iam_member.public_read]
 }
 
 # Upload flag.txt
@@ -61,6 +63,4 @@ resource "google_storage_bucket_object" "flag" {
   source = var.flag_txt_path
 
   content_type = "text/plain"
-
-  depends_on = [google_storage_bucket_iam_member.public_read]
 }
