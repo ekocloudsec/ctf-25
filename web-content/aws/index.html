@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Challenge 1 - AWS S3</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff9a56, #ff6b35);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            margin: 20px;
+        }
+        .aws-logo {
+            font-size: 48px;
+            color: #ff9900;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #232f3e;
+            margin-bottom: 30px;
+        }
+        .challenge-info {
+            background: #f8f9fa;
+            border-left: 4px solid #ff9900;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .hint {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #856404;
+        }
+        .footer {
+            margin-top: 30px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="aws-logo">☁️</div>
+        <h1>CTF Challenge 1: AWS S3 Misconfiguration</h1>
+        
+        <div class="challenge-info">
+            <h3>🎯 Objective</h3>
+            <p>Find the hidden flag in this misconfigured AWS S3 bucket.</p>
+            
+            <h3>📋 Description</h3>
+            <p>This S3 bucket has been intentionally misconfigured for educational purposes. 
+            The bucket policy allows public read access to all objects.</p>
+            
+            <h3>🔍 What to look for</h3>
+            <ul>
+                <li>Publicly accessible files</li>
+                <li>Bucket enumeration possibilities</li>
+                <li>Hidden or sensitive files</li>
+            </ul>
+        </div>
+        
+        <div class="hint">
+            <strong>💡 Hint:</strong> Sometimes the most obvious places hide the most valuable secrets. 
+            What files might be stored alongside this webpage?
+        </div>
+        
+        <div class="footer">
+            <p>🏆 CTF-25 Multi-Cloud Security Challenge</p>
+            <p>AWS Challenge #1 - Public Storage Misconfiguration</p>
+        </div>
+    </div>
+</body>
+</html>
