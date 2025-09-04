@@ -1,0 +1,7 @@
+# Azure Configuration
+azure_subscription_id = "your-azure-subscription-id"
+azure_tenant_id       = "your-azure-tenant-id"
+azure_location        = "East US"
+
+# Project Configuration
+project_name = "ctf-25"

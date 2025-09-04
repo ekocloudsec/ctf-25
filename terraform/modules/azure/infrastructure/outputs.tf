@@ -20,5 +20,5 @@ output "static_website_url" {
 
 output "storage_container_name" {
   description = "Name of the storage container"
-  value       = azurerm_storage_container.web.name
+  value       = "$web"
 }

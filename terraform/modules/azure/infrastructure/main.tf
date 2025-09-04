@@ -24,7 +24,7 @@ resource "azurerm_resource_group" "main" {
 
 # Storage account
 resource "azurerm_storage_account" "website" {
-  name                     = "${var.project_name}sa${random_id.suffix.hex}"
+  name                     = "ctf25sa${random_id.suffix.hex}"
   resource_group_name      = azurerm_resource_group.main.name
   location                 = azurerm_resource_group.main.location
   account_tier             = "Standard"
@@ -46,18 +46,14 @@ resource "azurerm_storage_account" "website" {
   })
 }
 
-# Storage container for web content
-resource "azurerm_storage_container" "web" {
-  name                  = "$web"
-  storage_account_name  = azurerm_storage_account.website.name
-  container_access_type = "blob"
-}
+# The $web container is automatically created when static website is enabled
+# No need to explicitly create it
 
 # Upload index.html
 resource "azurerm_storage_blob" "index" {
   name                   = "index.html"
   storage_account_name   = azurerm_storage_account.website.name
-  storage_container_name = azurerm_storage_container.web.name
+  storage_container_name = "$web"
   type                   = "Block"
   source                 = var.index_html_path
   content_type           = "text/html"
@@ -67,7 +63,7 @@ resource "azurerm_storage_blob" "index" {
 resource "azurerm_storage_blob" "flag" {
   name                   = "flag.txt"
   storage_account_name   = azurerm_storage_account.website.name
-  storage_container_name = azurerm_storage_container.web.name
+  storage_container_name = "$web"
   type                   = "Block"
   source                 = var.flag_txt_path
   content_type           = "text/plain"

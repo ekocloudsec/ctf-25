@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Challenge 2 - Azure Storage Advanced</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0078d4, #106ebe, #005a9e);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            padding: 50px;
+            text-align: center;
+            max-width: 700px;
+            margin: 20px;
+            border: 2px solid #0078d4;
+        }
+        .azure-logo {
+            font-size: 56px;
+            color: #0078d4;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0,120,212,0.3);
+        }
+        h1 {
+            color: #323130;
+            margin-bottom: 35px;
+            font-size: 28px;
+        }
+        .challenge-info {
+            background: linear-gradient(135deg, #f3f2f1, #faf9f8);
+            border-left: 6px solid #0078d4;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .hint {
+            background: linear-gradient(135deg, #fff4ce, #fef7d0);
+            border: 2px solid #ffb900;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            color: #323130;
+            box-shadow: 0 4px 8px rgba(255,185,0,0.2);
+        }
+        .difficulty {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            border: 2px solid #0288d1;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #01579b;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 35px;
+            color: #605e5c;
+            font-size: 14px;
+        }
+        ul li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="azure-logo">☁️🔒</div>
+        <h1>CTF Challenge 2: Azure Storage Advanced Misconfiguration</h1>
+        
+        <div class="difficulty">
+            🎖️ Difficulty: Intermediate | Azure-Only Challenge
+        </div>
+        
+        <div class="challenge-info">
+            <h3>🎯 Objective</h3>
+            <p>Discover the hidden flag in this advanced Azure Storage Account misconfiguration scenario.</p>
+            
+            <h3>📋 Description</h3>
+            <p>This Azure Storage Account demonstrates a more complex misconfiguration involving 
+            public blob access with additional security considerations. The challenge requires 
+            understanding Azure Storage security models and access patterns.</p>
+            
+            <h3>🔍 What to investigate</h3>
+            <ul>
+                <li>Public blob container access levels</li>
+                <li>Anonymous blob enumeration capabilities</li>
+                <li>Storage account access keys exposure</li>
+                <li>Container-level security policies</li>
+                <li>Blob metadata and properties</li>
+            </ul>
+            
+            <h3>🛠️ Azure Services Involved</h3>
+            <ul>
+                <li>Azure Storage Account</li>
+                <li>Blob Storage Containers</li>
+                <li>Static Website Hosting</li>
+                <li>Public Access Policies</li>
+            </ul>
+        </div>
+        
+        <div class="hint">
+            <strong>💡 Advanced Hint:</strong> Azure Storage blobs support different access levels. 
+            This challenge involves understanding how container-level permissions work and 
+            what happens when storage accounts are misconfigured for public access.
+        </div>
+        
+        <div class="footer">
+            <p>🏆 CTF-25 Multi-Cloud Security Challenge</p>
+            <p>Azure Challenge #2 - Advanced Storage Misconfiguration</p>
+            <p>🔥 New Azure Account Setup Challenge</p>
+        </div>
+    </div>
+</body>
+</html>
