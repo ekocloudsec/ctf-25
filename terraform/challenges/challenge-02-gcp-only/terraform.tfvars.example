@@ -1,0 +1,4 @@
+gcp_project_id = "your-project-id"
+gcp_region     = "us-east1"
+project_name   = "ctf-25"
+gcp_user_email = "your-email@example.com"
