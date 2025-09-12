@@ -29,8 +29,8 @@ module "gcp_storage" {
   
   project_name    = var.project_name
   region          = var.gcp_region
-  index_html_path = "${path.module}/../../../web-content/gcp/index.html"
-  flag_txt_path   = "${path.module}/../../../web-content/gcp/flag.txt"
+  index_html_path = "${path.module}/../../../web-content/gcp-challenge-01/index.html"
+  flag_txt_path   = "${path.module}/../../../web-content/gcp-challenge-01/flag.txt"
   
   labels = {
     challenge = "challenge-01-gcp-only"

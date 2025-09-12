@@ -30,8 +30,8 @@ module "azure_storage" {
   
   project_name      = var.project_name
   location          = var.azure_location
-  index_html_path   = "${path.module}/../../../web-content/azure/index.html"
-  flag_txt_path     = "${path.module}/../../../web-content/azure/flag.txt"
+  index_html_path   = "${path.module}/../../../web-content/azure-challenge-01/index.html"
+  flag_txt_path     = "${path.module}/../../../web-content/azure-challenge-01/flag.txt"
   
   tags = {
     Challenge = "challenge-01-azure-only"
