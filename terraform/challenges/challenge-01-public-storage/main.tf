@@ -52,8 +52,8 @@ module "aws_storage" {
   source = "../../modules/aws/infrastructure"
   
   project_name    = var.project_name
-  index_html_path = "${path.module}/../../../web-content/aws/index.html"
-  flag_txt_path   = "${path.module}/../../../web-content/aws/flag.txt"
+  index_html_path = "${path.module}/../../../web-content/aws-challenge-01/index.html"
+  flag_txt_path   = "${path.module}/../../../web-content/aws-challenge-01/flag.txt"
   
   tags = {
     Challenge = "challenge-01-public-storage"
@@ -67,8 +67,8 @@ module "azure_storage" {
   
   project_name    = var.project_name
   location        = var.azure_location
-  index_html_path = "${path.module}/../../../web-content/azure/index.html"
-  flag_txt_path   = "${path.module}/../../../web-content/azure/flag.txt"
+  index_html_path = "${path.module}/../../../web-content/azure-challenge-01/index.html"
+  flag_txt_path   = "${path.module}/../../../web-content/azure-challenge-01/flag.txt"
   
   tags = {
     Challenge = "challenge-01-public-storage"
@@ -82,8 +82,8 @@ module "gcp_storage" {
   
   project_name    = var.project_name
   region          = var.gcp_region
-  index_html_path = "${path.module}/../../../web-content/gcp/index.html"
-  flag_txt_path   = "${path.module}/../../../web-content/gcp/flag.txt"
+  index_html_path = "${path.module}/../../../web-content/gcp-challenge-01/index.html"
+  flag_txt_path   = "${path.module}/../../../web-content/gcp-challenge-01/flag.txt"
   
   labels = {
     challenge = "challenge-01-public-storage"

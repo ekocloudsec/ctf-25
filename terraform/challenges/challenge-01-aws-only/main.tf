@@ -12,9 +12,9 @@ terraform {
     }
   }
 
-  backend "s3" {
-    # Configuration loaded from backend-configs/s3.hcl
-  }
+  # backend "s3" {
+  #   # Configuration loaded from backend-configs/s3.hcl
+  # }
 }
 
 # Provider configuration
@@ -36,8 +36,8 @@ module "aws_storage" {
   source = "../../modules/aws/infrastructure"
   
   project_name    = var.project_name
-  index_html_path = "${path.module}/../../../web-content/aws/index.html"
-  flag_txt_path   = "${path.module}/../../../web-content/aws/flag.txt"
+  index_html_path = "${path.module}/../../../web-content/aws-challenge-01/index.html"
+  flag_txt_path   = "${path.module}/../../../web-content/aws-challenge-01/flag.txt"
   
   tags = {
     Challenge = "challenge-01-aws-only"
