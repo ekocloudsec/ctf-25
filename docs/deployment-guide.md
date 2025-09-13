@@ -9,7 +9,8 @@ Follow the [Authentication Guide](authentication.md) to configure access to all 
 
 ### 2. Configure Variables
 ```bash
-cd terraform/challenges/challenge-01-public-storage
+# Navigate to your chosen challenge (example with AWS)
+cd terraform/challenges/challenge-01-aws-only
 cp terraform.tfvars.example terraform.tfvars
 ```
 

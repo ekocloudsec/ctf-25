@@ -51,7 +51,7 @@ Este challenge simula una configuración incorrecta común en Google Cloud Platf
 
 2. **Inicializar Terraform**
    ```bash
-   terraform init -backend-config=../../backend-configs/gcs-gcp-only.hcl
+   terraform init -backend-config=../../backend-configs/challenge-01-gcs.hcl
    ```
 
 3. **Crear archivo de variables (opcional)**

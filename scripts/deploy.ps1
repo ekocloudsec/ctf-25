@@ -1,17 +1,20 @@
 # CTF-25 Deployment Script
-# PowerShell script to deploy Challenge 1 across all cloud providers
+# PowerShell script to deploy individual challenges per cloud provider
 
 param(
     [Parameter(Mandatory=$true)]
+    [ValidateSet("aws", "azure", "gcp")]
+    [string]$CloudProvider,
+    
     [string]$GcpProjectId,
     
-    [string]$BackendConfig = "s3"
+    [string]$BackendConfig
 )
 
-Write-Host "🚀 Starting CTF-25 Challenge 1 deployment..." -ForegroundColor Green
+Write-Host "🚀 Starting CTF-25 Challenge 1 deployment for $CloudProvider..." -ForegroundColor Green
 
 # Change to challenge directory
-$ChallengeDir = Join-Path $PSScriptRoot "..\terraform\challenges\challenge-01-public-storage"
+$ChallengeDir = Join-Path $PSScriptRoot "..\terraform\challenges\challenge-01-$CloudProvider-only"
 Set-Location $ChallengeDir
 
 # Create terraform.tfvars if it doesn't exist
@@ -25,6 +28,16 @@ gcp_project_id = "$GcpProjectId"
 
 # Initialize Terraform
 Write-Host "🔧 Initializing Terraform..." -ForegroundColor Blue
+
+# Set backend config based on cloud provider if not specified
+if (-not $BackendConfig) {
+    switch ($CloudProvider) {
+        "aws" { $BackendConfig = "s3" }
+        "azure" { $BackendConfig = "azurerm" }
+        "gcp" { $BackendConfig = "gcs" }
+    }
+}
+
 $BackendConfigFile = "..\..\backend-configs\$BackendConfig.hcl"
 terraform init -backend-config=$BackendConfigFile
 
@@ -57,4 +70,4 @@ if ($LASTEXITCODE -eq 0) {
 # Cleanup plan file
 Remove-Item tfplan -ErrorAction SilentlyContinue
 
-Write-Host "🏆 CTF Challenge 1 is now live across all three cloud providers!" -ForegroundColor Green
+Write-Host "🏆 CTF Challenge 1 is now live on $CloudProvider!" -ForegroundColor Green

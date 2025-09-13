@@ -17,7 +17,9 @@ ctf-25/
 │   │   └── prod/
 │   ├── backend-configs/            # Remote state configurations
 │   └── challenges/                 # Challenge-specific infrastructure
-│       ├── challenge-01-public-storage/
+│       ├── challenge-01-aws-only/
+│       ├── challenge-01-azure-only/
+│       ├── challenge-01-gcp-only/
 │       ├── challenge-02-*/
 │       └── ...
 ├── web-content/                    # Static web content for challenges
@@ -61,8 +63,8 @@ See [Authentication Guide](docs/authentication.md) for detailed setup instructio
 
 ### Deployment
 ```bash
-# Navigate to specific challenge
-cd terraform/challenges/challenge-01-public-storage
+# Navigate to specific challenge (example with AWS)
+cd terraform/challenges/challenge-01-aws-only
 
 # Initialize Terraform
 terraform init -backend-config=../../backend-configs/s3.hcl

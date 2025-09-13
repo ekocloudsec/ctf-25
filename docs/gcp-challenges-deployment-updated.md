@@ -11,11 +11,34 @@ Asegúrate de tener configurada la autenticación para GCP:
 - Configura tu proyecto de GCP
 
 ### 2. Backend de Terraform
-Puedes usar cualquiera de los backends configurados. Para GCP, utilizaremos el backend GCS:
+Para GCP, utilizamos un archivo de backend específico para cada desafío:
 
 ```bash
-# Inicializar con GCS backend
-terraform init -backend-config=../../backend-configs/dev-gcs.hcl
+# Inicializar con el backend específico del desafío
+# Sustituye XX con el número del desafío (01, 02, 03, 04)
+terraform init -backend-config=../../backend-configs/challenge-XX-gcs.hcl
+```
+
+## Despliegue de Challenge-01-gcp-only (Storage Bucket)
+
+```bash
+# Navegar al directorio del desafío
+cd terraform/challenges/challenge-01-gcp-only
+
+# Copiar y editar el archivo de variables
+cp terraform.tfvars.example terraform.tfvars
+
+# Editar el archivo terraform.tfvars con tu ID de proyecto GCP
+# gcp_project_id = "tu-id-de-proyecto-gcp"
+
+# Inicializar Terraform con backend GCS
+terraform init -backend-config=../../backend-configs/challenge-01-gcs.hcl
+
+# Revisar el plan de despliegue
+terraform plan
+
+# Desplegar la infraestructura
+terraform apply
 ```
 
 ## Despliegue de Challenge-02-gcp-only (Secret Manager)
@@ -31,7 +54,7 @@ cp terraform.tfvars.example terraform.tfvars
 # gcp_project_id = "tu-id-de-proyecto-gcp"
 
 # Inicializar Terraform con backend GCS
-terraform init -backend-config=../../backend-configs/dev-gcs.hcl
+terraform init -backend-config=../../backend-configs/challenge-02-gcs.hcl
 
 # Revisar el plan de despliegue
 terraform plan
@@ -57,7 +80,7 @@ cp terraform.tfvars.example terraform.tfvars
 # gcp_project_id = "tu-id-de-proyecto-gcp"
 
 # Inicializar Terraform con backend GCS
-terraform init -backend-config=../../backend-configs/dev-gcs.hcl
+terraform init -backend-config=../../backend-configs/challenge-03-gcs.hcl
 
 # Revisar el plan de despliegue
 terraform plan
@@ -83,7 +106,7 @@ cp terraform.tfvars.example terraform.tfvars
 # gcp_project_id = "tu-id-de-proyecto-gcp"
 
 # Inicializar Terraform con backend GCS
-terraform init -backend-config=../../backend-configs/dev-gcs.hcl
+terraform init -backend-config=../../backend-configs/challenge-04-gcs.hcl
 
 # Revisar el plan de despliegue
 terraform plan
