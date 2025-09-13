@@ -15,3 +15,9 @@ variable "project_name" {
   type        = string
   default     = "ctf-25"
 }
+
+variable "gcp_user_email" {
+  description = "GCP user email for permissions"
+  type        = string
+  default     = "administrator@ekocloudsec.com"
+}
