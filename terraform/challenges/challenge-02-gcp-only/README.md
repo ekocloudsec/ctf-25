@@ -33,7 +33,7 @@ gcp_project_id = "your-project-id"
 
 3. Initialize Terraform with the backend configuration:
 ```
-terraform init -backend-config=../../backend-configs/dev-gcs.hcl
+terraform init -backend-config=../../backend-configs/challenge-02-gcs.hcl
 ```
 
 4. Apply the Terraform configuration:
