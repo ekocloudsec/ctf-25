@@ -29,8 +29,7 @@ resource "local_file" "flag_file" {
   filename = "${path.module}/../../../web-content/gcp-challenge-03/flag.txt"
 
   provisioner "local-exec" {
-    command = "New-Item -Path '${path.module}/../../../web-content/gcp-challenge-03' -ItemType Directory -Force"
-    interpreter = ["PowerShell", "-Command"]
+    command = "mkdir -p ${path.module}/../../../web-content/gcp-challenge-03"
   }
 }
 
