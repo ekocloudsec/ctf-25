@@ -46,8 +46,15 @@ resource "azurerm_storage_account" "website" {
   })
 }
 
-# The $web container is automatically created when static website is enabled
-# No need to explicitly create it
+# Configure the $web container with public access
+# Even though it's automatically created, we need to set public access permissions
+resource "azurerm_storage_container" "web" {
+  name                  = "$web"
+  storage_account_name  = azurerm_storage_account.website.name
+  container_access_type = "container"  # Allow public read access to blobs AND container listing
+
+  depends_on = [azurerm_storage_account.website]
+}
 
 # Upload index.html
 resource "azurerm_storage_blob" "index" {
@@ -57,6 +64,8 @@ resource "azurerm_storage_blob" "index" {
   type                   = "Block"
   source                 = var.index_html_path
   content_type           = "text/html"
+  
+  depends_on = [azurerm_storage_container.web]
 }
 
 # Upload flag.txt
@@ -67,4 +76,6 @@ resource "azurerm_storage_blob" "flag" {
   type                   = "Block"
   source                 = var.flag_txt_path
   content_type           = "text/plain"
+  
+  depends_on = [azurerm_storage_container.web]
 }
