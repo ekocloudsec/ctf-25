@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 03 - AWS EC2 SSRF to S3 Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1e3a8a 50%, #3b82f6 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .challenge-card {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+        
+        .challenge-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            background: rgba(10, 22, 40, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        
+        .info-item h3 {
+            color: #60a5fa;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .scenario {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .scenario h3 {
+            color: #86efac;
+            margin-bottom: 15px;
+        }
+        
+        .attack-flow {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .attack-flow h3 {
+            color: #fcd34d;
+            margin-bottom: 15px;
+        }
+        
+        .attack-flow ol {
+            padding-left: 20px;
+        }
+        
+        .attack-flow li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .flag-format {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .flag-format h3 {
+            color: #fca5a5;
+            margin-bottom: 10px;
+        }
+        
+        .flag-format code {
+            background: rgba(10, 22, 40, 0.7);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            color: #60a5fa;
+        }
+        
+        .warning {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Challenge 03 - AWS EC2 SSRF to S3 Access</h1>
+            <p>MediCloudX Health - Portal de Análisis de Datos Vulnerabilidad SSRF</p>
+        </div>
+        
+        <div class="challenge-card">
+            <div class="challenge-info">
+                <div class="info-item">
+                    <h3>🎯 Dificultad</h3>
+                    <p>Intermedio</p>
+                </div>
+                <div class="info-item">
+                    <h3>⏱️ Tiempo Estimado</h3>
+                    <p>30-45 minutos</p>
+                </div>
+                <div class="info-item">
+                    <h3>🔧 Tecnologías</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">AWS EC2</span>
+                        <span class="tech-tag">SSRF</span>
+                        <span class="tech-tag">S3</span>
+                        <span class="tech-tag">IAM</span>
+                        <span class="tech-tag">Metadata Service</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <h3>📚 Habilidades</h3>
+                    <p>SSRF exploitation, AWS metadata service, S3 access, IAM privilege escalation</p>
+                </div>
+            </div>
+            
+            <div class="scenario">
+                <h3>📋 Escenario</h3>
+                <p>
+                    Has descubierto el portal interno de análisis de datos de <strong>MediCloudX Health</strong>, 
+                    una plataforma de telemedicina. El portal incluye una herramienta de verificación de conectividad 
+                    que parece ser vulnerable a ataques SSRF. Tu objetivo es explotar esta vulnerabilidad para 
+                    obtener acceso a datos sensibles de pacientes almacenados en buckets de S3.
+                </p>
+                <p style="margin-top: 15px;">
+                    <strong>Contexto:</strong> MediCloudX Health utiliza AWS para su infraestructura en la nube. 
+                    El equipo de desarrollo ha implementado un sistema de verificación de conectividad para servicios 
+                    externos, pero no ha validado adecuadamente las URLs de entrada, creando una vulnerabilidad SSRF.
+                </p>
+            </div>
+            
+            <div class="attack-flow">
+                <h3>🔍 Flujo de Ataque Esperado</h3>
+                <ol>
+                    <li><strong>Reconocimiento:</strong> Acceder al portal web de MediCloudX Health</li>
+                    <li><strong>Descubrimiento de Vulnerabilidad:</strong> Identificar la funcionalidad vulnerable a SSRF</li>
+                    <li><strong>Explotación de Metadatos:</strong> Usar SSRF para acceder al servicio de metadatos de EC2</li>
+                    <li><strong>Extracción de Credenciales:</strong> Obtener credenciales temporales de AWS desde el metadata service</li>
+                    <li><strong>Acceso a S3:</strong> Usar las credenciales para acceder al bucket de credenciales</li>
+                    <li><strong>Escalación de Credenciales:</strong> Obtener las credenciales de daniel.lopez desde el archivo CSV</li>
+                    <li><strong>Recuperación del Flag:</strong> Usar las credenciales de daniel.lopez para acceder al bucket de datos de pacientes</li>
+                    <li><strong>Extracción Final:</strong> Recuperar el flag final del sistema</li>
+                </ol>
+            </div>
+            
+            <div class="flag-format">
+                <h3>🏁 Formato del Flag</h3>
+                <code>CTF{...}</code>
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ Nota de Seguridad:</strong> Este desafío crea infraestructura intencionalmente vulnerable. 
+                Solo debe desplegarse en entornos aislados/de prueba. Asegúrate de limpiar adecuadamente los recursos 
+                después del uso y monitorear los costos de AWS durante el despliegue.
+            </div>
+        </div>
+        
+        <div style="text-align: center; color: rgba(255, 255, 255, 0.6); margin-top: 40px;">
+            <p>🏥 <strong>MediCloudX Health CTF Challenge</strong></p>
+            <p>© 2025 EkoCloudSec - Educación en Seguridad en la Nube</p>
+        </div>
+    </div>
+</body>
+</html>
