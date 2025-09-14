@@ -1,6 +1,6 @@
 # S3 resources for the challenge
 
-# S3 bucket for storing daniel.lopez credentials (accessible via EC2 SSRF)
+# S3 bucket for storing daniel.lopez credentials (accessible via EC2 role)
 resource "aws_s3_bucket" "credentials_bucket" {
   bucket = "${var.project_name}-medicloudx-credentials-${local.random_suffix}"
 
@@ -63,7 +63,7 @@ resource "aws_s3_object" "daniel_lopez_credentials" {
 resource "aws_s3_object" "flag" {
   bucket = aws_s3_bucket.flag_bucket.id
   key    = "analytics/patient-insights/flag.txt"
-  content = "CTF{m3d1cl0udx_ssrf_t0_s3_cr3d3nt14l_3xf1ltr4t10n}"
+  content = "CTF{m3d1cl0udx_d4t4_4n4lys1s_cr3d3nt14l_3xf1ltr4t10n}"
   
   content_type = "text/plain"
 

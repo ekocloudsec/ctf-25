@@ -1,8 +1,8 @@
 # IAM resources for the challenge
 
-# IAM role for EC2 instance (vulnerable to SSRF)
-resource "aws_iam_role" "ec2_ssrf_role" {
-  name = "${var.project_name}-ec2-ssrf-role-${local.random_suffix}"
+# IAM role for EC2 instance - data analysis portal
+resource "aws_iam_role" "ec2_data_analysis_role" {
+  name = "${var.project_name}-ec2-data-analysis-role-${local.random_suffix}"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -18,7 +18,7 @@ resource "aws_iam_role" "ec2_ssrf_role" {
   })
 
   tags = merge(local.common_tags, {
-    Name = "${var.project_name}-ec2-ssrf-role-${local.random_suffix}"
+    Name = "${var.project_name}-ec2-data-analysis-role-${local.random_suffix}"
   })
 }
 
@@ -49,14 +49,14 @@ resource "aws_iam_policy" "ec2_s3_read_policy" {
 
 # Attach policy to EC2 role
 resource "aws_iam_role_policy_attachment" "ec2_s3_read_attachment" {
-  role       = aws_iam_role.ec2_ssrf_role.name
+  role       = aws_iam_role.ec2_data_analysis_role.name
   policy_arn = aws_iam_policy.ec2_s3_read_policy.arn
 }
 
 # Instance profile for EC2
 resource "aws_iam_instance_profile" "ec2_profile" {
   name = "${var.project_name}-ec2-profile-${local.random_suffix}"
-  role = aws_iam_role.ec2_ssrf_role.name
+  role = aws_iam_role.ec2_data_analysis_role.name
 
   tags = local.common_tags
 }

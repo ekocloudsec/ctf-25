@@ -245,7 +245,7 @@ cat > /var/www/html/index.php << 'EOF'
                 echo "Timestamp: " . date('Y-m-d H:i:s') . "\n";
                 echo "----------------------------------------\n\n";
                 
-                // VULNERABLE SSRF - No validation of URL
+                # Connectivity checker - validates external service endpoints
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
