@@ -19,7 +19,8 @@ resource "aws_instance" "web_app" {
   iam_instance_profile  = aws_iam_instance_profile.ec2_profile.name
 
   user_data = base64encode(templatefile("${path.module}/user_data.sh", {
-    bucket_name = aws_s3_bucket.credentials_bucket.id
+    credentials_bucket_name = aws_s3_bucket.credentials_bucket.id
+    flag_bucket_name       = aws_s3_bucket.flag_bucket.id
   }))
 
   tags = merge(local.common_tags, {
