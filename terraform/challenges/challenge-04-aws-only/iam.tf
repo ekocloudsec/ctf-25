@@ -1,7 +1,7 @@
-# IAM policy for snapshot access (CloudCopy attack vector)
-resource "aws_iam_policy" "snapshot_access" {
-  name        = "${var.project_name}-${var.challenge_name}-snapshot-access-${random_string.suffix.result}"
-  description = "Policy allowing snapshot enumeration and sharing for CTF Challenge 04"
+# IAM policy for snapshot discovery (CloudCopy attack vector)
+resource "aws_iam_policy" "snapshot_discovery" {
+  name        = "${var.project_name}-${var.challenge_name}-snapshot-discovery-${random_string.suffix.result}"
+  description = "Policy allowing snapshot enumeration for CTF Challenge 04"
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -15,26 +15,13 @@ resource "aws_iam_policy" "snapshot_access" {
           "ec2:DescribeInstances"
         ]
         Resource = "*"
-      },
-      {
-        Sid    = "ModifySnapshotAttributes"
-        Effect = "Allow"
-        Action = [
-          "ec2:ModifySnapshotAttribute"
-        ]
-        Resource = "*"
-        Condition = {
-          StringEquals = {
-            "ec2:ResourceTag/Challenge" = var.challenge_name
-          }
-        }
       }
     ]
   })
 
   tags = {
-    Name        = "${var.project_name}-${var.challenge_name}-snapshot-policy-${random_string.suffix.result}"
-    Description = "Snapshot access policy for CTF participants"
+    Name        = "${var.project_name}-${var.challenge_name}-snapshot-discovery-policy-${random_string.suffix.result}"
+    Description = "Snapshot discovery policy for CTF participants"
   }
 }
 
@@ -51,10 +38,10 @@ resource "aws_iam_user" "carlos_cardenas" {
   }
 }
 
-# Attach snapshot policy to carlos.cardenas
-resource "aws_iam_user_policy_attachment" "carlos_snapshot_access" {
+# Attach snapshot discovery policy to carlos.cardenas
+resource "aws_iam_user_policy_attachment" "carlos_snapshot_discovery" {
   user       = aws_iam_user.carlos_cardenas.name
-  policy_arn = aws_iam_policy.snapshot_access.arn
+  policy_arn = aws_iam_policy.snapshot_discovery.arn
 }
 
 # Create access key for carlos.cardenas
