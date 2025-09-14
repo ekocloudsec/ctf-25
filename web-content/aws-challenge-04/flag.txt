@@ -1,0 +1,1 @@
+CTF{cloudcopy_ntds_snapshot_extraction_attack}

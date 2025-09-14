@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 04 - CloudCopy Attack | EkoCloudSec CTF</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .challenge-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .challenge-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .difficulty {
+            display: inline-block;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .content {
+            margin-top: 30px;
+        }
+
+        .scenario {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .scenario h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .scenario p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .objectives {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .objectives h3 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .objectives ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .objectives li {
+            background: #fff;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 3px solid #ffc107;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .objectives li::before {
+            content: "🎯";
+            position: absolute;
+            left: 12px;
+            top: 12px;
+        }
+
+        .credentials {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .credentials h3 {
+            color: #0c5460;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .cred-item {
+            background: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 3px solid #17a2b8;
+            font-family: 'Courier New', monospace;
+        }
+
+        .cred-label {
+            font-weight: bold;
+            color: #0c5460;
+            margin-bottom: 5px;
+        }
+
+        .cred-value {
+            color: #495057;
+            word-break: break-all;
+        }
+
+        .warning {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning h3 {
+            color: #721c24;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .warning p {
+            color: #721c24;
+            line-height: 1.6;
+        }
+
+        .attack-flow {
+            background: #e2e3e5;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .attack-flow h3 {
+            color: #383d41;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .step {
+            background: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #6c757d;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            background: #6c757d;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .step-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .step-desc {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+            color: #6c757d;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .tech-badge {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🛡️ EkoCloudSec</div>
+            <h1 class="challenge-title">Challenge 04 - CloudCopy Attack</h1>
+            <p class="challenge-subtitle">Stealing NTDS Hashes via EBS Snapshots</p>
+            <span class="difficulty">🔥 Advanced</span>
+        </div>
+
+        <div class="content">
+            <div class="scenario">
+                <h3>🎭 Scenario</h3>
+                <p>
+                    EkoCloudSec has deployed a Windows Server 2022 Domain Controller for the <strong>ekocloudsec.local</strong> 
+                    domain in AWS. The infrastructure team has created EBS snapshots for backup purposes, but the IAM 
+                    permissions are misconfigured, allowing unauthorized users to access and share these snapshots.
+                </p>
+                <p>
+                    Your mission is to exploit this misconfiguration using the <strong>CloudCopy</strong> technique to 
+                    extract NTDS hashes from the Domain Controller's snapshot and compromise the service account credentials.
+                </p>
+            </div>
+
+            <div class="objectives">
+                <h3>🎯 Objectives</h3>
+                <ul>
+                    <li>Enumerate EBS snapshots in the target AWS account</li>
+                    <li>Identify the Domain Controller snapshot containing NTDS database</li>
+                    <li>Exploit IAM permissions to share the snapshot with your personal account</li>
+                    <li>Extract NTDS.dit and SYSTEM registry hive from the snapshot</li>
+                    <li>Use secretsdump.py to extract password hashes</li>
+                    <li>Find the NT hash of the svc-flag service account</li>
+                </ul>
+            </div>
+
+            <div class="credentials">
+                <h3>🔑 Provided Credentials</h3>
+                <div class="cred-item">
+                    <div class="cred-label">IAM User:</div>
+                    <div class="cred-value">carlos.cardenas</div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-label">Access Key ID:</div>
+                    <div class="cred-value">[Provided in Terraform outputs]</div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-label">Secret Access Key:</div>
+                    <div class="cred-value">[Provided in Terraform outputs]</div>
+                </div>
+                <div class="cred-item">
+                    <div class="cred-label">AWS Region:</div>
+                    <div class="cred-value">us-east-1</div>
+                </div>
+            </div>
+
+            <div class="attack-flow">
+                <h3>⚡ Attack Flow</h3>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Reconnaissance</div>
+                    <div class="step-desc">Configure AWS CLI with carlos.cardenas credentials and enumerate snapshots</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Target Identification</div>
+                    <div class="step-desc">Find the EkoCloudSecDC snapshot using tags and metadata</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Snapshot Sharing</div>
+                    <div class="step-desc">Use ec2:ModifySnapshotAttribute to share snapshot with your personal account</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Cross-Account Copy</div>
+                    <div class="step-desc">Copy the shared snapshot to your personal AWS account</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-title">Volume Creation</div>
+                    <div class="step-desc">Create EBS volume from copied snapshot and attach to analysis instance</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-title">Data Extraction</div>
+                    <div class="step-desc">Mount volume and extract NTDS.dit and SYSTEM registry hive</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">7</div>
+                    <div class="step-title">Hash Extraction</div>
+                    <div class="step-desc">Use secretsdump.py to extract NT hashes from NTDS database</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">8</div>
+                    <div class="step-title">Flag Submission</div>
+                    <div class="step-desc">Find svc-flag user's NT hash and submit as your flag</div>
+                </div>
+            </div>
+
+            <div class="warning">
+                <h3>⚠️ Prerequisites</h3>
+                <p>
+                    You will need a <strong>personal AWS account</strong> (separate from the lab account) and a Linux 
+                    instance for analysis. Install Impacket tools including <code>secretsdump.py</code> for hash extraction.
+                </p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-badge">AWS EC2</span>
+                <span class="tech-badge">EBS Snapshots</span>
+                <span class="tech-badge">Windows Server 2022</span>
+                <span class="tech-badge">Active Directory</span>
+                <span class="tech-badge">IAM Permissions</span>
+                <span class="tech-badge">NTDS Extraction</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Flag Format:</strong> CTF{nt_hash_of_svc_flag_user}</p>
+            <p><strong>Estimated Time:</strong> 2-3 hours | <strong>Technique:</strong> T1003.003 - NTDS</p>
+            <p>© 2025 EkoCloudSec - Advanced Cloud Security Training</p>
+        </div>
+    </div>
+</body>
+</html>
