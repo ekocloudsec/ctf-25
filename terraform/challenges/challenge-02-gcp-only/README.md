@@ -43,15 +43,9 @@ terraform apply
 
 5. Review the outputs to get the name of the secret that was created.
 
-### Testing the Challenge
+### Challenge Information
 
-To verify the challenge is working correctly, check if the secret is accessible publicly:
-
-```
-gcloud secrets versions access 1 --secret="[SECRET_NAME_FROM_OUTPUT]"
-```
-
-You should be able to view the secret value, which contains the flag.
+Participants will need to discover and access the misconfigured Secret Manager secret to obtain the flag. The detailed solution steps are available in the `SOLUTION.md` file.
 
 ## Clean Up
 

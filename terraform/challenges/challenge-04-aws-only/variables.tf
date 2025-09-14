@@ -25,7 +25,7 @@ variable "challenge_name" {
 variable "domain_name" {
   description = "Active Directory domain name"
   type        = string
-  default     = "ekocloudsec.local"
+  default     = "medicloudx.local"
 }
 
 variable "dc_admin_password" {

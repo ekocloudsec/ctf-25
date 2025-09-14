@@ -44,15 +44,9 @@ terraform apply
 
 5. Review the outputs to get the name of the Firestore database and collection that were created.
 
-### Testing the Challenge
+### Challenge Information
 
-To verify the challenge is working correctly, visit the Firestore console in your Google Cloud project and examine the logs in the collection:
-
-```
-https://console.cloud.google.com/firestore/data
-```
-
-Navigate to the `medicloudx-store-audit-logs` collection and verify that the log entries, including the one with the hidden flag, are present.
+Participants will need to access the Firestore database and analyze the audit logs to find the hidden flag. The detailed solution steps are available in the `SOLUTION.md` file.
 
 ## Clean Up
 

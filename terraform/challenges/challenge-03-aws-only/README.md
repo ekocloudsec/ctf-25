@@ -68,99 +68,17 @@ The challenge deploys the following AWS resources:
    terraform output
    ```
 
-### Challenge Information
+## Challenge Information
 
 After deployment, participants will receive:
 - **Web Application URL**: The public IP/URL of the MediCloudX Health portal
 - **Challenge Instructions**: Basic scenario description
 
-## Solution Walkthrough
+The detailed solution walkthrough is available in the `SOLUTION.md` file.
 
-### Step 1: Explore the Web Application
+## Flag Format
 
-Access the provided URL to find the MediCloudX Health data analytics portal. The application includes:
-- A connectivity checker tool for external services
-- System status dashboard
-- Professional healthcare-themed interface
-
-### Step 2: Identify SSRF Vulnerability
-
-The connectivity checker accepts any URL without validation, making it vulnerable to SSRF attacks.
-
-### Step 3: Discover Bucket Names
-
-First, use the SSRF vulnerability to discover the bucket names by accessing:
-
-```
-URL: http://169.254.169.254/latest/user-data
-```
-
-This will reveal the EC2 user-data script containing bucket configuration. Alternatively, check for configuration files:
-
-```
-URL: file:///opt/medicloudx/config.env
-```
-
-### Step 4: Access EC2 Metadata Service
-
-Use the SSRF vulnerability to access the EC2 metadata service:
-
-```
-URL: http://169.254.169.254/latest/meta-data/
-```
-
-Explore the metadata to find:
-- Instance identity
-- IAM role information
-- Security credentials
-
-### Step 5: Extract Temporary Credentials
-
-Access the security credentials endpoint:
-
-```
-URL: http://169.254.169.254/latest/meta-data/iam/security-credentials/[ROLE-NAME]
-```
-
-This returns temporary AWS credentials (AccessKeyId, SecretAccessKey, Token).
-
-### Step 6: Configure AWS CLI
-
-Use the extracted credentials to configure AWS CLI or use them programmatically:
-
-```bash
-export AWS_ACCESS_KEY_ID="[ACCESS_KEY]"
-export AWS_SECRET_ACCESS_KEY="[SECRET_KEY]"
-export AWS_SESSION_TOKEN="[TOKEN]"
-```
-
-### Step 7: Access Credentials Bucket
-
-Use the bucket name discovered in Step 3 to access the credentials bucket:
-
-```bash
-aws s3 ls s3://[CREDENTIALS_BUCKET_NAME]
-aws s3 cp s3://[CREDENTIALS_BUCKET_NAME]/employees/daniel.lopez/aws-credentials.csv ./
-```
-
-### Step 8: Extract daniel.lopez Credentials
-
-The CSV file contains daniel.lopez's permanent AWS credentials.
-
-### Step 9: Access Flag Bucket
-
-Configure AWS CLI with daniel.lopez credentials and access the flag bucket using the bucket name from Step 3:
-
-```bash
-aws s3 ls s3://[FLAG_BUCKET_NAME]
-aws s3 cp s3://[FLAG_BUCKET_NAME]/analytics/patient-insights/flag.txt ./
-```
-
-## Flag
-
-```
-CTF{m3d1cl0udx_ssrf_t0_s3_cr3d3nt14l_3xf1ltr4t10n}
-```
+The flag follows the standard CTF format.
 
 ## Learning Objectives
 
