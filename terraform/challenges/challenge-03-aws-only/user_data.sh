@@ -10,6 +10,28 @@ yum install -y httpd php php-curl
 systemctl start httpd
 systemctl enable httpd
 
+# Set environment variables with bucket names for realistic discovery via metadata service
+# These will be available via the EC2 metadata service at:
+# http://169.254.169.254/latest/user-data
+export MEDICLOUDX_CREDENTIALS_BUCKET="${credentials_bucket_name}"
+export MEDICLOUDX_PATIENT_DATA_BUCKET="${flag_bucket_name}"
+
+# Also add them to a configuration file that could be discovered
+cat > /opt/medicloudx/config.env << EOF
+# MediCloudX Health Platform Configuration
+# Auto-generated during instance initialization
+MEDICLOUDX_CREDENTIALS_BUCKET=${credentials_bucket_name}
+MEDICLOUDX_PATIENT_DATA_BUCKET=${flag_bucket_name}
+MEDICLOUDX_VERSION=2.1.3
+MEDICLOUDX_ENVIRONMENT=production
+MEDICLOUDX_REGION=us-east-1
+EOF
+
+# Make the config directory and file accessible
+mkdir -p /opt/medicloudx
+chmod 755 /opt/medicloudx
+chmod 644 /opt/medicloudx/config.env
+
 # Create the vulnerable web application
 cat > /var/www/html/index.php << 'EOF'
 <!DOCTYPE html>
@@ -300,5 +322,17 @@ EOF
 # Restart Apache to ensure everything is loaded
 systemctl restart httpd
 
+# Create a hint file that might be discovered during reconnaissance
+cat > /var/www/html/robots.txt << 'EOF'
+User-agent: *
+Disallow: /admin/
+Disallow: /config/
+Disallow: /backup/
+
+# Internal note: Configuration files stored in /opt/medicloudx/
+# Remember to rotate credentials quarterly - DevOps Team
+EOF
+
 # Log the completion
 echo "$(date): MediCloudX Health Portal setup completed" >> /var/log/user-data.log
+echo "$(date): Bucket configuration: credentials=${credentials_bucket_name}, patient-data=${flag_bucket_name}" >> /var/log/user-data.log
