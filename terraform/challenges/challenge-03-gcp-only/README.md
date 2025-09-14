@@ -44,21 +44,9 @@ terraform apply
 
 5. Review the outputs to get the name of the bucket that was created.
 
-### Testing the Challenge
+### Challenge Information
 
-To verify the challenge is working correctly, check if the bucket is properly private by attempting to access it without authentication:
-
-```
-gsutil ls gs://[BUCKET_NAME_FROM_OUTPUT]
-```
-
-Without proper authentication, this should fail with an access denied error.
-
-With proper authentication (as the challenge administrator), you can verify the flag is correctly placed:
-
-```
-gsutil cat gs://[BUCKET_NAME_FROM_OUTPUT]/flag.txt
-```
+Participants will need to find a way to access the private bucket and retrieve the flag. The detailed solution steps are available in the `SOLUTION.md` file.
 
 ## Clean Up
 

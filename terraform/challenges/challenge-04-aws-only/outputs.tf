@@ -76,7 +76,3 @@ output "networking_info" {
   }
 }
 
-output "web_content_url" {
-  description = "URL to challenge web content"
-  value       = "https://ctf-25-challenge-04-aws.s3.amazonaws.com/index.html"
-}

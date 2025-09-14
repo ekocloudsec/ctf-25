@@ -18,14 +18,14 @@ data "aws_ebs_volume" "dc_root_volume" {
 # Create snapshot of the Domain Controller's root volume
 resource "aws_ebs_snapshot" "dc_snapshot" {
   volume_id   = data.aws_ebs_volume.dc_root_volume.id
-  description = "EkoCloudSecDC snapshot for CTF Challenge 04 - Contains NTDS database"
+  description = "MediCloudX backup snapshot - Weekly automated backup"
 
   tags = {
-    Name        = "EkoCloudSecDC-Snapshot-${random_string.suffix.result}"
-    Challenge   = var.challenge_name
-    Description = "Domain Controller snapshot containing NTDS database"
-    VictimDC    = "EkoCloudSecDC"
-    Domain      = var.domain_name
+    Name        = "MediCloudX-DC-Backup-${random_string.suffix.result}"
+    Environment = "Production"
+    BackupType  = "Weekly"
+    Application = "MediCloudX"
+    Owner       = "IT-Operations"
   }
 
   # Ensure the DC has had time to fully configure before taking snapshot

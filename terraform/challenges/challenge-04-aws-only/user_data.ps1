@@ -27,7 +27,7 @@ try {
     Write-Host "Promoting server to Domain Controller for domain ${domain_name}..." -ForegroundColor Yellow
     Install-ADDSForest `
         -DomainName "${domain_name}" `
-        -DomainNetbiosName "EKOCLOUDSEC" `
+        -DomainNetbiosName "MEDICLOUDX" `
         -SafeModeAdministratorPassword $SafeModePassword `
         -InstallDns:$true `
         -CreateDnsDelegation:$false `

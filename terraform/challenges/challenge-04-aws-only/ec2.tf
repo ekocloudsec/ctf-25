@@ -86,10 +86,11 @@ resource "aws_instance" "domain_controller" {
   }
 
   tags = {
-    Name        = "EkoCloudSecDC-${random_string.suffix.result}"
-    Description = "Domain Controller for CTF Challenge 04"
-    Challenge   = var.challenge_name
-    Domain      = var.domain_name
+    Name        = "MediCloudX-DC-${random_string.suffix.result}"
+    Environment = "Production"
+    Application = "MediCloudX"
+    Role        = "Domain-Controller"
+    Owner       = "IT-Operations"
   }
 
   # Ensure the instance is fully configured before creating snapshot

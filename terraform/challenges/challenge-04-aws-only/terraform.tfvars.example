@@ -11,7 +11,7 @@ project_name = "ctf-25"
 challenge_name = "challenge-04-aws-only"
 
 # Domain Configuration
-domain_name = "ekocloudsec.local"
+domain_name = "medicloudx.local"
 
 # Security Configuration (CHANGE THESE PASSWORDS!)
 dc_admin_password = "EkoCloudSec2025!"

