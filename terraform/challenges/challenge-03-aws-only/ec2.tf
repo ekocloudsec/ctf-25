@@ -24,7 +24,7 @@ resource "aws_instance" "web_app" {
   }))
 
   tags = merge(local.common_tags, {
-    Name        = "${var.project_name}-medicloudx-web-${local.random_suffix}"
+    Name        = "${var.project_name}-medicloudx-portal-analisis-${local.random_suffix}"
     Application = "MediCloudX Health Portal"
     Environment = "production"
     Owner       = "DevOps Team"
