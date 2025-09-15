@@ -47,7 +47,7 @@ resource "azurerm_storage_account" "website" {
 }
 
 # Configure the $web container with public access
-# Even though it's automatically created, we need to set public access permissions
+# Note: This container is automatically created by static_website, but we manage it explicitly
 resource "azurerm_storage_container" "web" {
   name                  = "$web"
   storage_account_name  = azurerm_storage_account.website.name

@@ -6,9 +6,21 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "~> 3.0"
     }
+    azuread = {
+      source  = "hashicorp/azuread"
+      version = "~> 2.0"
+    }
     random = {
       source  = "hashicorp/random"
       version = "~> 3.0"
+    }
+    tls = {
+      source  = "hashicorp/tls"
+      version = "~> 4.0"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.0"
     }
   }
 
@@ -24,7 +36,18 @@ provider "azurerm" {
   tenant_id       = var.azure_tenant_id
 }
 
-# Azure Storage Module
+provider "azuread" {
+  tenant_id = var.azure_tenant_id
+}
+
+# Random suffix for unique resource names
+resource "random_string" "suffix" {
+  length  = 8
+  special = false
+  upper   = false
+}
+
+# Azure Storage Module (Original Challenge-01)
 module "azure_storage" {
   source = "../../modules/azure/infrastructure"
   
