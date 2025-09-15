@@ -1,20 +1,29 @@
-# Challenge 01: Azure-Only Public Storage
+# Challenge 01: Azure Combined Storage & Identity Challenge
 
-Este desafío implementa una cuenta de Azure Storage con configuraciones de seguridad vulnerables para propósitos educativos de CTF.
+Este desafío combinado implementa múltiples vectores de ataque en Azure Storage y Azure AD para propósitos educativos de CTF.
 
 ## Descripción del Desafío
 
-**Objetivo**: Encontrar y acceder a una flag almacenada en un Azure Storage Account públicamente accesible.
+**Objetivo**: Encontrar y acceder a flags mediante dos rutas de ataque diferentes:
 
-**Recursos desplegados**:
+### Vector 1: Acceso Directo (Básico)
 - Azure Storage Account con acceso público de lectura
 - Hosting de sitio web estático habilitado
-- Flag almacenada en `flag.txt`
+- Flag básica almacenada en `flag.txt`
 
-**Vulnerabilidad demostrada**:
-- Container con acceso público de lectura
-- Sin restricciones de acceso a blobs
-- Hosting web estático habilitado
+### Vector 2: MediCloudX Research Portal (Avanzado)
+- Portal de investigación con SAS tokens embebidos
+- Container privado con datos sensibles
+- Azure AD App Registration con autenticación por certificado
+- Usuario Azure AD con credenciales conocidas
+- Flag avanzada en container privado
+
+**Vulnerabilidades demostradas**:
+- Container con acceso público de lectura (CWE-200)
+- SAS token expuesto en código cliente (CWE-200)
+- Token SAS con permisos excesivos y larga expiración (CWE-732)
+- Certificado almacenado en ubicación accesible (CWE-522)
+- Contraseña débil de certificado (CWE-521)
 
 ## Prerrequisitos
 

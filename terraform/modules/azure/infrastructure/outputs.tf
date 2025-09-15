@@ -22,3 +22,9 @@ output "storage_container_name" {
   description = "Name of the storage container"
   value       = "$web"
 }
+
+output "primary_connection_string" {
+  description = "Primary connection string for the storage account"
+  value       = azurerm_storage_account.website.primary_connection_string
+  sensitive   = true
+}
