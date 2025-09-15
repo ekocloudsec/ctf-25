@@ -31,7 +31,7 @@ resource "azurerm_storage_blob" "certificate_b64" {
   storage_container_name = azurerm_storage_container.medicloud_research.name
   type                   = "Block"
   content_type           = "text/plain"
-  source_content         = local_file.medicloud_pfx.content_base64
+  source_content         = data.local_file.medicloud_pfx.content_base64
 }
 
 # Upload PowerShell script to private container
@@ -54,14 +54,33 @@ resource "azurerm_storage_blob" "medicloud_flag" {
   source                 = "${path.module}/../../../web-content/azure-challenge-02/flag.txt"
 }
 
-# Create PFX certificate using local_file and openssl
-resource "local_file" "medicloud_pfx" {
-  content_base64 = base64encode(
-    # This creates a simple PFX-like structure for demonstration
-    # In a real scenario, you'd use openssl or similar tools
-    "${tls_self_signed_cert.medicloud_cert.cert_pem}${tls_private_key.medicloud_cert_key.private_key_pem}"
-  )
+# Create proper PKCS#12 certificate using external openssl command
+resource "null_resource" "create_pfx" {
+  provisioner "local-exec" {
+    command = <<-EOT
+      openssl pkcs12 -export -out "${path.module}/../../../web-content/azure-challenge-01/medicloud_cert.pfx" \
+        -inkey <(echo '${tls_private_key.medicloud_cert_key.private_key_pem}') \
+        -in <(echo '${tls_self_signed_cert.medicloud_cert.cert_pem}') \
+        -passout pass:M3d1Cl0ud25!
+    EOT
+    interpreter = ["/bin/bash", "-c"]
+  }
+  
+  triggers = {
+    cert_pem = tls_self_signed_cert.medicloud_cert.cert_pem
+    key_pem  = tls_private_key.medicloud_cert_key.private_key_pem
+  }
+  
+  depends_on = [
+    tls_self_signed_cert.medicloud_cert,
+    tls_private_key.medicloud_cert_key
+  ]
+}
+
+# Read the generated PFX file for base64 encoding
+data "local_file" "medicloud_pfx" {
   filename = "${path.module}/../../../web-content/azure-challenge-01/medicloud_cert.pfx"
+  depends_on = [null_resource.create_pfx]
 }
 
 # Generate SAS token for private container access
@@ -70,8 +89,8 @@ data "azurerm_storage_account_blob_container_sas" "medicloud_sas" {
   container_name    = azurerm_storage_container.medicloud_research.name
   https_only        = true
   
-  start  = "2024-01-01T00:00:00Z"
-  expiry = "2026-12-31T23:59:59Z"
+  start  = timestamp()
+  expiry = timeadd(timestamp(), "1h")
   
   permissions {
     read   = true
