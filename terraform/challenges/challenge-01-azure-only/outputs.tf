@@ -36,10 +36,6 @@ output "certificate_thumbprint" {
   value       = azuread_application_certificate.medicloud_cert.key_id
 }
 
-output "azure_ad_user" {
-  description = "Azure AD User Principal Name"
-  value       = azuread_user.medicloud_user.user_principal_name
-}
 
 output "medicloud_research_container_url" {
   description = "Private container URL (requires SAS token)"
@@ -59,7 +55,6 @@ output "challenge_summary" {
     private_container = "https://${module.azure_storage.storage_account_name}.blob.core.windows.net/medicloud-research/"
     sas_token = data.azurerm_storage_account_blob_container_sas.medicloud_sas.sas
     azure_ad_app = azuread_application.medicloud_app.client_id
-    azure_ad_user = azuread_user.medicloud_user.user_principal_name
     
     storage_account = module.azure_storage.storage_account_name
   }

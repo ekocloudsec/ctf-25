@@ -58,7 +58,7 @@ resource "azurerm_storage_blob" "medicloud_flag" {
 resource "null_resource" "create_pfx" {
   provisioner "local-exec" {
     command = <<-EOT
-      openssl pkcs12 -export -out "${path.module}/../../../web-content/azure-challenge-01/medicloud_cert.pfx" \
+      openssl pkcs12 -export -out "${path.module}/../../../web-content/azure-challenge-02/medicloud_cert.pfx" \
         -inkey <(echo '${tls_private_key.medicloud_cert_key.private_key_pem}') \
         -in <(echo '${tls_self_signed_cert.medicloud_cert.cert_pem}') \
         -passout pass:M3d1Cl0ud25!
@@ -79,7 +79,7 @@ resource "null_resource" "create_pfx" {
 
 # Read the generated PFX file for base64 encoding
 data "local_file" "medicloud_pfx" {
-  filename = "${path.module}/../../../web-content/azure-challenge-01/medicloud_cert.pfx"
+  filename = "${path.module}/../../../web-content/azure-challenge-02/medicloud_cert.pfx"
   depends_on = [null_resource.create_pfx]
 }
 

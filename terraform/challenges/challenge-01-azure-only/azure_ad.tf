@@ -64,16 +64,3 @@ resource "tls_self_signed_cert" "medicloud_cert" {
   ]
 }
 
-# Create Azure AD User
-resource "azuread_user" "medicloud_user" {
-  user_principal_name = "medicloud-researcher@${data.azuread_domains.default.domains[0].domain_name}"
-  display_name        = "MediCloud Researcher"
-  password            = "M3d1Cl0ud25!"
-  
-  depends_on = [data.azuread_domains.default]
-}
-
-# Get default Azure AD domain
-data "azuread_domains" "default" {
-  only_default = true
-}
