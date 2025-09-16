@@ -18,7 +18,7 @@ resource "local_file" "processed_script" {
     app_client_id       = azuread_application.medicloud_app.client_id
     storage_account_name = module.azure_storage.storage_account_name
   })
-  filename = "${path.module}/../../../web-content/azure-challenge-01/script.ps1"
+  filename = "${path.module}/../../../web-content/azure-challenge-02/script.ps1"
 }
 
 # Upload processed research portal HTML to public container

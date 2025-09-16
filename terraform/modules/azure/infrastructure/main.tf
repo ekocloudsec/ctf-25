@@ -46,15 +46,6 @@ resource "azurerm_storage_account" "website" {
   })
 }
 
-# Configure the $web container with public access
-# Note: This container is automatically created by static_website, but we manage it explicitly
-resource "azurerm_storage_container" "web" {
-  name                  = "$web"
-  storage_account_name  = azurerm_storage_account.website.name
-  container_access_type = "container"  # Allow public read access to blobs AND container listing
-
-  depends_on = [azurerm_storage_account.website]
-}
 
 # Upload index.html
 resource "azurerm_storage_blob" "index" {
@@ -65,7 +56,6 @@ resource "azurerm_storage_blob" "index" {
   source                 = var.index_html_path
   content_type           = "text/html"
   
-  depends_on = [azurerm_storage_container.web]
 }
 
 # Upload flag.txt
@@ -77,5 +67,4 @@ resource "azurerm_storage_blob" "flag" {
   source                 = var.flag_txt_path
   content_type           = "text/plain"
   
-  depends_on = [azurerm_storage_container.web]
 }

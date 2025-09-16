@@ -182,11 +182,8 @@
                 <p>Authorized researchers can access additional data files through our secure cloud storage system. 
                 All research materials are stored in compliance with HIPAA and institutional review board guidelines.</p>
                 
-                <div class="credentials">
-                    Storage Account: ${storage_account_name}<br>
-                    Container: medicloud-research<br>
-                    Access Method: SAS Token Authentication
-                </div>
+                <p><strong>Access Requirements:</strong> Valid institutional credentials and IRB approval required. 
+                Contact your research coordinator for access procedures.</p>
             </div>
 
             <div class="warning">
@@ -208,25 +205,23 @@
             
             <p style="margin-top: 20px;">
                 <strong>Azure AD Integration:</strong> This portal is integrated with Azure Active Directory 
-                for enhanced security. Application ID: <code>${app_client_id}</code>
+                for enhanced security and single sign-on capabilities.
             </p>
         </div>
 
         <div class="footer">
-            <p>MediCloudX Labs © 2024 | Tenant ID: ${azure_tenant_id}</p>
+            <p>MediCloudX Labs © 2024 | Research Division</p>
             <p>For technical support, contact: support@medicloudx.labs</p>
         </div>
     </div>
 
-    <!-- Hidden research metadata for internal use -->
+    <!-- Research metadata for internal documentation -->
     <!-- 
     Research Project: MediCloud Cardiovascular Analysis
     Principal Investigator: Dr. Sarah Chen
     IRB Protocol: MCX-2024-CVR-001
     Data Classification: Restricted
-    Storage Location: Azure Blob Storage
-    Container: medicloud-research
-    SAS Token: ${sas_token}
+    Last Updated: 2024-09-14
     -->
 </body>
 </html>
