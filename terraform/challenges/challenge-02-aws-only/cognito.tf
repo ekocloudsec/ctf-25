@@ -136,43 +136,17 @@ resource "aws_cognito_identity_pool" "main" {
   }
 }
 
-# Identity Pool Role Attachment - FASE 1: Asignar roles básicos
+# Identity Pool Role Attachment - Simple approach without role mapping for now
 resource "aws_cognito_identity_pool_roles_attachment" "main" {
   identity_pool_id = aws_cognito_identity_pool.main.id
 
   roles = {
     "authenticated" = aws_iam_role.authenticated_reader.arn
   }
-}
 
-# FASE 2: Después de crear la configuración anterior, agrega este recurso manualmente
-# Descomenta el siguiente bloque después de aplicar la configuración inicial
-/*
-resource "aws_cognito_identity_provider" "provider" {
-  user_pool_id  = aws_cognito_user_pool.main.id
-  provider_name = "Cognito"
-  provider_type = "COGNITO"
+  depends_on = [
+    aws_cognito_identity_pool.main,
+    aws_iam_role.authenticated_reader,
+    aws_iam_role.authenticated_admin
+  ]
 }
-
-# Una vez que el proveedor está registrado, agrega la configuración del role mapping
-resource "aws_cognito_identity_pool_roles_attachment" "admin_role" {
-  identity_pool_id = aws_cognito_identity_pool.main.id
-  
-  roles = {
-    "authenticated" = aws_iam_role.authenticated_admin.arn
-  }
-  
-  role_mapping {
-    identity_provider = "cognito-idp.${var.aws_region}.amazonaws.com/${aws_cognito_user_pool.main.id}"
-    ambiguous_role_resolution = "Deny"
-    type = "Rules"
-    
-    mapping_rule {
-      claim      = "custom:role"
-      match_type = "Equals"
-      role_arn   = aws_iam_role.authenticated_admin.arn
-      value      = "admin"
-    }
-  }
-}
-*/
