@@ -70,7 +70,7 @@ resource "aws_iam_role" "authenticated_reader" {
   })
 }
 
-# IAM role for authenticated users (admin role) - VULNERABLE ROLE MAPPING
+# IAM role for authenticated users (admin role)
 resource "aws_iam_role" "authenticated_admin" {
   name = "${var.project_name}-cognito-authenticated-admin-${random_string.suffix.result}"
 
@@ -107,15 +107,19 @@ resource "aws_iam_role_policy" "reader_policy" {
       {
         Effect = "Allow"
         Action = [
-          "s3:ListBucket"
+          "s3:ListBucket",
+          "s3:GetObject"
         ]
-        Resource = "*"
+        Resource = [
+          aws_s3_bucket.web_bucket.arn,
+          "${aws_s3_bucket.web_bucket.arn}/*"
+        ]
       }
     ]
   })
 }
 
-# Policy for admin role (access to flag bucket) - VULNERABILITY
+# Policy for admin role (access to flag bucket)
 resource "aws_iam_role_policy" "admin_policy" {
   name = "${var.project_name}-admin-policy-${random_string.suffix.result}"
   role = aws_iam_role.authenticated_admin.id

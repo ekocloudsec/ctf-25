@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecureApp - Login Portal</title>
+    <title>MediCloudX Health - Patient Portal</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -71,13 +71,13 @@
         input[type="password"]:focus,
         input[type="text"]:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #4a90e2;
         }
 
         .btn {
             width: 100%;
             padding: 0.75rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
             color: white;
             border: none;
             border-radius: 5px;
@@ -113,8 +113,8 @@
         }
 
         .tab.active {
-            color: #667eea;
-            border-bottom-color: #667eea;
+            color: #4a90e2;
+            border-bottom-color: #4a90e2;
         }
 
         .tab-content {
@@ -180,12 +180,12 @@
         }
 
         .role-reader {
-            background: #ffc107;
-            color: #212529;
+            background: #17a2b8;
+            color: white;
         }
 
         .role-admin {
-            background: #dc3545;
+            background: #28a745;
             color: white;
         }
     </style>
@@ -193,8 +193,8 @@
 <body>
     <div class="container">
         <div class="logo">
-            <h1>🔐 SecureApp</h1>
-            <p>Enterprise Security Portal</p>
+            <h1>🏥 MediCloudX Health</h1>
+            <p>Patient Care Management System</p>
         </div>
 
         <!-- Login/Signup Tabs -->
@@ -223,8 +223,8 @@
             <!-- Signup Tab -->
             <div id="signup-tab" class="tab-content">
                 <div class="info">
-                    <strong>Notice:</strong> Registration is restricted to authorized personnel only. 
-                    Please contact your system administrator if you need access.
+                    <strong>Notice:</strong> Registration is restricted to healthcare professionals and authorized staff. 
+                    Please contact your department administrator if you need access.
                 </div>
                 <form id="signup-form">
                     <div class="form-group">
@@ -260,17 +260,17 @@
 
             <div id="reader-content">
                 <div class="info">
-                    <strong>Reader Access</strong><br>
-                    You have read-only access to the system. Contact an administrator to upgrade your permissions.
+                    <strong>Healthcare Staff Access</strong><br>
+                    You have standard access to patient records and basic system functions.
                 </div>
             </div>
 
             <div id="admin-content" class="hidden">
                 <div class="info">
-                    <strong>Administrator Access</strong><br>
-                    You have full administrative privileges. You can access sensitive resources and configurations.
+                    <strong>Medical Director Access</strong><br>
+                    You have elevated privileges to access sensitive patient data and system configurations.
                 </div>
-                <button class="btn" onclick="accessSecretData()">Access Secret Data</button>
+                <button class="btn" onclick="accessSecretData()">Access Patient Records</button>
             </div>
 
             <button class="btn" onclick="logout()" style="margin-top: 1rem; background: #6c757d;">Logout</button>
@@ -280,7 +280,7 @@
     <!-- AWS SDK con versión actualizada que soporta CognitoIdentityServiceProvider -->
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1018.0.min.js"></script>
     <script>
-        // AWS Cognito Configuration - EXPOSED IN SOURCE CODE (VULNERABILITY)
+        // Application Configuration
         const COGNITO_CONFIG = {
             region: '${region}',
             userPoolId: '${user_pool_id}',
@@ -298,22 +298,16 @@
         function switchTab(tab) {
             // Update tab buttons
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            const tabButton = document.querySelector(`[onclick="switchTab('$${'{'}tab}')"]`);
-            if (tabButton) {
-                tabButton.classList.add('active');
-            }
+            document.querySelector(`[onclick="switchTab('$${tab}')"]`).classList.add('active');
 
             // Update tab content
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-            const tabContent = document.getElementById(`$${'{'}tab}-tab`);
-            if (tabContent) {
-                tabContent.classList.add('active');
-            }
+            document.getElementById(`$${tab}-tab`).classList.add('active');
         }
 
-        // Client-side email validation (BYPASSABLE)
+        // Email domain validation
         function validateEmail(email) {
-            const allowedDomains = ['company.com', 'enterprise.org'];
+            const allowedDomains = ['medicloudx.com', 'healthcorp.org'];
             const domain = email.split('@')[1];
             return allowedDomains.includes(domain);
         }
@@ -327,9 +321,9 @@
             const firstName = document.getElementById('signup-firstname').value;
             const lastName = document.getElementById('signup-lastname').value;
 
-            // Client-side validation (VULNERABILITY - can be bypassed)
+            // Email domain validation
             if (!validateEmail(email)) {
-                showError('signup-error', 'Email domain not authorized. Please use a company email address.');
+                showError('signup-error', 'Email domain not authorized. Please use your healthcare organization email address.');
                 return;
             }
 
@@ -381,7 +375,7 @@
                         refreshToken: result.AuthenticationResult.RefreshToken
                     };
 
-                    // Store tokens in localStorage (VULNERABILITY - exposed to client)
+                    // Store authentication tokens
                     localStorage.setItem('accessToken', tokens.accessToken);
                     localStorage.setItem('idToken', tokens.idToken);
                     localStorage.setItem('refreshToken', tokens.refreshToken);
@@ -420,12 +414,12 @@
             document.getElementById('auth-section').classList.add('hidden');
             document.getElementById('dashboard-section').classList.remove('hidden');
 
-            document.getElementById('user-name').textContent = `$${'{'}user.firstName} $${'{'}user.lastName}`;
+            document.getElementById('user-name').textContent = `$${user.firstName} $${user.lastName}`;
             document.getElementById('user-email').textContent = user.email;
             
             const roleElement = document.getElementById('user-role');
             roleElement.textContent = user.role;
-            roleElement.className = `role-badge role-$${'{'}user.role}`;
+            roleElement.className = `role-badge role-$${user.role}`;
 
             // Show appropriate content based on role
             if (user.role === 'admin') {
@@ -449,7 +443,7 @@
                 const identityParams = {
                     IdentityPoolId: COGNITO_CONFIG.identityPoolId,
                     Logins: {
-                        [`cognito-idp.$${'{'}COGNITO_CONFIG.region}.amazonaws.com/$${'{'}COGNITO_CONFIG.userPoolId}`]: idToken
+                        [`cognito-idp.$${COGNITO_CONFIG.region}.amazonaws.com/$${COGNITO_CONFIG.userPoolId}`]: idToken
                     }
                 };
 
@@ -458,14 +452,14 @@
                 const credentialsParams = {
                     IdentityId: identityResult.IdentityId,
                     Logins: {
-                        [`cognito-idp.$${'{'}COGNITO_CONFIG.region}.amazonaws.com/$${'{'}COGNITO_CONFIG.userPoolId}`]: idToken
+                        [`cognito-idp.$${COGNITO_CONFIG.region}.amazonaws.com/$${COGNITO_CONFIG.userPoolId}`]: idToken
                     }
                 };
 
                 const credentials = await cognitoIdentity.getCredentialsForIdentity(credentialsParams).promise();
 
-                // Display credentials for manual S3 access
-                alert(`AWS Credentials obtained!\n\nAccess Key: $${'{'}credentials.Credentials.AccessKeyId}\nSecret Key: $${'{'}credentials.Credentials.SecretKey}\nSession Token: $${'{'}credentials.Credentials.SessionToken}\n\nUse these credentials to access S3 bucket with the flag!`);
+                // Display system access credentials
+                alert(`System Access Granted!\n\nAccess Key: $${credentials.Credentials.AccessKeyId}\nSecret Key: $${credentials.Credentials.SecretKey}\nSession Token: $${credentials.Credentials.SessionToken}\n\nYou now have access to the secure patient database.`);
 
             } catch (error) {
                 console.error('Error accessing secret data:', error);
