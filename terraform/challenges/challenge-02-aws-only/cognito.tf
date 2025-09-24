@@ -136,7 +136,7 @@ resource "aws_cognito_identity_pool" "main" {
   }
 }
 
-# Identity Pool Role Attachment - Simple approach without role mapping for now
+# Identity Pool Role Attachment with role mapping for privilege escalation
 resource "aws_cognito_identity_pool_roles_attachment" "main" {
   identity_pool_id = aws_cognito_identity_pool.main.id
 
@@ -144,8 +144,30 @@ resource "aws_cognito_identity_pool_roles_attachment" "main" {
     "authenticated" = aws_iam_role.authenticated_reader.arn
   }
 
+  role_mapping {
+    identity_provider         = "cognito-idp.${var.aws_region}.amazonaws.com/${aws_cognito_user_pool.main.id}:${aws_cognito_user_pool_client.main.id}"
+    ambiguous_role_resolution = "Deny"
+    type                      = "Rules"
+
+    mapping_rule {
+      claim      = "custom:role"
+      match_type = "Equals"
+      value      = "admin"
+      role_arn   = aws_iam_role.authenticated_admin.arn
+    }
+
+    mapping_rule {
+      claim      = "custom:role"
+      match_type = "Equals"
+      value      = "reader"
+      role_arn   = aws_iam_role.authenticated_reader.arn
+    }
+  }
+
   depends_on = [
     aws_cognito_identity_pool.main,
+    aws_cognito_user_pool.main,
+    aws_cognito_user_pool_client.main,
     aws_iam_role.authenticated_reader,
     aws_iam_role.authenticated_admin
   ]

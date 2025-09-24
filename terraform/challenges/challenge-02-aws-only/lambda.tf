@@ -63,3 +63,56 @@ resource "aws_lambda_permission" "cognito_invoke" {
   principal     = "cognito-idp.amazonaws.com"
   source_arn    = aws_cognito_user_pool.main.arn
 }
+
+# JWT Authorizer Lambda Function
+resource "aws_lambda_function" "jwt_authorizer" {
+  filename         = "jwt_authorizer.zip"
+  function_name    = "${var.project_name}-jwt-authorizer-${random_string.suffix.result}"
+  role            = aws_iam_role.jwt_authorizer_role.arn
+  handler         = "lambda_authorizer.lambda_handler"
+  source_code_hash = filebase64sha256("jwt_authorizer.zip")
+  runtime         = "python3.9"
+  timeout         = 30
+
+  environment {
+    variables = {
+      USER_POOL_ID = aws_cognito_user_pool.main.id
+      CLIENT_ID    = aws_cognito_user_pool_client.main.id
+      REGION       = var.aws_region
+    }
+  }
+
+  tags = merge(local.common_tags, {
+    Name = "${var.project_name}-jwt-authorizer"
+  })
+
+  depends_on = [aws_iam_role_policy.jwt_authorizer_policy]
+}
+
+# ReadDataPatience Lambda Function
+resource "aws_lambda_function" "read_data_patience" {
+  filename         = "read_data_patience.zip"
+  function_name    = "${var.project_name}-read-data-patience-${random_string.suffix.result}"
+  role            = aws_iam_role.read_data_patience_role.arn
+  handler         = "lambda_read_data_patience.lambda_handler"
+  source_code_hash = data.archive_file.read_data_patience_zip.output_base64sha256
+  runtime         = "python3.9"
+  timeout         = 30
+
+  environment {
+    variables = {
+      DYNAMODB_TABLE_NAME = aws_dynamodb_table.data_patience.name
+    }
+  }
+
+  tags = merge(local.common_tags, {
+    Name = "${var.project_name}-read-data-patience"
+  })
+}
+
+# ReadDataPatience Lambda deployment package
+data "archive_file" "read_data_patience_zip" {
+  type        = "zip"
+  output_path = "read_data_patience.zip"
+  source_file = "lambda_read_data_patience.py"
+}

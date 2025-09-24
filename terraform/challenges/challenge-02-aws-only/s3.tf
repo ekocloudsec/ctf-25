@@ -70,6 +70,7 @@ locals {
     client_id        = aws_cognito_user_pool_client.main.id
     identity_pool_id = aws_cognito_identity_pool.main.id
     region          = var.aws_region
+    api_endpoint     = "https://${aws_api_gateway_rest_api.patient_api.id}.execute-api.${var.aws_region}.amazonaws.com/${aws_api_gateway_stage.patient_api_stage.stage_name}/patients"
   })
 }
 
@@ -83,6 +84,8 @@ resource "aws_s3_object" "index_html" {
   depends_on = [
     aws_cognito_user_pool.main,
     aws_cognito_user_pool_client.main,
-    aws_cognito_identity_pool.main
+    aws_cognito_identity_pool.main,
+    aws_api_gateway_rest_api.patient_api,
+    aws_api_gateway_stage.patient_api_stage
   ]
 }

@@ -141,3 +141,101 @@ resource "aws_iam_role_policy" "admin_policy" {
     ]
   })
 }
+
+# IAM role for JWT Authorizer Lambda
+resource "aws_iam_role" "jwt_authorizer_role" {
+  name = "${var.project_name}-jwt-authorizer-role-${random_string.suffix.result}"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        }
+      }
+    ]
+  })
+
+  tags = merge(local.common_tags, {
+    Name = "${var.project_name}-jwt-authorizer-role"
+  })
+}
+
+# IAM policy for JWT Authorizer Lambda
+resource "aws_iam_role_policy" "jwt_authorizer_policy" {
+  name = "${var.project_name}-jwt-authorizer-policy"
+  role = aws_iam_role.jwt_authorizer_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ]
+        Resource = "arn:aws:logs:*:*:*"
+      }
+    ]
+  })
+}
+
+# IAM role for ReadDataPatience Lambda
+resource "aws_iam_role" "read_data_patience_role" {
+  name = "${var.project_name}-read-data-patience-role-${random_string.suffix.result}"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        }
+      }
+    ]
+  })
+
+  tags = merge(local.common_tags, {
+    Name = "${var.project_name}-read-data-patience-role"
+  })
+}
+
+# IAM policy for ReadDataPatience Lambda
+resource "aws_iam_role_policy" "read_data_patience_policy" {
+  name = "${var.project_name}-read-data-patience-policy"
+  role = aws_iam_role.read_data_patience_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ]
+        Resource = "arn:aws:logs:*:*:*"
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          "dynamodb:Scan",
+          "dynamodb:Query",
+          "dynamodb:GetItem"
+        ]
+        Resource = [
+          aws_dynamodb_table.data_patience.arn,
+          "${aws_dynamodb_table.data_patience.arn}/index/*"
+        ]
+      }
+    ]
+  })
+}

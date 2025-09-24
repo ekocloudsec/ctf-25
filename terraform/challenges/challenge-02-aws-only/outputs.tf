@@ -33,21 +33,43 @@ output "aws_region" {
   value       = var.aws_region
 }
 
+output "api_gateway_url" {
+  description = "API Gateway URL for patient records API"
+  value       = "https://${aws_api_gateway_rest_api.patient_api.id}.execute-api.${var.aws_region}.amazonaws.com/${aws_api_gateway_stage.patient_api_stage.stage_name}"
+}
+
+output "patient_api_endpoint" {
+  description = "Patient API endpoint"
+  value       = "https://${aws_api_gateway_rest_api.patient_api.id}.execute-api.${var.aws_region}.amazonaws.com/${aws_api_gateway_stage.patient_api_stage.stage_name}/patients"
+}
+
+output "dynamodb_table_name" {
+  description = "DynamoDB table name for patient data"
+  value       = aws_dynamodb_table.data_patience.name
+}
+
 output "challenge_instructions" {
   description = "Instructions for the challenge"
   value = <<EOF
-Challenge 02 - AWS Cognito Privilege Escalation
+Challenge 02 - AWS Cognito Privilege Escalation with API Gateway
 
 1. Navigate to the web application: http://${aws_s3_bucket_website_configuration.web_bucket.website_endpoint}
 2. Discover the Cognito User Pool Client ID in the source code
 3. Register a new user directly via AWS CLI bypassing frontend validation
-4. Login and extract the access token from browser storage
+4. Login and extract the ID token from browser storage
 5. Update your custom:role attribute from 'reader' to 'admin'
-6. Obtain Identity Pool credentials using your ID token
-7. Use the admin credentials to access the flag in S3 bucket: ${aws_s3_bucket.flag_bucket.id}
+6. Use the "Access Patient Records" button to call the API with admin privileges
+7. Find the flag hidden in the patient records data
 
+Alternative Advanced Path:
+- Obtain Identity Pool credentials using your ID token for S3 access
+- Access flag in S3 bucket: ${aws_s3_bucket.flag_bucket.id}
+- Or query DynamoDB table directly: ${aws_dynamodb_table.data_patience.name}
+
+API Endpoint: ${aws_api_gateway_rest_api.patient_api.id}.execute-api.${var.aws_region}.amazonaws.com/prod/patients
 User Pool ID: ${aws_cognito_user_pool.main.id}
 Client ID: ${aws_cognito_user_pool_client.main.id}
 Identity Pool ID: ${aws_cognito_identity_pool.main.id}
+DynamoDB Table: ${aws_dynamodb_table.data_patience.name}
 EOF
 }

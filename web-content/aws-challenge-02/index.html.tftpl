@@ -285,7 +285,8 @@
             region: '${region}',
             userPoolId: '${user_pool_id}',
             clientId: '${client_id}',
-            identityPoolId: '${identity_pool_id}'
+            identityPoolId: '${identity_pool_id}',
+            apiEndpoint: '${api_endpoint}'
         };
 
         // Initialize AWS SDK
@@ -435,36 +436,95 @@
             try {
                 const idToken = localStorage.getItem('idToken');
                 if (!idToken) {
-                    alert('No valid session found');
+                    alert('No valid session found. Please login first.');
                     return;
                 }
 
-                // Get Identity Pool credentials
-                const identityParams = {
-                    IdentityPoolId: COGNITO_CONFIG.identityPoolId,
-                    Logins: {
-                        [`cognito-idp.$${COGNITO_CONFIG.region}.amazonaws.com/$${COGNITO_CONFIG.userPoolId}`]: idToken
+                // Show loading message
+                const button = document.querySelector('#admin-content button');
+                const originalText = button.textContent;
+                button.textContent = 'Loading Patient Records...';
+                button.disabled = true;
+
+                // Call the Patient API
+                const response = await fetch(COGNITO_CONFIG.apiEndpoint, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer $${idToken}`,
+                        'Content-Type': 'application/json'
                     }
-                };
+                });
 
-                const identityResult = await cognitoIdentity.getId(identityParams).promise();
-                
-                const credentialsParams = {
-                    IdentityId: identityResult.IdentityId,
-                    Logins: {
-                        [`cognito-idp.$${COGNITO_CONFIG.region}.amazonaws.com/$${COGNITO_CONFIG.userPoolId}`]: idToken
+                if (response.ok) {
+                    const data = await response.json();
+                    
+                    // Display patient records in a better format
+                    if (data.success && data.data) {
+                        displayPatientRecords(data.data);
+                    } else {
+                        alert('No patient records found or invalid response format.');
                     }
-                };
-
-                const credentials = await cognitoIdentity.getCredentialsForIdentity(credentialsParams).promise();
-
-                // Display system access credentials
-                alert(`System Access Granted!\n\nAccess Key: $${credentials.Credentials.AccessKeyId}\nSecret Key: $${credentials.Credentials.SecretKey}\nSession Token: $${credentials.Credentials.SessionToken}\n\nYou now have access to the secure patient database.`);
+                } else {
+                    const errorData = await response.json();
+                    if (response.status === 403) {
+                        alert('Access Denied: Administrator privileges required to view patient records.\n\nHint: Check your user role permissions.');
+                    } else {
+                        alert(`Failed to access patient records: $${errorData.message || 'Unknown error'}`);
+                    }
+                }
 
             } catch (error) {
-                console.error('Error accessing secret data:', error);
-                alert('Failed to access secret data: ' + error.message);
+                console.error('Error accessing patient data:', error);
+                alert('Failed to access patient records: ' + error.message);
+            } finally {
+                // Restore button
+                const button = document.querySelector('#admin-content button');
+                if (button) {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                }
             }
+        }
+
+        function displayPatientRecords(records) {
+            // Create a modal or dedicated section to show patient records
+            const recordsHtml = records.map(record => `
+                <div class="patient-record" style="border: 1px solid #ddd; margin: 10px 0; padding: 15px; border-radius: 5px; background: #f9f9f9;">
+                    <h4 style="color: #2c5aa0; margin-top: 0;">Patient ID: $${record.patient_id}</h4>
+                    <p><strong>Name:</strong> $${record.name}</p>
+                    <p><strong>Department:</strong> $${record.department}</p>
+                    <p><strong>Diagnosis:</strong> $${record.diagnosis}</p>
+                    <p><strong>Status:</strong> <span style="color: $${record.status === 'active' ? 'green' : 'gray'}">$${record.status}</span></p>
+                    <p><strong>Created:</strong> $${record.created_at}</p>
+                    <p><strong>Notes:</strong> $${record.notes}</p>
+                    $${record.access_level ? `<p><strong>Access Level:</strong> <span style="color: red; font-weight: bold;">$${record.access_level}</span></p>` : ''}
+                </div>
+            `).join('');
+
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                background: rgba(0,0,0,0.8); z-index: 1000; 
+                display: flex; align-items: center; justify-content: center;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; padding: 20px; border-radius: 10px; max-width: 80%; max-height: 80%; overflow-y: auto;">
+                    <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 20px;">
+                        <h2 style="color: #2c5aa0; margin: 0;">MediCloudX Patient Records ($${records.length} records)</h2>
+                        <button onclick="this.parentElement.parentElement.parentElement.remove()" 
+                                style="margin-left: auto; padding: 5px 10px; background: #dc3545; color: white; border: none; border-radius: 3px; cursor: pointer;">✕ Close</button>
+                    </div>
+                    $${recordsHtml}
+                    <div style="margin-top: 20px; padding: 10px; background: #e8f5e8; border-radius: 5px;">
+                        <p style="margin: 0; font-size: 12px; color: #666;">
+                            <strong>System Access:</strong> You have successfully accessed the secure patient database with administrator privileges.
+                        </p>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
         }
 
         function logout() {
