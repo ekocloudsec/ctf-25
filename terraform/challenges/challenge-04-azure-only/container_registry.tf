@@ -117,7 +117,8 @@ const nextConfig = {
 module.exports = nextConfig
 EOF
       # Create src directory structure
-      mkdir -p ./app-build/src/app/{api/create-user,api/update-departament,login}
+      mkdir -p ./app-build/src/app/{api/create-user,api/update-departament,api/validate/support,login,support}
+      mkdir -p ./app-build/src/app/support/{login,callback,dashboard}
       mkdir -p ./app-build/src/components
       mkdir -p ./app-build/public
       
@@ -529,6 +530,98 @@ function generateTempPassword() {
 }
 EOF
 
+      # Create support landing page
+      cat > ./app-build/src/app/support/page.js << 'EOF'
+'use client'
+
+export default function SupportHub() {
+  return (
+    <div style={{ 
+      minHeight: '100vh', 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      backgroundColor: '#f8f9fa',
+      fontFamily: 'system-ui, sans-serif'
+    }}>
+      <div style={{
+        backgroundColor: 'white',
+        padding: '3rem',
+        borderRadius: '12px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        textAlign: 'center',
+        maxWidth: '500px'
+      }}>
+        <div style={{ marginBottom: '2rem' }}>
+          <h1 style={{ 
+            color: '#2563eb', 
+            fontSize: '2.5rem', 
+            marginBottom: '0.5rem',
+            fontWeight: 'bold'
+          }}>
+            🔧 MediCloudX Support Hub
+          </h1>
+          <p style={{ 
+            color: '#6b7280', 
+            fontSize: '1.1rem',
+            lineHeight: '1.6'
+          }}>
+            Secure access portal for Support Department staff
+          </p>
+        </div>
+
+        <div style={{
+          backgroundColor: '#fef3c7',
+          border: '1px solid #f59e0b',
+          borderRadius: '8px',
+          padding: '1rem',
+          marginBottom: '2rem'
+        }}>
+          <p style={{ 
+            color: '#92400e', 
+            fontSize: '0.9rem',
+            margin: '0',
+            fontWeight: '500'
+          }}>
+            ⚠️ Access restricted to Support Department personnel only
+          </p>
+        </div>
+
+        <button 
+          onClick={() => window.location.href = '/support/login'}
+          style={{
+            backgroundColor: '#2563eb',
+            color: 'white',
+            padding: '12px 24px',
+            fontSize: '1.1rem',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            fontWeight: '600',
+            transition: 'background-color 0.3s'
+          }}
+          onMouseOver={(e) => e.target.style.backgroundColor = '#1d4ed8'}
+          onMouseOut={(e) => e.target.style.backgroundColor = '#2563eb'}
+        >
+          🔑 Sign in with Microsoft Account
+        </button>
+
+        <div style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
+          <p style={{ 
+            color: '#9ca3af', 
+            fontSize: '0.8rem',
+            margin: '0'
+          }}>
+            © 2025 MediCloudX Healthcare Solutions
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+EOF
+
       # Create update-departament API endpoint
       mkdir -p ./app-build/src/app/api/update-departament
       cat > ./app-build/src/app/api/update-departament/route.js << 'EOF'
@@ -683,6 +776,555 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('💥 Error updating user department:', error);
+    return NextResponse.json({ 
+      error: 'Internal server error',
+      message: error.message 
+    }, { status: 500 });
+  }
+}
+EOF
+
+      # Create support login route (OAuth redirect)
+      cat > ./app-build/src/app/support/login/route.js << 'EOF'
+import { NextResponse } from 'next/server';
+
+export async function GET(request) {
+  try {
+    console.log('🔄 SUPPORT LOGIN: Initiating OAuth flow');
+    
+    const clientId = process.env.AZURE_CLIENT_ID;
+    const tenantId = process.env.AZURE_TENANT_ID;
+    
+    if (!clientId || !tenantId) {
+      console.error('❌ Missing OAuth configuration');
+      return NextResponse.json(
+        { error: 'OAuth configuration missing' },
+        { status: 500 }
+      );
+    }
+
+    // Construct OAuth URL
+    const baseUrl = request.headers.get('host');
+    const protocol = request.headers.get('x-forwarded-proto') || 'https';
+    const redirectUri = `$${protocol}://$${baseUrl}/support/callback`;
+    
+    const authUrl = new URL(`https://login.microsoftonline.com/$${tenantId}/oauth2/v2.0/authorize`);
+    authUrl.searchParams.set('client_id', clientId);
+    authUrl.searchParams.set('response_type', 'code');
+    authUrl.searchParams.set('redirect_uri', redirectUri);
+    authUrl.searchParams.set('scope', 'User.Read');
+    authUrl.searchParams.set('response_mode', 'query');
+    authUrl.searchParams.set('state', 'support-login');
+
+    console.log('✅ Redirecting to Microsoft OAuth:', authUrl.toString());
+    
+    return NextResponse.redirect(authUrl.toString());
+    
+  } catch (error) {
+    console.error('💥 Error in OAuth redirect:', error);
+    return NextResponse.json({ 
+      error: 'OAuth redirect failed',
+      message: error.message 
+    }, { status: 500 });
+  }
+}
+EOF
+
+      # Create support callback route (OAuth response handler)
+      cat > ./app-build/src/app/support/callback/route.js << 'EOF'
+import { NextResponse } from 'next/server';
+
+export async function GET(request) {
+  try {
+    console.log('🔄 SUPPORT CALLBACK: Processing OAuth response');
+    
+    const { searchParams } = new URL(request.url);
+    const code = searchParams.get('code');
+    const state = searchParams.get('state');
+    const error = searchParams.get('error');
+    
+    if (error) {
+      console.error('❌ OAuth error:', error);
+      return NextResponse.redirect('/support?error=oauth_failed');
+    }
+    
+    if (!code || state !== 'support-login') {
+      console.error('❌ Invalid OAuth callback');
+      return NextResponse.redirect('/support?error=invalid_callback');
+    }
+
+    // Exchange code for access token
+    const clientId = process.env.AZURE_CLIENT_ID;
+    const clientSecret = process.env.AZURE_CLIENT_SECRET;
+    const tenantId = process.env.AZURE_TENANT_ID;
+    
+    const baseUrl = request.headers.get('host');
+    const protocol = request.headers.get('x-forwarded-proto') || 'https';
+    const redirectUri = `$${protocol}://$${baseUrl}/support/callback`;
+
+    const tokenResponse = await fetch(`https://login.microsoftonline.com/$${tenantId}/oauth2/v2.0/token`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        code: code,
+        redirect_uri: redirectUri,
+        grant_type: 'authorization_code'
+      })
+    });
+
+    if (!tokenResponse.ok) {
+      const errorData = await tokenResponse.text();
+      console.error('❌ Token exchange failed:', errorData);
+      return NextResponse.redirect('/support?error=token_failed');
+    }
+
+    const tokenData = await tokenResponse.json();
+    const accessToken = tokenData.access_token;
+    
+    console.log('✅ OAuth access token obtained successfully');
+    
+    // Get basic user profile from Microsoft Graph (just for user ID)
+    const graphResponse = await fetch('https://graph.microsoft.com/v1.0/me?$select=id,userPrincipalName,displayName', {
+      headers: {
+        'Authorization': 'Bearer ' + accessToken,
+      }
+    });
+
+    if (!graphResponse.ok) {
+      console.error('❌ Failed to get user profile');
+      return NextResponse.redirect('/support?error=profile_failed');
+    }
+
+    const basicProfile = await graphResponse.json();
+    console.log('✅ Basic user profile obtained:', basicProfile.userPrincipalName);
+    
+    // Store user info in session/memory for validation API (simplified approach)
+    console.log('✅ OAuth authentication successful - redirecting to dashboard');
+    
+    // Redirect to dashboard with user info (no validation yet)
+    const dashboardUrl = new URL('/support/dashboard', `$${protocol}://$${baseUrl}`);
+    dashboardUrl.searchParams.set('user', basicProfile.displayName || basicProfile.userPrincipalName);
+    dashboardUrl.searchParams.set('userId', basicProfile.id);
+    
+    return NextResponse.redirect(dashboardUrl.toString());
+
+  } catch (error) {
+    console.error('💥 Error in OAuth callback:', error);
+    return NextResponse.redirect('/support?error=callback_failed');
+  }
+}
+EOF
+
+      # Create support dashboard (simplified with validation button)
+      cat > ./app-build/src/app/support/dashboard/page.js << 'EOF'
+'use client'
+
+import { useSearchParams } from 'next/navigation';
+import { Suspense, useState } from 'react';
+
+function DashboardContent() {
+  const searchParams = useSearchParams();
+  const user = searchParams.get('user');
+  const userId = searchParams.get('userId');
+  
+  const [loading, setLoading] = useState(false);
+  const [validationResult, setValidationResult] = useState(null);
+
+  const validateSupportAccess = async () => {
+    if (!userId) {
+      alert('Missing user ID. Please login again.');
+      return;
+    }
+
+    setLoading(true);
+    setValidationResult(null);
+
+    try {
+      const response = await fetch('/api/validate/support', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId: userId })
+      });
+
+      const result = await response.json();
+      setValidationResult(result);
+      
+    } catch (error) {
+      console.error('Validation error:', error);
+      setValidationResult({
+        success: false,
+        message: 'Failed to validate access',
+        error: error.message
+      });
+    }
+
+    setLoading(false);
+  };
+
+  return (
+    <div style={{ 
+      minHeight: '100vh', 
+      display: 'flex', 
+      flexDirection: 'column',
+      alignItems: 'center', 
+      justifyContent: 'center',
+      backgroundColor: '#f8f9fa',
+      fontFamily: 'system-ui, sans-serif',
+      padding: '2rem'
+    }}>
+      <div style={{
+        backgroundColor: 'white',
+        padding: '3rem',
+        borderRadius: '12px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        textAlign: 'center',
+        maxWidth: '600px',
+        width: '100%'
+      }}>
+        <h1 style={{ 
+          color: '#2563eb', 
+          fontSize: '2.5rem', 
+          marginBottom: '1rem',
+          fontWeight: 'bold'
+        }}>
+          🔧 Support Hub Dashboard
+        </h1>
+        
+        <p style={{ 
+          color: '#374151', 
+          fontSize: '1.2rem',
+          marginBottom: '2rem'
+        }}>
+          Welcome <strong>{user || 'User'}</strong>! 
+        </p>
+
+        <div style={{
+          backgroundColor: '#f0f9ff',
+          border: '1px solid #0ea5e9',
+          borderRadius: '8px',
+          padding: '1.5rem',
+          marginBottom: '2rem'
+        }}>
+          <p style={{ 
+            color: '#0c4a6e', 
+            fontSize: '1rem',
+            margin: '0',
+            lineHeight: '1.6'
+          }}>
+            You have successfully authenticated with Microsoft OAuth. 
+            <br />
+            Click the button below to verify your Support Department access.
+          </p>
+        </div>
+
+        {!validationResult && (
+          <button 
+            onClick={validateSupportAccess}
+            disabled={loading}
+            style={{
+              backgroundColor: loading ? '#9ca3af' : '#059669',
+              color: 'white',
+              padding: '16px 32px',
+              fontSize: '1.1rem',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: loading ? 'not-allowed' : 'pointer',
+              fontWeight: '600',
+              marginBottom: '2rem',
+              minWidth: '200px'
+            }}
+          >
+            {loading ? '🔄 Validating...' : '🔐 Access Restricted Content'}
+          </button>
+        )}
+
+        {validationResult && (
+          <div style={{
+            backgroundColor: validationResult.success ? '#dcfce7' : '#fef2f2',
+            border: '2px solid ' + (validationResult.success ? '#16a34a' : '#dc2626'),
+            borderRadius: '8px',
+            padding: '2rem',
+            marginBottom: '2rem'
+          }}>
+            {validationResult.success ? (
+              <>
+                <h2 style={{ 
+                  color: '#15803d', 
+                  fontSize: '1.5rem',
+                  marginBottom: '1rem',
+                  fontWeight: 'bold'
+                }}>
+                  🎉 Access Granted!
+                </h2>
+                <div style={{
+                  backgroundColor: '#1f2937',
+                  color: '#f9fafb',
+                  padding: '1rem',
+                  borderRadius: '6px',
+                  fontFamily: 'monospace',
+                  fontSize: '1.1rem',
+                  fontWeight: 'bold',
+                  letterSpacing: '1px',
+                  marginBottom: '1rem'
+                }}>
+                  🚩 {validationResult.flag}
+                </div>
+                <div style={{
+                  backgroundColor: '#f3f4f6',
+                  borderRadius: '8px',
+                  padding: '1rem'
+                }}>
+                  <h3 style={{ color: '#374151', marginBottom: '0.5rem' }}>🏆 Challenge Completed!</h3>
+                  <ul style={{ 
+                    textAlign: 'left', 
+                    color: '#6b7280',
+                    lineHeight: '1.6',
+                    margin: '0'
+                  }}>
+                    <li>✅ Exploited CVE-2025-29927 middleware bypass</li>
+                    <li>✅ Updated user department to 'Support'</li>
+                    <li>✅ Completed Microsoft OAuth flow</li>
+                    <li>✅ Accessed restricted Support Hub</li>
+                  </ul>
+                </div>
+              </>
+            ) : (
+              <>
+                <h2 style={{ 
+                  color: '#dc2626', 
+                  fontSize: '1.5rem',
+                  marginBottom: '1rem',
+                  fontWeight: 'bold'
+                }}>
+                  ❌ Access Denied
+                </h2>
+                <p style={{ 
+                  color: '#7f1d1d',
+                  marginBottom: '1rem'
+                }}>
+                  {validationResult.message}
+                </p>
+                {validationResult.user && (
+                  <div style={{
+                    backgroundColor: '#f3f4f6',
+                    borderRadius: '6px',
+                    padding: '1rem',
+                    textAlign: 'left'
+                  }}>
+                    <strong>Your Profile:</strong>
+                    <br />
+                    Department: {validationResult.user.department}
+                    <br />
+                    Required: Support
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        )}
+
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+          <button 
+            onClick={() => window.location.href = '/support'}
+            style={{
+              backgroundColor: '#6b7280',
+              color: 'white',
+              padding: '10px 20px',
+              fontSize: '0.9rem',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: '600'
+            }}
+          >
+            🔧 Back to Support Hub
+          </button>
+          
+          <button 
+            onClick={() => window.location.href = '/'}
+            style={{
+              backgroundColor: '#2563eb',
+              color: 'white',
+              padding: '10px 20px',
+              fontSize: '0.9rem',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: '600'
+            }}
+          >
+            🏠 HR Onboarding
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function SupportDashboard() {
+  return (
+    <Suspense fallback={
+      <div style={{ 
+        minHeight: '100vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center' 
+      }}>
+        <p>Loading...</p>
+      </div>
+    }>
+      <DashboardContent />
+    </Suspense>
+  );
+}
+EOF
+
+      # Create support validation API endpoint
+      cat > ./app-build/src/app/api/validate/support/route.js << 'EOF'
+import { NextResponse } from 'next/server';
+
+export async function POST(request) {
+  try {
+    console.log('🔄 SUPPORT VALIDATION: Request received');
+    
+    let body;
+    try {
+      body = await request.json();
+    } catch (jsonError) {
+      console.error('❌ Invalid JSON in request body:', jsonError.message);
+      return NextResponse.json(
+        { error: 'Invalid JSON format', details: jsonError.message },
+        { status: 400 }
+      );
+    }
+
+    const { userId } = body;
+    
+    if (!userId) {
+      console.error('❌ Missing userId in request');
+      return NextResponse.json(
+        { error: 'userId is required' },
+        { status: 400 }
+      );
+    }
+
+    console.log(`🔍 Validating support access for user: $${userId}`);
+
+    // Get Azure AD credentials from environment
+    const clientId = process.env.AZURE_CLIENT_ID;
+    const clientSecret = process.env.AZURE_CLIENT_SECRET;
+    const tenantId = process.env.AZURE_TENANT_ID;
+
+    if (!clientId || !clientSecret || !tenantId) {
+      console.error('❌ Missing Azure AD configuration');
+      return NextResponse.json(
+        { error: 'Azure AD configuration missing' },
+        { status: 500 }
+      );
+    }
+
+    // Get application token for Microsoft Graph API
+    console.log('🔄 Obtaining application token...');
+    
+    const tokenResponse = await fetch(`https://login.microsoftonline.com/$${tenantId}/oauth2/v2.0/token`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        scope: 'https://graph.microsoft.com/.default',
+        grant_type: 'client_credentials'
+      })
+    });
+
+    if (!tokenResponse.ok) {
+      const errorData = await tokenResponse.text();
+      console.error('❌ Application token request failed:', errorData);
+      return NextResponse.json(
+        { error: 'Failed to obtain application token', details: errorData },
+        { status: 500 }
+      );
+    }
+
+    const tokenData = await tokenResponse.json();
+    const accessToken = tokenData.access_token;
+    
+    console.log('✅ Application token obtained successfully');
+
+    // Query user details from Microsoft Graph API
+    const selectFields = 'id,displayName,userPrincipalName,department,jobTitle';
+    const userDetailsUrl = 'https://graph.microsoft.com/v1.0/users/' + userId + '?$select=' + selectFields;
+    console.log('🔍 Querying user details URL:', userDetailsUrl);
+    
+    const userResponse = await fetch(userDetailsUrl, {
+      headers: {
+        'Authorization': 'Bearer ' + accessToken,
+      }
+    });
+
+    if (!userResponse.ok) {
+      const errorData = await userResponse.text();
+      console.error('❌ Failed to get user details:', errorData);
+      return NextResponse.json(
+        { error: 'Failed to get user details', details: errorData },
+        { status: userResponse.status }
+      );
+    }
+
+    const userProfile = await userResponse.json();
+    console.log('✅ User profile obtained:', {
+      id: userProfile.id,
+      userPrincipalName: userProfile.userPrincipalName,
+      department: userProfile.department || 'none'
+    });
+
+    // Validate if user has Support department
+    const department = userProfile.department || '';
+    
+    if (department.toLowerCase() === 'support') {
+      console.log('✅ User has Support department - access granted');
+      
+      return NextResponse.json({
+        success: true,
+        message: 'Support access granted',
+        user: {
+          id: userProfile.id,
+          displayName: userProfile.displayName,
+          userPrincipalName: userProfile.userPrincipalName,
+          department: userProfile.department,
+          jobTitle: userProfile.jobTitle
+        },
+        flag: 'CTF{support_department_oauth_bypass_complete}',
+        access: 'granted'
+      });
+    } else {
+      console.log(`❌ User department '$${department}' is not 'support' - access denied`);
+      
+      return NextResponse.json({
+        success: false,
+        message: 'Access denied: Support Department personnel only',
+        user: {
+          id: userProfile.id,
+          displayName: userProfile.displayName,
+          userPrincipalName: userProfile.userPrincipalName,
+          department: department || 'none',
+          jobTitle: userProfile.jobTitle
+        },
+        access: 'denied',
+        reason: `Department '$${department}' does not have access to Support Hub`
+      }, { status: 403 });
+    }
+
+  } catch (error) {
+    console.error('💥 Error in support validation:', error);
     return NextResponse.json({ 
       error: 'Internal server error',
       message: error.message 
