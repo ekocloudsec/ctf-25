@@ -158,17 +158,14 @@ function DashboardContent() {
                   padding: '1rem'
                 }}>
                   <h3 style={{ color: '#374151', marginBottom: '0.5rem' }}>🏆 Challenge Completed!</h3>
-                  <ul style={{ 
-                    textAlign: 'left', 
+                  <p style={{ 
                     color: '#6b7280',
                     lineHeight: '1.6',
-                    margin: '0'
+                    margin: '0',
+                    textAlign: 'center'
                   }}>
-                    <li>✅ Exploited CVE-2025-29927 middleware bypass</li>
-                    <li>✅ Updated user department to 'Support'</li>
-                    <li>✅ Completed Microsoft OAuth flow</li>
-                    <li>✅ Accessed restricted Support Hub</li>
-                  </ul>
+                    Congratulations! You have successfully completed this security challenge.
+                  </p>
                 </div>
               </>
             ) : (

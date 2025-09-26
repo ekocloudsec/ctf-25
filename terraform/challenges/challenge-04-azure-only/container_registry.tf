@@ -117,7 +117,7 @@ const nextConfig = {
 module.exports = nextConfig
 EOF
       # Create src directory structure
-      mkdir -p ./app-build/src/app/{api/create-user,api/update-departament,api/validate/support,login,support}
+      mkdir -p ./app-build/src/app/{api/create-user,api/update-departament,api/validate/support,docs,login,support}
       mkdir -p ./app-build/src/app/support/{login,callback,dashboard}
       mkdir -p ./app-build/src/components
       mkdir -p ./app-build/public
@@ -1081,17 +1081,14 @@ function DashboardContent() {
                   padding: '1rem'
                 }}>
                   <h3 style={{ color: '#374151', marginBottom: '0.5rem' }}>🏆 Challenge Completed!</h3>
-                  <ul style={{ 
-                    textAlign: 'left', 
+                  <p style={{ 
                     color: '#6b7280',
                     lineHeight: '1.6',
-                    margin: '0'
+                    margin: '0',
+                    textAlign: 'center'
                   }}>
-                    <li>✅ Exploited CVE-2025-29927 middleware bypass</li>
-                    <li>✅ Updated user department to 'Support'</li>
-                    <li>✅ Completed Microsoft OAuth flow</li>
-                    <li>✅ Accessed restricted Support Hub</li>
-                  </ul>
+                    Congratulations! You have successfully completed this security challenge.
+                  </p>
                 </div>
               </>
             ) : (
@@ -1418,15 +1415,165 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
 EOF
 
-      # Build and push Docker image
+      # Create docs API documentation endpoint
+      cat > ./app-build/src/app/docs/route.js << 'EOF'
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  try {
+    const apiDocs = {
+      "openapi": "3.0.0",
+      "info": {
+        "title": "MediCloudX Workforce Onboarding API",
+        "version": "1.0.0",
+        "description": "Internal API for healthcare workforce management"
+      },
+      "servers": [
+        {
+          "url": "/",
+          "description": "Current server"
+        }
+      ],
+      "paths": {
+        "/api/version": {
+          "get": {
+            "summary": "Get API version information",
+            "description": "Returns current API and system version details",
+            "responses": {
+              "200": {
+                "description": "Version information",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "version": { "type": "string" },
+                        "nodejs": { "type": "string" },
+                        "environment": { "type": "string" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/api/create-user": {
+          "post": {
+            "summary": "Create new user account",
+            "description": "Creates a new user in the workforce management system",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "User created successfully"
+              },
+              "401": {
+                "description": "Authentication required"
+              }
+            }
+          }
+        },
+        "/api/update-departament": {
+          "post": {
+            "summary": "Update user department assignment",
+            "description": "Updates the department assignment for an existing user",
+            "requestBody": {
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "required": ["id", "departament"],
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "User ID to update"
+                      },
+                      "departament": {
+                        "type": "string",
+                        "description": "New department assignment"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Department updated successfully"
+              },
+              "401": {
+                "description": "Authentication required"
+              },
+              "404": {
+                "description": "User not found"
+              }
+            }
+          }
+        }
+      },
+      "components": {
+        "securitySchemes": {
+          "bearerAuth": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        }
+      },
+      "security": [
+        {
+          "bearerAuth": []
+        }
+      ]
+    };
+
+    return NextResponse.json(apiDocs, {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    });
+
+  } catch (error) {
+    console.error('Error serving API documentation:', error);
+    return NextResponse.json({ 
+      error: 'Failed to load API documentation' 
+    }, { status: 500 });
+  }
+}
+EOF
+
+      # Build the container with docker buildx
       cd ./app-build
       
       # Login to ACR
       az acr login --name ${azurerm_container_registry.medicloudx_acr.name}
       
       # Build and tag image for linux/amd64 platform (Azure App Service)
+      docker buildx build --platform linux/amd64 -t ${azurerm_container_registry.medicloudx_acr.login_server}/medicloudx-onboarding:latest .
       docker build --platform linux/amd64 -t ${azurerm_container_registry.medicloudx_acr.login_server}/medicloudx-onboarding:latest .
       
       # Push image
