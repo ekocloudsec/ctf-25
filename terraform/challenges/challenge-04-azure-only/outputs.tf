@@ -85,10 +85,11 @@ output "challenge_info" {
 output "api_endpoints" {
   description = "Important API endpoints for the challenge"
   value = {
-    base_url            = "https://${azurerm_linux_web_app.medicloudx_onboarding.name}.azurewebsites.net"
-    login_page          = "https://${azurerm_linux_web_app.medicloudx_onboarding.name}.azurewebsites.net/login"
-    create_user_api     = "https://${azurerm_linux_web_app.medicloudx_onboarding.name}.azurewebsites.net/api/create-user"
-    vulnerable_header   = "x-middleware-subrequest: middleware"
+    base_url              = "https://${azurerm_linux_web_app.medicloudx_onboarding.name}.azurewebsites.net"
+    login_page            = "https://${azurerm_linux_web_app.medicloudx_onboarding.name}.azurewebsites.net/login"
+    create_user_api       = "https://${azurerm_linux_web_app.medicloudx_onboarding.name}.azurewebsites.net/api/create-user"
+    update_departament_api = "https://${azurerm_linux_web_app.medicloudx_onboarding.name}.azurewebsites.net/api/update-departament"
+    vulnerable_header     = "x-middleware-subrequest: src/middleware:src/middleware:src/middleware:src/middleware:src/middleware"
   }
 }
 
