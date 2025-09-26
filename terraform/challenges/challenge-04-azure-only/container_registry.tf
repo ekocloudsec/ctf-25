@@ -1,0 +1,652 @@
+# Azure Container Registry for hosting the vulnerable Next.js application
+
+resource "azurerm_container_registry" "medicloudx_acr" {
+  name                = "medicloudxacr${random_string.suffix.result}"
+  resource_group_name = azurerm_resource_group.medicloudx_identity.name
+  location            = azurerm_resource_group.medicloudx_identity.location
+  sku                 = "Basic"
+  
+  # Enable admin user to allow App Service to pull images
+  admin_enabled = true
+
+  tags = {
+    Environment = var.environment
+    Challenge   = "04-azure-only"
+    Purpose     = "Container Image Storage"
+    Component   = "ACR"
+  }
+}
+
+# Local provisioner to build and push the Docker image
+# This requires Docker to be installed and running locally
+resource "null_resource" "docker_build_push" {
+  depends_on = [azurerm_container_registry.medicloudx_acr]
+  
+  triggers = {
+    # Rebuild when ACR changes or when the application code changes
+    acr_id = azurerm_container_registry.medicloudx_acr.id
+    # Force rebuild on every apply for development
+    always_run = timestamp()
+  }
+
+  provisioner "local-exec" {
+    command = <<-EOT
+      # Create temporary directory for application
+      mkdir -p ./app-build
+      
+      # Create the vulnerable Next.js application files
+      cat > ./app-build/package.json << 'EOF'
+{
+  "name": "medicloudx-onboarding",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "13.4.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "@azure/msal-node": "^2.6.6",
+    "@azure/identity": "^4.0.1",
+    "@microsoft/microsoft-graph-client": "^3.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "13.4.0"
+  }
+}
+EOF
+
+      cat > ./app-build/Dockerfile << 'EOF'
+FROM node:18-alpine AS base
+
+# Install dependencies only when needed
+FROM base AS deps
+WORKDIR /app
+
+# Install dependencies based on the preferred package manager
+COPY package*.json ./
+RUN npm install --omit=dev
+
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+RUN npm run build
+
+# Production image, copy all the files and run next
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV production
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+
+EXPOSE 3000
+
+ENV PORT 3000
+ENV HOSTNAME "0.0.0.0"
+
+CMD ["node", "server.js"]
+EOF
+
+      cat > ./app-build/next.config.js << 'EOF'
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
+  output: 'standalone',
+}
+
+module.exports = nextConfig
+EOF
+
+      # Create src directory structure
+      mkdir -p ./app-build/src/app/{api/create-user,login}
+      mkdir -p ./app-build/src/components
+      mkdir -p ./app-build/public
+
+      # Create middleware.js with vulnerability (CVE-2025-29927)
+      cat > ./app-build/src/middleware.js << 'EOF'
+import { NextResponse } from 'next/server'
+
+export function middleware(request) {
+  const { pathname } = request.nextUrl
+  
+  // Skip middleware for static files, login, and version endpoint
+  if (pathname.startsWith('/_next/') || 
+      pathname.startsWith('/favicon.ico') ||
+      pathname === '/login' ||
+      pathname === '/api/version') {
+    return NextResponse.next()
+  }
+
+  // CVE-2025-29927: Authorization Bypass vulnerability
+  // COMMENTED FOR TESTING REAL VULNERABILITY:
+  // const subrequest = request.headers.get('x-middleware-subrequest')
+  // if (subrequest === 'middleware:middleware:middleware:middleware:middleware') {
+  //   // Vulnerability: bypass authentication completely
+  //   return NextResponse.next()
+  // }
+
+  // REMOVED COOKIE AUTHENTICATION - Force users to use only the vulnerability
+  // No normal authentication path - only CVE-2025-29927 bypass should work
+  return NextResponse.redirect(new URL('/login', request.url))
+}
+
+export const config = {
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico).*)',
+  ],
+}
+EOF
+
+      # Create main page
+      cat > ./app-build/src/app/page.js << 'EOF'
+'use client'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+
+export default function Home() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [userInfo, setUserInfo] = useState(null)
+  const router = useRouter()
+
+  useEffect(() => {
+    const token = document.cookie.includes('auth-token=')
+    if (!token) {
+      router.push('/login')
+    } else {
+      setIsAuthenticated(true)
+      // In a real app, you'd decode the JWT to get user info
+      setUserInfo({ name: 'HR Administrator', role: 'admin' })
+    }
+  }, [router])
+
+  const handleCreateUser = async () => {
+    try {
+      const response = await fetch('/api/create-user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({}),
+      })
+
+      if (response.ok) {
+        const userData = await response.json()
+        alert('User created successfully!\\n\\nUser Principal Name: ' + userData.userPrincipalName + '\\nDisplay Name: ' + userData.displayName + '\\nTemporary Password: ' + userData.tempPassword)
+      } else {
+        const error = await response.text()
+        alert('Error creating user: ' + error)
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Error creating user')
+    }
+  }
+
+  if (!isAuthenticated) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <div style={{ padding: '40px', fontFamily: 'system-ui, sans-serif', backgroundColor: '#f8fafc', minHeight: '100vh' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto', backgroundColor: 'white', padding: '32px', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }}>
+        <header style={{ borderBottom: '1px solid #e2e8f0', paddingBottom: '24px', marginBottom: '32px' }}>
+          <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: '#1e293b', marginBottom: '8px' }}>
+            🏥 MediCloudX Workforce Onboarding
+          </h1>
+          <p style={{ color: '#64748b', fontSize: '18px' }}>
+            Automated Clinical & Administrative Staff Registration System
+          </p>
+        </header>
+
+        {userInfo && (
+          <div style={{ backgroundColor: '#f1f5f9', padding: '16px', borderRadius: '8px', marginBottom: '32px' }}>
+            <p style={{ margin: '0', color: '#334155' }}>
+              Welcome, <strong>{userInfo.name}</strong> ({userInfo.role})
+            </p>
+          </div>
+        )}
+
+        <div style={{ backgroundColor: '#fef3c7', border: '1px solid #f59e0b', padding: '16px', borderRadius: '8px', marginBottom: '32px' }}>
+          <h3 style={{ margin: '0 0 8px 0', color: '#92400e' }}>⚠️ System Notice</h3>
+          <p style={{ margin: '0', color: '#92400e', fontSize: '14px' }}>
+            This onboarding system automatically provisions Azure AD accounts for new healthcare staff. 
+            Only authorized HR personnel should have access to this functionality.
+          </p>
+        </div>
+
+        <div style={{ textAlign: 'center' }}>
+          <button
+            onClick={handleCreateUser}
+            style={{
+              backgroundColor: '#2563eb',
+              color: 'white',
+              padding: '12px 32px',
+              fontSize: '18px',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontWeight: '600',
+              transition: 'background-color 0.2s'
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#1d4ed8'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#2563eb'}
+          >
+            Create New Staff Account
+          </button>
+        </div>
+
+        <div style={{ marginTop: '32px', padding: '16px', backgroundColor: '#f8fafc', borderRadius: '8px', fontSize: '14px', color: '#64748b' }}>
+          <h4 style={{ margin: '0 0 12px 0', color: '#374151' }}>System Features:</h4>
+          <ul style={{ margin: '0', paddingLeft: '20px' }}>
+            <li>Automated Azure AD user provisioning</li>
+            <li>Temporary password generation</li>
+            <li>Compliance with MediCloudX security policies</li>
+            <li>Integration with Microsoft Graph API</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  )
+}
+EOF
+
+      # Create login page
+      cat > ./app-build/src/app/login/page.js << 'EOF'
+'use client'
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+
+export default function Login() {
+  const [credentials, setCredentials] = useState({ username: '', password: '' })
+  const [error, setError] = useState('')
+  const router = useRouter()
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    
+    // Simple authentication check (in a real app, this would be more secure)
+    if (credentials.username === 'hradmin' && credentials.password === 'MediCloudX2025!') {
+      // Set auth cookie (in a real app, this would be a proper JWT)
+      document.cookie = 'auth-token=valid; path=/; max-age=3600'
+      router.push('/')
+    } else {
+      setError('Invalid credentials. Contact IT support for access.')
+    }
+  }
+
+  return (
+    <div style={{ 
+      minHeight: '100vh', 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      backgroundColor: '#f1f5f9',
+      fontFamily: 'system-ui, sans-serif'
+    }}>
+      <div style={{
+        backgroundColor: 'white',
+        padding: '40px',
+        borderRadius: '12px',
+        boxShadow: '0 10px 25px -3px rgba(0, 0, 0, 0.1)',
+        width: '100%',
+        maxWidth: '400px'
+      }}>
+        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+          <h1 style={{ fontSize: '28px', fontWeight: 'bold', color: '#1e293b', marginBottom: '8px' }}>
+            🏥 MediCloudX
+          </h1>
+          <p style={{ color: '#64748b', fontSize: '16px' }}>
+            Workforce Onboarding Portal
+          </p>
+        </div>
+
+        <form onSubmit={handleLogin}>
+          <div style={{ marginBottom: '20px' }}>
+            <label style={{ display: 'block', marginBottom: '8px', color: '#374151', fontWeight: '500' }}>
+              Username
+            </label>
+            <input
+              type="text"
+              value={credentials.username}
+              onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
+              style={{
+                width: '100%',
+                padding: '12px',
+                border: '1px solid #d1d5db',
+                borderRadius: '8px',
+                fontSize: '16px'
+              }}
+              required
+            />
+          </div>
+
+          <div style={{ marginBottom: '24px' }}>
+            <label style={{ display: 'block', marginBottom: '8px', color: '#374151', fontWeight: '500' }}>
+              Password
+            </label>
+            <input
+              type="password"
+              value={credentials.password}
+              onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+              style={{
+                width: '100%',
+                padding: '12px',
+                border: '1px solid #d1d5db',
+                borderRadius: '8px',
+                fontSize: '16px'
+              }}
+              required
+            />
+          </div>
+
+          {error && (
+            <div style={{
+              backgroundColor: '#fee2e2',
+              border: '1px solid #f87171',
+              color: '#dc2626',
+              padding: '12px',
+              borderRadius: '8px',
+              marginBottom: '20px',
+              fontSize: '14px'
+            }}>
+              {error}
+            </div>
+          )}
+
+          <button
+            type="submit"
+            style={{
+              width: '100%',
+              backgroundColor: '#2563eb',
+              color: 'white',
+              padding: '12px',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '16px',
+              fontWeight: '600',
+              cursor: 'pointer'
+            }}
+          >
+            Sign In
+          </button>
+        </form>
+
+        <div style={{ marginTop: '24px', padding: '16px', backgroundColor: '#f8fafc', borderRadius: '8px', fontSize: '12px', color: '#6b7280', textAlign: 'center' }}>
+          <p style={{ margin: '0' }}>
+            Access restricted to authorized HR personnel only.<br />
+            Contact IT support if you need assistance.
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+EOF
+
+      # Create the vulnerable API endpoint with real Microsoft Graph integration
+      cat > ./app-build/src/app/api/create-user/route.js << 'EOF'
+import { NextRequest, NextResponse } from 'next/server'
+
+// Real Azure AD integration using Microsoft Graph API
+export async function POST(request) {
+  try {
+    const clientId = process.env.AZURE_CLIENT_ID
+    const clientSecret = process.env.AZURE_CLIENT_SECRET
+    const tenantId = process.env.AZURE_TENANT_ID
+
+    if (!clientId || !clientSecret || !tenantId) {
+      return NextResponse.json(
+        { error: 'Azure AD configuration missing' },
+        { status: 500 }
+      )
+    }
+
+    // Get access token from Azure AD
+    const tokenResponse = await fetch('https://login.microsoftonline.com/' + tenantId + '/oauth2/v2.0/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        client_id: clientId,
+        client_secret: clientSecret,
+        scope: 'https://graph.microsoft.com/.default',
+        grant_type: 'client_credentials'
+      })
+    })
+
+    if (!tokenResponse.ok) {
+      const error = await tokenResponse.text()
+      console.error('Token request failed:', error)
+      return NextResponse.json(
+        { error: 'Authentication failed' },
+        { status: 401 }
+      )
+    }
+
+    const tokenData = await tokenResponse.json()
+    const accessToken = tokenData.access_token
+
+    // Generate random user data
+    const userId = Math.random().toString(36).substr(2, 5)
+    const tempPassword = generateTempPassword()
+    
+    // Create user in Azure AD using Microsoft Graph API
+    const userPayload = {
+      accountEnabled: true,
+      displayName: 'CTF User ' + userId,
+      mailNickname: 'ctf-user-' + userId,
+      userPrincipalName: 'ctf-user-' + userId + '@ekocloudsec.com',
+      passwordProfile: {
+        forceChangePasswordNextSignIn: true,
+        password: tempPassword
+      }
+    }
+
+    const createUserResponse = await fetch('https://graph.microsoft.com/v1.0/users', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + accessToken,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userPayload)
+    })
+
+    if (!createUserResponse.ok) {
+      const error = await createUserResponse.text()
+      console.error('User creation failed:', error)
+      return NextResponse.json(
+        { error: 'Failed to create user in Azure AD', details: error },
+        { status: 400 }
+      )
+    }
+
+    const createdUser = await createUserResponse.json()
+
+    // Return success response with real user data
+    const responseData = {
+      id: createdUser.id,
+      userPrincipalName: createdUser.userPrincipalName,
+      displayName: createdUser.displayName,
+      mailNickname: createdUser.mailNickname,
+      accountEnabled: createdUser.accountEnabled,
+      createdDateTime: createdUser.createdDateTime,
+      tempPassword: tempPassword,
+      forceChangePasswordNextSignIn: true
+    }
+
+    return NextResponse.json(responseData, { 
+      status: 201,
+      headers: {
+        'Cache-Control': 'no-store',
+        'Content-Type': 'application/json; charset=utf-8'
+      }
+    })
+    
+  } catch (error) {
+    console.error('Error creating user:', error)
+    return NextResponse.json(
+      { error: 'Internal server error', message: error.message },
+      { status: 500 }
+    )
+  }
+}
+
+function generateTempPassword() {
+  // Generate a secure password that meets Azure AD requirements
+  const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  const lower = 'abcdefghijklmnopqrstuvwxyz'
+  const numbers = '0123456789'
+  const symbols = '!@#$%^&*'
+  
+  let password = ''
+  // Ensure at least one of each type
+  password += upper.charAt(Math.floor(Math.random() * upper.length))
+  password += lower.charAt(Math.floor(Math.random() * lower.length))
+  password += numbers.charAt(Math.floor(Math.random() * numbers.length))
+  password += symbols.charAt(Math.floor(Math.random() * symbols.length))
+  
+  // Fill the rest randomly
+  const allChars = upper + lower + numbers + symbols
+  for (let i = 4; i < 16; i++) {
+    password += allChars.charAt(Math.floor(Math.random() * allChars.length))
+  }
+  
+  // Shuffle the password
+  return password.split('').sort(() => Math.random() - 0.5).join('')
+}
+EOF
+
+      # Create version API endpoint
+      mkdir -p ./app-build/src/app/api/version
+      cat > ./app-build/src/app/api/version/route.js << 'EOF'
+import { NextResponse } from 'next/server'
+
+export async function GET() {
+  try {
+    // Get versions from package.json and process.version
+    const packageJson = require('../../../../package.json')
+    
+    const versionInfo = {
+      nodejs: process.version,
+      nextjs: packageJson.dependencies.next,
+      application: {
+        name: packageJson.name,
+        version: packageJson.version
+      },
+      vulnerability: {
+        cve: "CVE-2025-29927",
+        description: "Next.js Middleware Authorization Bypass",
+        affected_versions: {
+          "13.x": ">= 13.0.0, < 13.5.9",
+          "14.x": ">= 14.0.0, < 14.2.25", 
+          "15.x": ">= 15.0.0, < 15.2.3",
+          "12.x": ">= 11.1.4, < 12.3.5"
+        },
+        current_status: packageJson.dependencies.next.includes('13.4.0') ? "VULNERABLE" : "UNKNOWN"
+      },
+      timestamp: new Date().toISOString()
+    }
+
+    return NextResponse.json(versionInfo, {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Cache-Control': 'no-cache'
+      }
+    })
+    
+  } catch (error) {
+    return NextResponse.json(
+      { 
+        error: 'Unable to retrieve version information',
+        message: error.message 
+      },
+      { status: 500 }
+    )
+  }
+}
+EOF
+
+      # Create layout
+      cat > ./app-build/src/app/layout.js << 'EOF'
+import './globals.css'
+
+export const metadata = {
+  title: 'MediCloudX Workforce Onboarding',
+  description: 'Automated Clinical & Administrative Staff Registration System',
+}
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
+}
+EOF
+
+      cat > ./app-build/src/app/globals.css << 'EOF'
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+EOF
+
+      # Build and push Docker image
+      cd ./app-build
+      
+      # Login to ACR
+      az acr login --name ${azurerm_container_registry.medicloudx_acr.name}
+      
+      # Build and tag image for linux/amd64 platform (Azure App Service)
+      docker build --platform linux/amd64 -t ${azurerm_container_registry.medicloudx_acr.login_server}/medicloudx-onboarding:latest .
+      
+      # Push image
+      docker push ${azurerm_container_registry.medicloudx_acr.login_server}/medicloudx-onboarding:latest
+      
+      # Cleanup
+      rm -rf ./app-build
+    EOT
+  }
+}

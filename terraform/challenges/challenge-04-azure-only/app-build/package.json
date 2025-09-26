@@ -1,0 +1,23 @@
+{
+  "name": "medicloudx-onboarding",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "13.4.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "@azure/msal-node": "^2.6.6",
+    "@azure/identity": "^4.0.1",
+    "@microsoft/microsoft-graph-client": "^3.0.7"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "13.4.0"
+  }
+}
