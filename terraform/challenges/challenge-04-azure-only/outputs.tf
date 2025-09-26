@@ -88,13 +88,12 @@ output "api_endpoints" {
     base_url            = "https://${azurerm_linux_web_app.medicloudx_onboarding.name}.azurewebsites.net"
     login_page          = "https://${azurerm_linux_web_app.medicloudx_onboarding.name}.azurewebsites.net/login"
     create_user_api     = "https://${azurerm_linux_web_app.medicloudx_onboarding.name}.azurewebsites.net/api/create-user"
-    vulnerable_header   = "x-middleware-subrequest"
+    vulnerable_header   = "x-middleware-subrequest: middleware"
   }
 }
 
 # Azure AD Permissions
 output "azure_ad_permissions" {
-  description = "Azure AD permissions granted to the application"
   value = {
     app_permissions = [
       "User.ReadWrite.All",

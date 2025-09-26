@@ -47,16 +47,16 @@ resource "null_resource" "docker_build_push" {
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.4.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "15.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "@azure/msal-node": "^2.6.6",
     "@azure/identity": "^4.0.1",
     "@microsoft/microsoft-graph-client": "^3.0.7"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "13.4.0"
+    "eslint": "^9",
+    "eslint-config-next": "15.2.1"
   }
 }
 EOF
@@ -106,52 +106,46 @@ EOF
       cat > ./app-build/next.config.js << 'EOF'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
+  reactStrictMode: true,
+  swcMinify: true,
   experimental: {
     appDir: true,
-  },
-  output: 'standalone',
+  }
 }
 
 module.exports = nextConfig
 EOF
-
       # Create src directory structure
       mkdir -p ./app-build/src/app/{api/create-user,login}
       mkdir -p ./app-build/src/components
       mkdir -p ./app-build/public
-
-      # Create middleware.js with vulnerability (CVE-2025-29927)
+      
+      # Remove middleware from root (if exists)
+      rm -f ./app-build/middleware.js
+      
+      # Create middleware.js in SRC (where it worked before)
       cat > ./app-build/src/middleware.js << 'EOF'
 import { NextResponse } from 'next/server'
 
-export function middleware(request) {
-  const { pathname } = request.nextUrl
-  
-  // Skip middleware for static files, login, and version endpoint
-  if (pathname.startsWith('/_next/') || 
-      pathname.startsWith('/favicon.ico') ||
-      pathname === '/login' ||
-      pathname === '/api/version') {
-    return NextResponse.next()
-  }
-
-  // CVE-2025-29927: Authorization Bypass vulnerability
-  // COMMENTED FOR TESTING REAL VULNERABILITY:
-  // const subrequest = request.headers.get('x-middleware-subrequest')
-  // if (subrequest === 'middleware:middleware:middleware:middleware:middleware') {
-  //   // Vulnerability: bypass authentication completely
-  //   return NextResponse.next()
-  // }
-
-  // REMOVED COOKIE AUTHENTICATION - Force users to use only the vulnerability
-  // No normal authentication path - only CVE-2025-29927 bypass should work
-  return NextResponse.redirect(new URL('/login', request.url))
+export const config = {
+    matcher: '/api/create-user',
 }
 
-export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|favicon.ico).*)',
-  ],
+export function middleware(request) {
+    // Debug: Confirm middleware is executing
+    console.log('🚨 MIDDLEWARE EJECUTÁNDOSE - URL:', request.url);
+    console.log('🚨 HEADERS:', Object.fromEntries(request.headers.entries()));
+
+    const token = request.headers.get("x-super-secret-auth");
+
+    if (!token) {
+        console.log('❌ NO TOKEN - Redirecting to /login');
+        return NextResponse.redirect(new URL('/login', request.url))
+    }
+
+    console.log('✅ TOKEN FOUND - Allowing request');
+    return NextResponse.next();
 }
 EOF
 
@@ -551,17 +545,6 @@ export async function GET() {
       application: {
         name: packageJson.name,
         version: packageJson.version
-      },
-      vulnerability: {
-        cve: "CVE-2025-29927",
-        description: "Next.js Middleware Authorization Bypass",
-        affected_versions: {
-          "13.x": ">= 13.0.0, < 13.5.9",
-          "14.x": ">= 14.0.0, < 14.2.25", 
-          "15.x": ">= 15.0.0, < 15.2.3",
-          "12.x": ">= 11.1.4, < 12.3.5"
-        },
-        current_status: packageJson.dependencies.next.includes('13.4.0') ? "VULNERABLE" : "UNKNOWN"
       },
       timestamp: new Date().toISOString()
     }

