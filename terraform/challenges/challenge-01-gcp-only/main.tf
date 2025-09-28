@@ -27,10 +27,11 @@ provider "google" {
 module "gcp_storage" {
   source = "../../modules/gcp/infrastructure"
   
-  project_name    = var.project_name
-  region          = var.gcp_region
-  index_html_path = "${path.module}/../../../web-content/gcp-challenge-01/index.html"
-  flag_txt_path   = "${path.module}/../../../web-content/gcp-challenge-01/flag.txt"
+  project_name      = var.project_name
+  region            = var.gcp_region
+  index_html_path   = "${path.module}/../../../web-content/gcp-challenge-01/index.html"
+  flag_txt_path     = "${path.module}/../../../web-content/gcp-challenge-01/flag.txt"
+  discovery_key_path = "${path.module}/../../../web-content/gcp-challenge-01/medicloudx-discovery-key.json.b64"
   
   labels = {
     challenge = "challenge-01-gcp-only"

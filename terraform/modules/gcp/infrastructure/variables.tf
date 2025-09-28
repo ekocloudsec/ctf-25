@@ -25,3 +25,9 @@ variable "labels" {
   type        = map(string)
   default     = {}
 }
+
+variable "discovery_key_path" {
+  description = "Path to the medicloudx-discovery-key.json.b64 file"
+  type        = string
+  default     = ""
+}

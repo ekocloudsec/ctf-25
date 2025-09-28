@@ -64,3 +64,13 @@ resource "google_storage_bucket_object" "flag" {
 
   content_type = "text/plain"
 }
+
+# Upload discovery key file if provided
+resource "google_storage_bucket_object" "discovery_key" {
+  count  = var.discovery_key_path != "" ? 1 : 0
+  name   = "medicloudx-discovery-key.json.b64"
+  bucket = google_storage_bucket.website.name
+  source = var.discovery_key_path
+
+  content_type = "application/octet-stream"
+}

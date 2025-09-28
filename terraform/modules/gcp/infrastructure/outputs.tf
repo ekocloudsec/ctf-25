@@ -17,3 +17,8 @@ output "bucket_self_link" {
   description = "Self link of the bucket"
   value       = google_storage_bucket.website.self_link
 }
+
+output "discovery_key_url" {
+  description = "URL to access the discovery key file"
+  value       = var.discovery_key_path != "" ? "https://storage.googleapis.com/${google_storage_bucket.website.name}/medicloudx-discovery-key.json.b64" : ""
+}
