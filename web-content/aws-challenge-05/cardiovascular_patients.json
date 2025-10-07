@@ -1,0 +1,70 @@
+{
+  "export_type": "cardiovascular_records",
+  "generated_at": "2024-10-05T14:35:00Z",
+  "record_count": 756,
+  "department": "Cardiology",
+  "attending_physicians": [
+    "Dr. Sarah Chen - Chief Cardiologist",
+    "Dr. Michael Rodriguez - Interventional Cardiology", 
+    "Dr. Emily Watson - Electrophysiology",
+    "Dr. James Park - Heart Failure Specialist"
+  ],
+  "patients": [
+    {
+      "patient_id": "CV-001847",
+      "age": 67,
+      "gender": "M",
+      "primary_diagnosis": "Coronary Artery Disease",
+      "risk_factors": ["Hypertension", "Diabetes", "Smoking History"],
+      "last_visit": "2024-09-15",
+      "medications": ["Metoprolol", "Lisinopril", "Atorvastatin"],
+      "ejection_fraction": "45%",
+      "status": "Stable"
+    },
+    {
+      "patient_id": "CV-002156",
+      "age": 54,
+      "gender": "F", 
+      "primary_diagnosis": "Atrial Fibrillation",
+      "risk_factors": ["Hypertension", "Sleep Apnea"],
+      "last_visit": "2024-10-01",
+      "medications": ["Warfarin", "Diltiazem", "Metoprolol"],
+      "rhythm": "Controlled AFib",
+      "status": "Stable on anticoagulation"
+    },
+    {
+      "patient_id": "CV-002891",
+      "age": 72,
+      "gender": "M",
+      "primary_diagnosis": "Heart Failure with Reduced EF",
+      "risk_factors": ["Previous MI", "Hypertension", "Diabetes"],
+      "last_visit": "2024-09-28",
+      "medications": ["Carvedilol", "Lisinopril", "Furosemide", "Spironolactone"],
+      "ejection_fraction": "35%",
+      "status": "Compensated, on optimal medical therapy"
+    }
+  ],
+  "statistics": {
+    "average_age": 63.2,
+    "common_diagnoses": {
+      "Coronary Artery Disease": 234,
+      "Heart Failure": 187,
+      "Atrial Fibrillation": 156,
+      "Hypertensive Heart Disease": 143,
+      "Valvular Disease": 89
+    },
+    "procedures_performed": {
+      "Cardiac Catheterization": 145,
+      "Echocardiogram": 567,
+      "Stress Testing": 298,
+      "Holter Monitoring": 234,
+      "Pacemaker Implantation": 23
+    }
+  },
+  "quality_metrics": {
+    "readmission_rate_30_day": "8.2%",
+    "mortality_rate": "2.1%",
+    "patient_satisfaction": "4.7/5.0",
+    "guideline_adherence": "94.8%"
+  }
+}

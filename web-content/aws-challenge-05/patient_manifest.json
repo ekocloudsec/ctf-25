@@ -1,0 +1,54 @@
+{
+  "manifest_version": "2.1.3",
+  "generated_at": "2024-10-05T14:30:00Z",
+  "facility_info": {
+    "name": "MediCloudX Healthcare Center",
+    "location": "Seattle, WA",
+    "license": "WA-HC-2024-8901",
+    "hipaa_compliant": true
+  },
+  "export_summary": {
+    "total_patients": 2847,
+    "active_records": 2156,
+    "archived_records": 691,
+    "data_categories": [
+      "Demographics",
+      "Vital Signs", 
+      "Medical History",
+      "Prescriptions",
+      "Laboratory Results",
+      "Cardiovascular Records"
+    ]
+  },
+  "patient_demographics": {
+    "age_distribution": {
+      "0-18": 423,
+      "19-35": 891,
+      "36-55": 1024,
+      "56-75": 398,
+      "75+": 111
+    },
+    "gender_distribution": {
+      "male": 1389,
+      "female": 1421,
+      "other": 37
+    }
+  },
+  "data_retention": {
+    "policy": "7 years minimum as per HIPAA",
+    "last_purge": "2024-01-15",
+    "next_scheduled_purge": "2025-01-15"
+  },
+  "access_logs": {
+    "total_access_events": 15734,
+    "unique_staff_access": 87,
+    "last_audit": "2024-09-30",
+    "compliance_status": "PASSED"
+  },
+  "system_info": {
+    "database_version": "PostgreSQL 14.2",
+    "backup_frequency": "Daily at 2:00 AM PST",
+    "encryption_status": "AES-256 at rest",
+    "uptime": "99.97%"
+  }
+}

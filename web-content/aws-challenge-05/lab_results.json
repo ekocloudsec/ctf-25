@@ -1,0 +1,95 @@
+{
+  "export_type": "laboratory_results",
+  "generated_at": "2024-10-05T14:40:00Z",
+  "lab_department": "Clinical Laboratory Services",
+  "total_tests": 18942,
+  "date_range": {
+    "start": "2024-09-01",
+    "end": "2024-09-30"
+  },
+  "laboratory_sections": {
+    "chemistry": {
+      "tests_performed": 7834,
+      "turnaround_time_avg": "2.4 hours",
+      "critical_values": 23
+    },
+    "hematology": {
+      "tests_performed": 4521,
+      "turnaround_time_avg": "1.8 hours", 
+      "critical_values": 15
+    },
+    "microbiology": {
+      "tests_performed": 3245,
+      "turnaround_time_avg": "24-72 hours",
+      "positive_cultures": 312
+    },
+    "immunology": {
+      "tests_performed": 2156,
+      "turnaround_time_avg": "4.2 hours",
+      "autoimmune_markers": 89
+    },
+    "toxicology": {
+      "tests_performed": 1186,
+      "turnaround_time_avg": "6.1 hours",
+      "positive_results": 67
+    }
+  },
+  "sample_results": [
+    {
+      "patient_id": "LAB-004523",
+      "collection_date": "2024-09-30",
+      "test_type": "Comprehensive Metabolic Panel",
+      "results": {
+        "glucose": "98 mg/dL",
+        "bun": "18 mg/dL", 
+        "creatinine": "0.9 mg/dL",
+        "sodium": "140 mEq/L",
+        "potassium": "4.2 mEq/L",
+        "chloride": "102 mEq/L",
+        "co2": "24 mEq/L"
+      },
+      "status": "Normal",
+      "reviewed_by": "Dr. Patricia Lee, MD"
+    },
+    {
+      "patient_id": "LAB-007891",
+      "collection_date": "2024-09-29",
+      "test_type": "Lipid Panel",
+      "results": {
+        "total_cholesterol": "195 mg/dL",
+        "hdl_cholesterol": "52 mg/dL",
+        "ldl_cholesterol": "118 mg/dL", 
+        "triglycerides": "125 mg/dL"
+      },
+      "status": "Borderline High LDL",
+      "reviewed_by": "Dr. Robert Kim, MD"
+    },
+    {
+      "patient_id": "LAB-009234",
+      "collection_date": "2024-09-28",
+      "test_type": "Complete Blood Count", 
+      "results": {
+        "wbc": "7.2 K/uL",
+        "rbc": "4.5 M/uL",
+        "hemoglobin": "14.2 g/dL",
+        "hematocrit": "42.1%",
+        "platelets": "285 K/uL"
+      },
+      "status": "Normal",
+      "reviewed_by": "Dr. Susan Chen, MD"
+    }
+  ],
+  "quality_control": {
+    "external_proficiency": "CAP Proficiency Testing - PASSED",
+    "internal_qa_checks": 1247,
+    "calibration_checks": 156,
+    "equipment_maintenance": "Up to date",
+    "staff_competency": "All certified"
+  },
+  "reference_ranges": {
+    "updated": "2024-08-15",
+    "source": "Mayo Clinic Laboratory Reference Values",
+    "pediatric_ranges": "Available for ages 0-18",
+    "geriatric_considerations": "Applied for ages 65+"
+  }
+}

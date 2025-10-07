@@ -12,6 +12,31 @@ This document provides a complete step-by-step walkthrough for solving the Cloud
 
 ## Step-by-Step Solution
 
+### Step 0: Initial IAM Enumeration
+
+First, perform a comprehensive IAM enumeration to understand available permissions:
+
+```bash
+(.venv) root@9217d31e8742:/home/enumerate-iam# python enumerate-iam.py --access-key AKIA5HCACCPUCLXM4WS5 --secret-key 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
+2025-10-05 19:21:02,881 - 419 - [INFO] Starting permission enumeration for access-key-id "AKIA5HCACCPUCLXM4WS5"
+2025-10-05 19:21:03,511 - 419 - [INFO] -- Account ARN : arn:aws:iam::908519937000:user/ctf-users/carlos.cardenas
+2025-10-05 19:21:03,512 - 419 - [INFO] -- Account Id  : 908519937000
+2025-10-05 19:21:03,512 - 419 - [INFO] -- Account Path: user/ctf-users/carlos.cardenas
+2025-10-05 19:21:03,621 - 419 - [INFO] Attempting common-service describe / list brute force.
+2025-10-05 19:21:04,159 - 419 - [INFO] -- sts.get_session_token() worked!
+2025-10-05 19:21:04,255 - 419 - [INFO] -- sts.get_caller_identity() worked!
+2025-10-05 19:21:05,733 - 419 - [ERROR] Remove globalaccelerator.describe_accelerator_attributes action
+2025-10-05 19:21:11,190 - 419 - [INFO] -- ec2.describe_volumes() worked!
+2025-10-05 19:21:11,409 - 419 - [INFO] -- dynamodb.describe_endpoints() worked!
+2025-10-05 19:21:11,651 - 419 - [INFO] -- ec2.describe_instances() worked!
+```
+
+**Key Findings:**
+- User identified as `carlos.cardenas`
+- EC2 permissions include `describe_volumes`, `describe_instances` 
+- STS permissions allow token generation and identity verification
+- Account ID: `908519937000`
+
 ### Step 1: Initial Reconnaissance with carlos.cardenas
 
 First, use the provided CTF credentials to enumerate available snapshots:
@@ -273,14 +298,15 @@ The flag is the NT hash portion (after the third colon):
 
 ## Attack Flow Summary
 
-1. **Initial Reconnaissance**: Used carlos.cardenas credentials to enumerate snapshots
-2. **Target Discovery**: Identified public EBS snapshot from MediCloudX
-3. **Cross-Account Access**: Exploited public snapshot permissions
-4. **Data Exfiltration**: Copied snapshot to personal AWS account
-5. **Volume Analysis**: Created volume and attached to analysis instance
-6. **File System Access**: Mounted NTFS volume and extracted critical files
-7. **Credential Extraction**: Used secretsdump to extract NTDS hashes
-8. **Target Identification**: Located svc-flag user NT hash
+1. **Permission Enumeration**: Used IAM enumeration tool to identify available permissions
+2. **Initial Reconnaissance**: Used carlos.cardenas credentials to enumerate snapshots
+3. **Target Discovery**: Identified public EBS snapshot from MediCloudX
+4. **Cross-Account Access**: Exploited public snapshot permissions
+5. **Data Exfiltration**: Copied snapshot to personal AWS account
+6. **Volume Analysis**: Created volume and attached to analysis instance
+7. **File System Access**: Mounted NTFS volume and extracted critical files
+8. **Credential Extraction**: Used secretsdump to extract NTDS hashes
+9. **Target Identification**: Located svc-flag user NT hash
 
 ## Key Vulnerabilities Exploited
 
@@ -311,6 +337,7 @@ The flag is the NT hash portion (after the third colon):
 
 ## Tools Used
 
+- **enumerate-iam.py**: For initial permission enumeration and discovery
 - **AWS CLI**: For snapshot discovery and management
 - **Impacket secretsdump**: For NTDS hash extraction
 - **Linux mount utilities**: For NTFS volume access
