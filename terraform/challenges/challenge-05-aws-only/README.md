@@ -152,8 +152,8 @@ terraform output embedded_credentials
 
 # Example output:
 # {
-#   "access_key" = "AKIA5HCACCPUJV4O5PWF"
-#   "secret_key" = "xhoGS30hPE0iNHHpm3Lvz6fSeUX9bqa2zeuwChn7"
+#   "access_key" = "AKIAIOSFODNN7EXAMPLE"
+#   "secret_key" = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 # }
 
 # Use these values in the compilation commands above

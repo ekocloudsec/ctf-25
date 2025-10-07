@@ -17,8 +17,8 @@ This document provides a complete step-by-step walkthrough for solving the Cloud
 First, perform a comprehensive IAM enumeration to understand available permissions:
 
 ```bash
-(.venv) root@9217d31e8742:/home/enumerate-iam# python enumerate-iam.py --access-key AKIA5HCACCPUCLXM4WS5 --secret-key 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
-2025-10-05 19:21:02,881 - 419 - [INFO] Starting permission enumeration for access-key-id "AKIA5HCACCPUCLXM4WS5"
+(.venv) root@9217d31e8742:/home/enumerate-iam# python enumerate-iam.py --access-key AKIAIOSFODNN7EXAMPLE --secret-key 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
+2025-10-05 19:21:02,881 - 419 - [INFO] Starting permission enumeration for access-key-id "AKIAIOSFODNN7EXAMPLE"
 2025-10-05 19:21:03,511 - 419 - [INFO] -- Account ARN : arn:aws:iam::908519937000:user/ctf-users/carlos.cardenas
 2025-10-05 19:21:03,512 - 419 - [INFO] -- Account Id  : 908519937000
 2025-10-05 19:21:03,512 - 419 - [INFO] -- Account Path: user/ctf-users/carlos.cardenas

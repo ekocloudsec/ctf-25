@@ -51,10 +51,10 @@ strings medicloudx_exporter_linux | grep AKIA
 
 **Expected Output:**
 ```
-AKIA5HCACCPUJV4O5PWF
+AKIAIOSFODNN7EXAMPLE
 ```
 
-This reveals the AWS Access Key ID: `AKIA5HCACCPUJV4O5PWF`
+This reveals the AWS Access Key ID: `AKIAIOSFODNN7EXAMPLE`
 
 ### Step 3: Extract AWS Secret Access Key
 
@@ -66,10 +66,10 @@ strings medicloudx_exporter_linux | grep xhoGS30hP
 
 **Expected Output:**
 ```
-xhoGS30hPE0iNHHpm3Lvz6fSeUX9bqa2zeuwChn7
+wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
 
-This reveals the complete AWS Secret Access Key: `xhoGS30hPE0iNHHpm3Lvz6fSeUX9bqa2zeuwChn7`
+This reveals the complete AWS Secret Access Key: `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
 
 ### Step 4: Extract S3 Bucket Pattern
 
@@ -92,8 +92,8 @@ This reveals the bucket naming pattern: `ctf-25-medical-exporter-records-[suffix
 Create an AWS CLI profile with the extracted credentials:
 
 ```bash
-aws configure set aws_access_key_id AKIA5HCACCPUJV4O5PWF --profile challenge5
-aws configure set aws_secret_access_key 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 --profile challenge5
+aws configure set aws_access_key_id AKIAIOSFODNN7EXAMPLE --profile challenge5
+aws configure set aws_secret_access_key wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY --profile challenge5
 aws configure set region us-east-1 --profile challenge5
 ```
 
@@ -163,19 +163,19 @@ The challenge can be solved using simple static analysis:
 ```bash
 # Extract AWS Access Key
 strings medicloudx_exporter_linux | grep AKIA
-# Result: AKIA5HCACCPUJV4O5PWF
+# Result: AKIAIOSFODNN7EXAMPLE
 
 # Extract AWS Secret Access Key
 strings medicloudx_exporter_linux | grep xhoGS30hP
-# Result: xhoGS30hPE0iNHHpm3Lvz6fSeUX9bqa2zeuwChn7
+# Result: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 
 # Extract bucket pattern
 strings medicloudx_exporter_linux | grep exporter
 # Result: ctf-25-medical-exporter-records-%s
 
 # Configure AWS CLI
-aws configure set aws_access_key_id AKIA5HCACCPUJV4O5PWF --profile challenge5
-aws configure set aws_secret_access_key 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 --profile challenge5
+aws configure set aws_access_key_id AKIAIOSFODNN7EXAMPLE --profile challenge5
+aws configure set aws_secret_access_key wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY --profile challenge5
 aws configure set region us-east-1 --profile challenge5
 
 # Navigate and download flag
