@@ -1,0 +1,3 @@
+com.medicloudx.healthmanager.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

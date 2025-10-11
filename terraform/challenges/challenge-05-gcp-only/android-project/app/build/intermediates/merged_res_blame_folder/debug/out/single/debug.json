@@ -1,0 +1,178 @@
+[
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_phone.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_phone.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_calendar.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_calendar.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_emergency.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_emergency.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/menu_patient_detail_menu.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/menu/patient_detail_menu.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/layout_activity_settings.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_medication.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_medication.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_age_badge_background.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/age_badge_background.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_person_add.xml.flat",
+        "source": "com.medicloudx.healthmanager.app-main-66:/drawable/ic_person_add.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_login_background.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/login_background.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_add.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_risk_badge_high.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/risk_badge_high.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_sync.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_sync.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/menu_main_menu.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/menu/main_menu.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_info.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_info.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/xml_network_security_config.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_share.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_share.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/layout_activity_main.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_risk_badge_low.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/risk_badge_low.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/layout_activity_login.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_launcher.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_arrow_forward.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_arrow_forward.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/layout_item_patient.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/layout/item_patient.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_medical_condition.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_medical_condition.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_email.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_email.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_medical_logo.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_medical_logo.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_patient_avatar.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_patient_avatar.xml"
+    },
+    {
+        "merged": "com.medicloudx.healthmanager.app-merged_res-64:/drawable_spinner_background.xml.flat",
+        "source": "com.medicloudx.healthmanager.app-main-66:/drawable/spinner_background.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_lock.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_lock.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/xml_backup_rules.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_system_flag_background.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/system_flag_background.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_launcher_round.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_splash_background.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/splash_background.xml"
+    },
+    {
+        "merged": "com.medicloudx.healthmanager.app-merged_res-64:/drawable_button_outline.xml.flat",
+        "source": "com.medicloudx.healthmanager.app-main-66:/drawable/button_outline.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/layout_activity_patient_detail.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/layout/activity_patient_detail.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_id_badge_background.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/id_badge_background.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_empty_patients.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_empty_patients.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_risk_badge_medium.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/risk_badge_medium.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_patient_avatar_large.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_patient_avatar_large.xml"
+    },
+    {
+        "merged": "com.medicloudx.healthmanager.app-merged_res-64:/layout_activity_add_patient.xml.flat",
+        "source": "com.medicloudx.healthmanager.app-main-66:/layout/activity_add_patient.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_patients.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_patients.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_risk_indicator_background.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/risk_indicator_background.xml"
+    },
+    {
+        "merged": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-merged_res-64:/drawable_ic_notification.xml.flat",
+        "source": "/Users/gerardoeliasib/.gradle/daemon/8.12/com.medicloudx.healthmanager.app-main-66:/drawable/ic_notification.xml"
+    },
+    {
+        "merged": "com.medicloudx.healthmanager.app-merged_res-64:/drawable_button_primary.xml.flat",
+        "source": "com.medicloudx.healthmanager.app-main-66:/drawable/button_primary.xml"
+    }
+]

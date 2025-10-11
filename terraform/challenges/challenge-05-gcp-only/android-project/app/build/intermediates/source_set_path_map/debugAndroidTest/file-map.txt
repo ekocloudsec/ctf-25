@@ -1,0 +1,6 @@
+com.medicloudx.healthmanager.test.app-core-1.5.0-0 /Users/gerardoeliasib/.gradle/caches/8.12/transforms/29e84824293a3c0450167abc4f3d8fd5/transformed/core-1.5.0/res
+com.medicloudx.healthmanager.test.app-annotation-experimental-1.3.0-1 /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a5302a67155dc4a3aae32f59a8846d00/transformed/annotation-experimental-1.3.0/res
+com.medicloudx.healthmanager.test.app-androidTest-2 /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/build/generated/res/resValues/androidTest/debug
+com.medicloudx.healthmanager.test.app-mergeDebugAndroidTestResources-3 /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.medicloudx.healthmanager.test.app-mergeDebugAndroidTestResources-4 /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.medicloudx.healthmanager.test.app-merged_res-5 /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/build/intermediates/merged_res/debugAndroidTest

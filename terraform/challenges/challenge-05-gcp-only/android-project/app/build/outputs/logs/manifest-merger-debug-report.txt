@@ -1,0 +1,1080 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:2:1-82:12
+INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:2:1-82:12
+MERGED from [androidx.databinding:viewbinding:8.1.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/710dc5568a6b6bb83f148a9e0a0629d1/transformed/viewbinding-8.1.2/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:2:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/0023bdd5c5efd836ff43b8e55bac60ab/transformed/navigation-common-2.7.5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/62a267e7695e2b2ae963abc38b68c450/transformed/navigation-common-ktx-2.7.5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-runtime:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/aaac671b9f1a51d053bc226069fb51c7/transformed/navigation-runtime-2.7.5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7344a8e931429c2ccca9b3b4df0c14c2/transformed/navigation-runtime-ktx-2.7.5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-fragment:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72536272ca5b17b10b78a185a3c155a5/transformed/navigation-fragment-2.7.5/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3718ecd7fbdf8a1967f1b2ae6f0a9d20/transformed/navigation-fragment-ktx-2.7.5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6daf5a3e5a694bd0813e7d824a4f6cdc/transformed/navigation-ui-ktx-2.7.5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-ui:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/974b4130d69c54cb5021399c6fd79b46/transformed/navigation-ui-2.7.5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.material:material:1.10.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/68fb1c1fb1d8b89adc2ae75c99ef6794/transformed/material-1.10.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/03c720ed64418d6dff6e4dc523461ced/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6e72e1da710917914de16c0e74e44b65/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6608c5e2c7e0d8e43039901d89acf050/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/597f5f9658a88b6ff28ba8d98888aec4/transformed/viewpager2-1.1.0-beta02/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c9a2ec84dcedcda4148520c2a63b9a9c/transformed/recyclerview-1.3.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9356af03ac4029667a14ce2cd9b61d6d/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [com.github.bumptech.glide:glide:4.16.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b04661bf5650f522efe84bdb27af2a6d/transformed/glide-4.16.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:17:1-75:12
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:17:1-66:12
+MERGED from [com.google.firebase:firebase-analytics:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ad6d1cabc232afce707601bd3130acb9/transformed/firebase-analytics-21.5.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:17:1-43:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f6e5d08942aab77b9efd07c5ed874bd6/transformed/play-services-measurement-sdk-21.5.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb405b0b16cd8a92b418a9b2ef68cb86/transformed/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:17:1-38:12
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/327cd5e2c92b93fe6c77f98ac77fbb02/transformed/recaptcha-18.1.2/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.play:integrity:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7b3deeffb891b5cc2e9c7fe3274d4dd9/transformed/integrity-1.1.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d4117bd08dd6ab31d6b875b2551c2870/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml:15:1-25:12
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6fa760d18395bac7f305f44a2733fc6b/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:15:1-35:12
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1eae9e4cd22db9d03f1f6c0670204f1d/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:15:1-41:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ebc916313a3ab2c266e2dbb6ba2e35a6/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/96cc261d245b05db3dc78329d55cac1c/transformed/play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb1223e0024a542745e60100f6c8f35d/transformed/firebase-iid-interop-17.1.0/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2d3cbf4f9070b41c3f87ef67550ecf33/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:15:1-19:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/eb2444ba89258d3fc62ac334c1c8a613/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/32166cbc432679480bec014b03137431/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/4a2f6483d032b53737fed7cfa98f12ea/transformed/activity-ktx-1.8.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a8eee46a9b89ef9b699d940ec66ce3a0/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/bea39383f6e2c84bc7e51da12e0ebc71/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c075d02b16d64d77e0adbfc190de4a98/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/50f43f61564b6bbe9703c3e800f48ad5/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/638a35575ed2fdf4cc17f01d8ccd7969/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3a1c6a12aded9215220fc76aeb19f779/transformed/lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c58fd8a42af928c4df60b24dc387857b/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a7e2c30976d13c3086072709d75228a8/transformed/play-services-stats-17.0.2/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/37d2323e7f5fda22b78bdc31e5f18874/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/39d3ae550f6c37f1b49a76287e210c67/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/08f9311d6882adcedf8414203ca95331/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/18d0e21c7379158712ef8d6dd2029468/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/8159bbfe0718ecddb0b9df5533e1ad4c/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/180b5c9dd706bed472577bde09d12c99/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/29707ccda07a5d73d3a522519e6919a0/transformed/datastore-preferences-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.datastore:datastore:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7fb1fdb99d016d1d7adf72414f7fd48f/transformed/datastore-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b8671fdfa12c86f1f16fc5374ab7c984/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-abt:21.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5d9d8fb56598007c207b0183b49c7f06/transformed/firebase-abt-21.1.1/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3138c1c109c85581c6e0dc7d8d94159e/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/341a0ce9566b91d59b6fa9374c70639c/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:17:1-30:12
+MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a36a112be944b569fe9a7b73f6dc00f9/transformed/play-services-measurement-base-21.5.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/237601b740daa16b65acefec5326defc/transformed/play-services-basement-18.1.0/AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.6.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/65c155ce05ce981e46115e630f936de5/transformed/fragment-1.6.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.8.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fae82e3d3dbc6168a4d69258de085a32/transformed/activity-1.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2722b28fc7da17aafeda2304b1511c31/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f7adf569db8deff1f20a7bdbab4fb6e3/transformed/core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/77cc1f3f532dbe9a5c8096d0a5cb4c08/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b791d7938dddea65473b103c418c2191/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6a878187ca34719d896e9ceaa761c90b/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a0babb576c340c33cd78dd0aceb17869/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5a58af7ccd7fb065fc4b87c7ca999255/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.browser:browser:1.4.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/215a9bbd68477527cc7c39a86cd5e612/transformed/browser-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/42a522af2488dbdb1b8434c29b6c703d/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/89867a9d7ac7ae23e15fc969860b71d1/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3d4d00d7ddb6366474c8d0734a838cb8/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.4.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/82751c63c9ffdd594f826cac0316f6c7/transformed/transition-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/113fc96aa4d1161fe5c14ea7f8648475/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/e2897f162fbac0b8370db7d007afd45d/transformed/lifecycle-livedata-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5466c9d755b201b99f26084975511719/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.firebase:firebase-config-interop:16.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f24b4fce07928349932ced5acae3991e/transformed/firebase-config-interop-16.0.0/AndroidManifest.xml:15:1-20:12
+MERGED from [com.google.firebase:firebase-datatransport:18.1.8] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/35ffb79b64356dca28f8d23631d88702/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:15:1-33:12
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:15:1-37:12
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2a675e0a9b596f48c2a6067721d305ca/transformed/firebase-encoders-json-18.0.1/AndroidManifest.xml:15:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3b73c2d6eec24185fdf74a14c3a00741/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/e3e8428111f1c0a0ce5a3b576d2292ec/transformed/circleimageview-3.1.0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:15:1-41:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2bb826b20bdf29387d1cf44855b1d14/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ad1c74b1243cc65a8eb4317d6151b40d/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/62156caa7f9b004489ed5705b89a3baf/transformed/gifdecoder-4.16.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6011b352aae3252ea25e48580d33c889/transformed/exifinterface-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/16ecbffce795ab9ca889104990d5ffa7/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d909dc113a4ff94636a7e5e102394238/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/68d245f6f74b60ff70c7a27afb26fa37/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:17.1.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d19994955e3c1bae3eb2604001c7c955/transformed/firebase-components-17.1.5/AndroidManifest.xml:15:1-20:12
+MERGED from [com.google.android.datatransport:transport-api:3.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2afd9600dabf7305bfc65727df3fe196/transformed/transport-api-3.0.0/AndroidManifest.xml:15:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b6cd9546c4a1dd9659b607a22737d182/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f843ce9bf8d10029c0f37342d66ee2d9/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/484d0b10252e1fd106ec16c071e791b3/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/58d16305b9e4eb82e7ae7908128101ed/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a5302a67155dc4a3aae32f59a8846d00/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+MERGED from [io.grpc:grpc-android:1.52.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6f80815855b69f7f594037f6a67ccbe1/transformed/grpc-android-1.52.1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d967c84ed6ed25326af40c32b96c007d/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
+	package
+		INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:7:5-67
+MERGED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:7:5-67
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/327cd5e2c92b93fe6c77f98ac77fbb02/transformed/recaptcha-18.1.2/AndroidManifest.xml:7:5-67
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/327cd5e2c92b93fe6c77f98ac77fbb02/transformed/recaptcha-18.1.2/AndroidManifest.xml:7:5-67
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:8:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:25:5-67
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:6:5-79
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/327cd5e2c92b93fe6c77f98ac77fbb02/transformed/recaptcha-18.1.2/AndroidManifest.xml:8:5-79
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/327cd5e2c92b93fe6c77f98ac77fbb02/transformed/recaptcha-18.1.2/AndroidManifest.xml:8:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:22:5-79
+MERGED from [io.grpc:grpc-android:1.52.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6f80815855b69f7f594037f6a67ccbe1/transformed/grpc-android-1.52.1/AndroidManifest.xml:9:5-79
+MERGED from [io.grpc:grpc-android:1.52.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6f80815855b69f7f594037f6a67ccbe1/transformed/grpc-android-1.52.1/AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:7:5-68
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:9:5-68
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:9:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:7:22-65
+application
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:9:5-80:19
+INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:9:5-80:19
+MERGED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.android.material:material:1.10.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/68fb1c1fb1d8b89adc2ae75c99ef6794/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.10.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/68fb1c1fb1d8b89adc2ae75c99ef6794/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/03c720ed64418d6dff6e4dc523461ced/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/03c720ed64418d6dff6e4dc523461ced/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:28:5-73:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:28:5-64:19
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:28:5-64:19
+MERGED from [com.google.firebase:firebase-analytics:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ad6d1cabc232afce707601bd3130acb9/transformed/firebase-analytics-21.5.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ad6d1cabc232afce707601bd3130acb9/transformed/firebase-analytics-21.5.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:29:5-41:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:29:5-41:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f6e5d08942aab77b9efd07c5ed874bd6/transformed/play-services-measurement-sdk-21.5.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f6e5d08942aab77b9efd07c5ed874bd6/transformed/play-services-measurement-sdk-21.5.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:25:5-36:19
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:25:5-36:19
+MERGED from [com.google.android.play:integrity:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7b3deeffb891b5cc2e9c7fe3274d4dd9/transformed/integrity-1.1.0/AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.android.play:integrity:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7b3deeffb891b5cc2e9c7fe3274d4dd9/transformed/integrity-1.1.0/AndroidManifest.xml:5:5-6:19
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d4117bd08dd6ab31d6b875b2551c2870/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml:23:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d4117bd08dd6ab31d6b875b2551c2870/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml:23:5-20
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6fa760d18395bac7f305f44a2733fc6b/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6fa760d18395bac7f305f44a2733fc6b/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:21:5-33:19
+MERGED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:21:5-33:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:11:5-22:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1eae9e4cd22db9d03f1f6c0670204f1d/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1eae9e4cd22db9d03f1f6c0670204f1d/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:8:5-16:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:22:5-39:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/96cc261d245b05db3dc78329d55cac1c/transformed/play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/96cc261d245b05db3dc78329d55cac1c/transformed/play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb1223e0024a542745e60100f6c8f35d/transformed/firebase-iid-interop-17.1.0/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb1223e0024a542745e60100f6c8f35d/transformed/firebase-iid-interop-17.1.0/AndroidManifest.xml:7:5-8:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/638a35575ed2fdf4cc17f01d8ccd7969/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/638a35575ed2fdf4cc17f01d8ccd7969/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a7e2c30976d13c3086072709d75228a8/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a7e2c30976d13c3086072709d75228a8/transformed/play-services-stats-17.0.2/AndroidManifest.xml:7:5-20
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/180b5c9dd706bed472577bde09d12c99/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/180b5c9dd706bed472577bde09d12c99/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b8671fdfa12c86f1f16fc5374ab7c984/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b8671fdfa12c86f1f16fc5374ab7c984/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-abt:21.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5d9d8fb56598007c207b0183b49c7f06/transformed/firebase-abt-21.1.1/AndroidManifest.xml:10:5-16:19
+MERGED from [com.google.firebase:firebase-abt:21.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5d9d8fb56598007c207b0183b49c7f06/transformed/firebase-abt-21.1.1/AndroidManifest.xml:10:5-16:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3138c1c109c85581c6e0dc7d8d94159e/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3138c1c109c85581c6e0dc7d8d94159e/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/341a0ce9566b91d59b6fa9374c70639c/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/341a0ce9566b91d59b6fa9374c70639c/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a36a112be944b569fe9a7b73f6dc00f9/transformed/play-services-measurement-base-21.5.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a36a112be944b569fe9a7b73f6dc00f9/transformed/play-services-measurement-base-21.5.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/237601b740daa16b65acefec5326defc/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/237601b740daa16b65acefec5326defc/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [com.google.firebase:firebase-datatransport:18.1.8] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/35ffb79b64356dca28f8d23631d88702/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:23:5-31:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.8] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/35ffb79b64356dca28f8d23631d88702/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:23:5-31:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:27:5-35:19
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/e3e8428111f1c0a0ce5a3b576d2292ec/transformed/circleimageview-3.1.0/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/e3e8428111f1c0a0ce5a3b576d2292ec/transformed/circleimageview-3.1.0/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:25:5-39:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/16ecbffce795ab9ca889104990d5ffa7/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/16ecbffce795ab9ca889104990d5ffa7/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b6cd9546c4a1dd9659b607a22737d182/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b6cd9546c4a1dd9659b607a22737d182/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:16:9-35
+	android:label
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:14:9-41
+	android:fullBackupContent
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:12:9-54
+	android:roundIcon
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:15:9-56
+	tools:targetApi
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:19:9-29
+	android:icon
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:13:9-45
+	android:allowBackup
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:17:9-61
+	android:networkSecurityConfig
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:18:9-69
+	android:dataExtractionRules
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:11:9-65
+activity#com.medicloudx.healthmanager.ui.auth.LoginActivity
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:22:9-31:20
+	android:screenOrientation
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:25:13-49
+	android:exported
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:24:13-36
+	android:theme
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:26:13-77
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:23:13-50
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:27:13-30:29
+action#android.intent.action.MAIN
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:29:27-74
+activity#com.medicloudx.healthmanager.ui.main.MainActivity
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:34:9-38:80
+	android:screenOrientation
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:37:13-49
+	android:exported
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:36:13-37
+	android:theme
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:38:13-77
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:35:13-49
+activity#com.medicloudx.healthmanager.ui.patient.PatientDetailActivity
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:41:9-46:66
+	android:screenOrientation
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:44:13-49
+	android:parentActivityName
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:46:13-63
+	android:exported
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:43:13-37
+	android:theme
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:45:13-77
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:42:13-61
+activity#com.medicloudx.healthmanager.ui.patient.AddPatientActivity
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:49:9-54:66
+	android:screenOrientation
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:52:13-49
+	android:parentActivityName
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:54:13-63
+	android:exported
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:51:13-37
+	android:theme
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:53:13-77
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:50:13-58
+activity#com.medicloudx.healthmanager.ui.settings.SettingsActivity
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:57:9-61:66
+	android:screenOrientation
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:60:13-49
+	android:parentActivityName
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:61:13-63
+	android:exported
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:59:13-37
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:58:13-57
+service#com.medicloudx.healthmanager.services.MediCloudXFirebaseMessagingService
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:64:9-70:19
+	android:exported
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:66:13-37
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:65:13-72
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:67:13-69:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:68:17-78
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:68:25-75
+meta-data#com.google.firebase.messaging.default_notification_icon
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:72:9-74:60
+	android:resource
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:74:13-57
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:73:13-83
+meta-data#com.google.firebase.messaging.default_notification_color
+ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:76:9-78:54
+	android:resource
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:78:13-51
+	android:name
+		ADDED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml:77:13-84
+uses-sdk
+INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.1.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/710dc5568a6b6bb83f148a9e0a0629d1/transformed/viewbinding-8.1.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.1.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/710dc5568a6b6bb83f148a9e0a0629d1/transformed/viewbinding-8.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/0023bdd5c5efd836ff43b8e55bac60ab/transformed/navigation-common-2.7.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/0023bdd5c5efd836ff43b8e55bac60ab/transformed/navigation-common-2.7.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/62a267e7695e2b2ae963abc38b68c450/transformed/navigation-common-ktx-2.7.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/62a267e7695e2b2ae963abc38b68c450/transformed/navigation-common-ktx-2.7.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/aaac671b9f1a51d053bc226069fb51c7/transformed/navigation-runtime-2.7.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/aaac671b9f1a51d053bc226069fb51c7/transformed/navigation-runtime-2.7.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7344a8e931429c2ccca9b3b4df0c14c2/transformed/navigation-runtime-ktx-2.7.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7344a8e931429c2ccca9b3b4df0c14c2/transformed/navigation-runtime-ktx-2.7.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72536272ca5b17b10b78a185a3c155a5/transformed/navigation-fragment-2.7.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72536272ca5b17b10b78a185a3c155a5/transformed/navigation-fragment-2.7.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3718ecd7fbdf8a1967f1b2ae6f0a9d20/transformed/navigation-fragment-ktx-2.7.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3718ecd7fbdf8a1967f1b2ae6f0a9d20/transformed/navigation-fragment-ktx-2.7.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-ui-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6daf5a3e5a694bd0813e7d824a4f6cdc/transformed/navigation-ui-ktx-2.7.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-ui-ktx:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6daf5a3e5a694bd0813e7d824a4f6cdc/transformed/navigation-ui-ktx-2.7.5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-ui:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/974b4130d69c54cb5021399c6fd79b46/transformed/navigation-ui-2.7.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui:2.7.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/974b4130d69c54cb5021399c6fd79b46/transformed/navigation-ui-2.7.5/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.10.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/68fb1c1fb1d8b89adc2ae75c99ef6794/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.10.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/68fb1c1fb1d8b89adc2ae75c99ef6794/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/03c720ed64418d6dff6e4dc523461ced/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/03c720ed64418d6dff6e4dc523461ced/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6e72e1da710917914de16c0e74e44b65/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6e72e1da710917914de16c0e74e44b65/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6608c5e2c7e0d8e43039901d89acf050/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6608c5e2c7e0d8e43039901d89acf050/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/597f5f9658a88b6ff28ba8d98888aec4/transformed/viewpager2-1.1.0-beta02/AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/597f5f9658a88b6ff28ba8d98888aec4/transformed/viewpager2-1.1.0-beta02/AndroidManifest.xml:5:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c9a2ec84dcedcda4148520c2a63b9a9c/transformed/recyclerview-1.3.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c9a2ec84dcedcda4148520c2a63b9a9c/transformed/recyclerview-1.3.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9356af03ac4029667a14ce2cd9b61d6d/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9356af03ac4029667a14ce2cd9b61d6d/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [com.github.bumptech.glide:glide:4.16.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b04661bf5650f522efe84bdb27af2a6d/transformed/glide-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.16.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b04661bf5650f522efe84bdb27af2a6d/transformed/glide-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:21:5-23:64
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:21:5-23:64
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ad6d1cabc232afce707601bd3130acb9/transformed/firebase-analytics-21.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ad6d1cabc232afce707601bd3130acb9/transformed/firebase-analytics-21.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f6e5d08942aab77b9efd07c5ed874bd6/transformed/play-services-measurement-sdk-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f6e5d08942aab77b9efd07c5ed874bd6/transformed/play-services-measurement-sdk-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb405b0b16cd8a92b418a9b2ef68cb86/transformed/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb405b0b16cd8a92b418a9b2ef68cb86/transformed/play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/327cd5e2c92b93fe6c77f98ac77fbb02/transformed/recaptcha-18.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/327cd5e2c92b93fe6c77f98ac77fbb02/transformed/recaptcha-18.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.play:integrity:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7b3deeffb891b5cc2e9c7fe3274d4dd9/transformed/integrity-1.1.0/AndroidManifest.xml:4:5-44
+MERGED from [com.google.android.play:integrity:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7b3deeffb891b5cc2e9c7fe3274d4dd9/transformed/integrity-1.1.0/AndroidManifest.xml:4:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d4117bd08dd6ab31d6b875b2551c2870/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:17.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d4117bd08dd6ab31d6b875b2551c2870/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6fa760d18395bac7f305f44a2733fc6b/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6fa760d18395bac7f305f44a2733fc6b/transformed/firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1eae9e4cd22db9d03f1f6c0670204f1d/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1eae9e4cd22db9d03f1f6c0670204f1d/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:19:5-44
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ebc916313a3ab2c266e2dbb6ba2e35a6/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ebc916313a3ab2c266e2dbb6ba2e35a6/transformed/firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/96cc261d245b05db3dc78329d55cac1c/transformed/play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/96cc261d245b05db3dc78329d55cac1c/transformed/play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb1223e0024a542745e60100f6c8f35d/transformed/firebase-iid-interop-17.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb1223e0024a542745e60100f6c8f35d/transformed/firebase-iid-interop-17.1.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2d3cbf4f9070b41c3f87ef67550ecf33/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:17:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2d3cbf4f9070b41c3f87ef67550ecf33/transformed/firebase-installations-interop-17.1.1/AndroidManifest.xml:17:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/eb2444ba89258d3fc62ac334c1c8a613/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/eb2444ba89258d3fc62ac334c1c8a613/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/32166cbc432679480bec014b03137431/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.6.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/32166cbc432679480bec014b03137431/transformed/fragment-ktx-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/4a2f6483d032b53737fed7cfa98f12ea/transformed/activity-ktx-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/4a2f6483d032b53737fed7cfa98f12ea/transformed/activity-ktx-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a8eee46a9b89ef9b699d940ec66ce3a0/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a8eee46a9b89ef9b699d940ec66ce3a0/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/bea39383f6e2c84bc7e51da12e0ebc71/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/bea39383f6e2c84bc7e51da12e0ebc71/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c075d02b16d64d77e0adbfc190de4a98/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c075d02b16d64d77e0adbfc190de4a98/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/50f43f61564b6bbe9703c3e800f48ad5/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/50f43f61564b6bbe9703c3e800f48ad5/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/638a35575ed2fdf4cc17f01d8ccd7969/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/638a35575ed2fdf4cc17f01d8ccd7969/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3a1c6a12aded9215220fc76aeb19f779/transformed/lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3a1c6a12aded9215220fc76aeb19f779/transformed/lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c58fd8a42af928c4df60b24dc387857b/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c58fd8a42af928c4df60b24dc387857b/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a7e2c30976d13c3086072709d75228a8/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a7e2c30976d13c3086072709d75228a8/transformed/play-services-stats-17.0.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/37d2323e7f5fda22b78bdc31e5f18874/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/37d2323e7f5fda22b78bdc31e5f18874/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/39d3ae550f6c37f1b49a76287e210c67/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/39d3ae550f6c37f1b49a76287e210c67/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/08f9311d6882adcedf8414203ca95331/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/08f9311d6882adcedf8414203ca95331/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/18d0e21c7379158712ef8d6dd2029468/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/18d0e21c7379158712ef8d6dd2029468/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/8159bbfe0718ecddb0b9df5533e1ad4c/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/8159bbfe0718ecddb0b9df5533e1ad4c/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/180b5c9dd706bed472577bde09d12c99/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:20:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/180b5c9dd706bed472577bde09d12c99/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:20:5-44
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/29707ccda07a5d73d3a522519e6919a0/transformed/datastore-preferences-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore-preferences:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/29707ccda07a5d73d3a522519e6919a0/transformed/datastore-preferences-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7fb1fdb99d016d1d7adf72414f7fd48f/transformed/datastore-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.datastore:datastore:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/7fb1fdb99d016d1d7adf72414f7fd48f/transformed/datastore-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b8671fdfa12c86f1f16fc5374ab7c984/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b8671fdfa12c86f1f16fc5374ab7c984/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-abt:21.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5d9d8fb56598007c207b0183b49c7f06/transformed/firebase-abt-21.1.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-abt:21.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5d9d8fb56598007c207b0183b49c7f06/transformed/firebase-abt-21.1.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3138c1c109c85581c6e0dc7d8d94159e/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3138c1c109c85581c6e0dc7d8d94159e/transformed/firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/341a0ce9566b91d59b6fa9374c70639c/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/341a0ce9566b91d59b6fa9374c70639c/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a36a112be944b569fe9a7b73f6dc00f9/transformed/play-services-measurement-base-21.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a36a112be944b569fe9a7b73f6dc00f9/transformed/play-services-measurement-base-21.5.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/237601b740daa16b65acefec5326defc/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/237601b740daa16b65acefec5326defc/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.6.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/65c155ce05ce981e46115e630f936de5/transformed/fragment-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.6.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/65c155ce05ce981e46115e630f936de5/transformed/fragment-1.6.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fae82e3d3dbc6168a4d69258de085a32/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fae82e3d3dbc6168a4d69258de085a32/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2722b28fc7da17aafeda2304b1511c31/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2722b28fc7da17aafeda2304b1511c31/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f7adf569db8deff1f20a7bdbab4fb6e3/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f7adf569db8deff1f20a7bdbab4fb6e3/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/77cc1f3f532dbe9a5c8096d0a5cb4c08/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/77cc1f3f532dbe9a5c8096d0a5cb4c08/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b791d7938dddea65473b103c418c2191/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b791d7938dddea65473b103c418c2191/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6a878187ca34719d896e9ceaa761c90b/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6a878187ca34719d896e9ceaa761c90b/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a0babb576c340c33cd78dd0aceb17869/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a0babb576c340c33cd78dd0aceb17869/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5a58af7ccd7fb065fc4b87c7ca999255/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5a58af7ccd7fb065fc4b87c7ca999255/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/215a9bbd68477527cc7c39a86cd5e612/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/215a9bbd68477527cc7c39a86cd5e612/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/42a522af2488dbdb1b8434c29b6c703d/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/42a522af2488dbdb1b8434c29b6c703d/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/89867a9d7ac7ae23e15fc969860b71d1/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/89867a9d7ac7ae23e15fc969860b71d1/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3d4d00d7ddb6366474c8d0734a838cb8/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3d4d00d7ddb6366474c8d0734a838cb8/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/82751c63c9ffdd594f826cac0316f6c7/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/82751c63c9ffdd594f826cac0316f6c7/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/113fc96aa4d1161fe5c14ea7f8648475/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/113fc96aa4d1161fe5c14ea7f8648475/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/e2897f162fbac0b8370db7d007afd45d/transformed/lifecycle-livedata-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/e2897f162fbac0b8370db7d007afd45d/transformed/lifecycle-livedata-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5466c9d755b201b99f26084975511719/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5466c9d755b201b99f26084975511719/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-config-interop:16.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f24b4fce07928349932ced5acae3991e/transformed/firebase-config-interop-16.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-config-interop:16.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f24b4fce07928349932ced5acae3991e/transformed/firebase-config-interop-16.0.0/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-datatransport:18.1.8] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/35ffb79b64356dca28f8d23631d88702/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-datatransport:18.1.8] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/35ffb79b64356dca28f8d23631d88702/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2a675e0a9b596f48c2a6067721d305ca/transformed/firebase-encoders-json-18.0.1/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-encoders-json:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2a675e0a9b596f48c2a6067721d305ca/transformed/firebase-encoders-json-18.0.1/AndroidManifest.xml:18:5-20:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3b73c2d6eec24185fdf74a14c3a00741/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3b73c2d6eec24185fdf74a14c3a00741/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/e3e8428111f1c0a0ce5a3b576d2292ec/transformed/circleimageview-3.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/e3e8428111f1c0a0ce5a3b576d2292ec/transformed/circleimageview-3.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:18:5-20:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2bb826b20bdf29387d1cf44855b1d14/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2bb826b20bdf29387d1cf44855b1d14/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ad1c74b1243cc65a8eb4317d6151b40d/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ad1c74b1243cc65a8eb4317d6151b40d/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/62156caa7f9b004489ed5705b89a3baf/transformed/gifdecoder-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.16.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/62156caa7f9b004489ed5705b89a3baf/transformed/gifdecoder-4.16.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6011b352aae3252ea25e48580d33c889/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6011b352aae3252ea25e48580d33c889/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/16ecbffce795ab9ca889104990d5ffa7/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/16ecbffce795ab9ca889104990d5ffa7/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d909dc113a4ff94636a7e5e102394238/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d909dc113a4ff94636a7e5e102394238/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/68d245f6f74b60ff70c7a27afb26fa37/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/68d245f6f74b60ff70c7a27afb26fa37/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:17.1.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d19994955e3c1bae3eb2604001c7c955/transformed/firebase-components-17.1.5/AndroidManifest.xml:18:5-44
+MERGED from [com.google.firebase:firebase-components:17.1.5] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d19994955e3c1bae3eb2604001c7c955/transformed/firebase-components-17.1.5/AndroidManifest.xml:18:5-44
+MERGED from [com.google.android.datatransport:transport-api:3.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2afd9600dabf7305bfc65727df3fe196/transformed/transport-api-3.0.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.android.datatransport:transport-api:3.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2afd9600dabf7305bfc65727df3fe196/transformed/transport-api-3.0.0/AndroidManifest.xml:18:5-20:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b6cd9546c4a1dd9659b607a22737d182/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b6cd9546c4a1dd9659b607a22737d182/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f843ce9bf8d10029c0f37342d66ee2d9/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/f843ce9bf8d10029c0f37342d66ee2d9/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/484d0b10252e1fd106ec16c071e791b3/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/484d0b10252e1fd106ec16c071e791b3/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/58d16305b9e4eb82e7ae7908128101ed/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/58d16305b9e4eb82e7ae7908128101ed/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a5302a67155dc4a3aae32f59a8846d00/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a5302a67155dc4a3aae32f59a8846d00/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [io.grpc:grpc-android:1.52.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6f80815855b69f7f594037f6a67ccbe1/transformed/grpc-android-1.52.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.grpc:grpc-android:1.52.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6f80815855b69f7f594037f6a67ccbe1/transformed/grpc-android-1.52.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d967c84ed6ed25326af40c32b96c007d/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/d967c84ed6ed25326af40c32b96c007d/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
+	tools:overrideLibrary
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:23:9-61
+	android:targetSdkVersion
+		INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/gerardoeliasib/gerh-data/EkoCloudSec/ctf-25/terraform/challenges/challenge-05-gcp-only/android-project/app/src/main/AndroidManifest.xml
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:66:9-72:19
+MERGED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:66:9-72:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:14:9-23:19
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:54:9-63:19
+MERGED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:54:9-63:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:34:9-40:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:34:9-40:19
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:26:9-35:19
+MERGED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:26:9-35:19
+MERGED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:26:9-32:19
+MERGED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:26:9-32:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:12:9-21:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1eae9e4cd22db9d03f1f6c0670204f1d/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1eae9e4cd22db9d03f1f6c0670204f1d/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:9:9-15:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:30:9-38:19
+MERGED from [com.google.firebase:firebase-abt:21.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5d9d8fb56598007c207b0183b49c7f06/transformed/firebase-abt-21.1.1/AndroidManifest.xml:11:9-15:19
+MERGED from [com.google.firebase:firebase-abt:21.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5d9d8fb56598007c207b0183b49c7f06/transformed/firebase-abt-21.1.1/AndroidManifest.xml:11:9-15:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.8] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/35ffb79b64356dca28f8d23631d88702/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:24:9-30:19
+MERGED from [com.google.firebase:firebase-datatransport:18.1.8] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/35ffb79b64356dca28f8d23631d88702/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:24:9-30:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:14:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:34:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:32:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:13:13-84
+meta-data#com.google.firebase.components:com.google.firebase.crashlytics.FirebaseCrashlyticsKtxRegistrar
+ADDED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:15:13-17:85
+	android:value
+		ADDED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:16:17-126
+meta-data#com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar
+ADDED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-crashlytics:18.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1416ef9e490857102733a39fa0e13ec2/transformed/firebase-crashlytics-18.6.0/AndroidManifest.xml:19:17-115
+activity#com.google.firebase.auth.internal.GenericIdpActivity
+ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:29:9-46:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:31:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:33:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:32:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:34:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:30:13-80
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
+ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:35:13-45:29
+action#android.intent.action.VIEW
+ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:36:17-69
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:36:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:38:17-76
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:38:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:39:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:39:27-75
+data
+ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:41:17-44:51
+	android:path
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:43:21-37
+	android:host
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:42:21-49
+	android:scheme
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:44:21-48
+activity#com.google.firebase.auth.internal.RecaptchaActivity
+ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:47:9-64:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:49:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:51:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:50:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:52:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:48:13-79
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
+ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:53:13-63:29
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:69:13-71:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:71:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:22.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/254c1af860ed786f353da4042aa9a804/transformed/firebase-auth-22.3.0/AndroidManifest.xml:70:17-109
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:17:13-19:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:19:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:18:17-122
+meta-data#com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar
+ADDED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:20:13-22:85
+	android:value
+		ADDED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:22:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-firestore:24.9.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/c605192e3764c214ca30561c43948860/transformed/firebase-firestore-24.9.1/AndroidManifest.xml:21:17-111
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:23:5-77
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:23:22-74
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:26:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:11:5-82
+MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9c82f69b77d8805c4df54caadb309295/transformed/play-services-cloud-messaging-17.0.1/AndroidManifest.xml:11:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:26:22-79
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:29:9-40:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:31:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:32:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:30:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:33:13-35:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:34:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:34:25-78
+meta-data#com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED
+ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:37:13-39:40
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:39:17-37
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:38:17-92
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:46:9-53:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:49:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:48:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:47:13-82
+meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar
+ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:57:13-59:85
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:59:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:58:17-122
+meta-data#com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar
+ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:60:13-62:85
+	android:value
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:62:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:23.3.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1bdb1bb5c98273852846ebf013f41010/transformed/firebase-messaging-23.3.1/AndroidManifest.xml:61:17-119
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:36:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:39:9-43:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:42:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:43:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/ac2b5e9784ef69acb274fc40a6764335/transformed/play-services-measurement-21.5.0/AndroidManifest.xml:40:13-87
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/6436b5d8201695ef60439047038e7201/transformed/play-services-measurement-impl-21.5.0/AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/341a0ce9566b91d59b6fa9374c70639c/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/341a0ce9566b91d59b6fa9374c70639c/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:25:22-76
+uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:26:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:27:5-88
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:27:5-88
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:26:22-85
+uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:27:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:28:5-82
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb3914841b16ee6f2e18164410a237de/transformed/play-services-measurement-sdk-api-21.5.0/AndroidManifest.xml:28:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:27:22-79
+property
+ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:30:9-32:61
+	android:resource
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:32:13-58
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:31:13-65
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:37:13-39:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:39:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.5.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/72c0f42b50f4a13c2ab27041230867fb/transformed/play-services-measurement-api-21.5.0/AndroidManifest.xml:38:17-139
+meta-data#com.google.firebase.components:com.google.firebase.remoteconfig.FirebaseRemoteConfigKtxRegistrar
+ADDED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:29:13-31:85
+	android:value
+		ADDED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:31:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:30:17-128
+meta-data#com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar
+ADDED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-config:21.6.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/a2932b78efc8d4bf98bf270e72131b02/transformed/firebase-config-21.6.0/AndroidManifest.xml:33:17-117
+service#com.google.firebase.sessions.SessionLifecycleService
+ADDED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:22:9-25:40
+	android:enabled
+		ADDED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:24:13-35
+	android:exported
+		ADDED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:23:13-80
+meta-data#com.google.firebase.components:com.google.firebase.sessions.FirebaseSessionsRegistrar
+ADDED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:29:13-31:85
+	android:value
+		ADDED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:31:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-sessions:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/fb938f70246b4f0dd01fa5ef85a76e81/transformed/firebase-sessions-1.2.0/AndroidManifest.xml:30:17-117
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:15:13-17:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:17:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:16:17-130
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/9f5e3761fc168944c2dc3e7f6b578548/transformed/firebase-installations-17.2.0/AndroidManifest.xml:19:17-127
+meta-data#com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar
+ADDED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1eae9e4cd22db9d03f1f6c0670204f1d/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1eae9e4cd22db9d03f1f6c0670204f1d/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common-ktx:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/1eae9e4cd22db9d03f1f6c0670204f1d/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:25:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:27:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:26:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:28:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:24:13-77
+meta-data#com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar
+ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
+	android:value
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:37:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.4.2] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/b4cd4904e955fe37dcef2644d2b7de16/transformed/firebase-common-20.4.2/AndroidManifest.xml:36:17-109
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/96cc261d245b05db3dc78329d55cac1c/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/96cc261d245b05db3dc78329d55cac1c/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/96cc261d245b05db3dc78329d55cac1c/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/96cc261d245b05db3dc78329d55cac1c/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/638a35575ed2fdf4cc17f01d8ccd7969/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/638a35575ed2fdf4cc17f01d8ccd7969/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/16ecbffce795ab9ca889104990d5ffa7/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/16ecbffce795ab9ca889104990d5ffa7/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/783c2215251c8888ba1f22dee2e16ee8/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/638a35575ed2fdf4cc17f01d8ccd7969/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/638a35575ed2fdf4cc17f01d8ccd7969/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/638a35575ed2fdf4cc17f01d8ccd7969/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+uses-library#android.ext.adservices
+ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/180b5c9dd706bed472577bde09d12c99/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/180b5c9dd706bed472577bde09d12c99/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
+	android:name
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/180b5c9dd706bed472577bde09d12c99/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
+meta-data#com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar
+ADDED from [com.google.firebase:firebase-abt:21.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5d9d8fb56598007c207b0183b49c7f06/transformed/firebase-abt-21.1.1/AndroidManifest.xml:12:13-14:85
+	android:value
+		ADDED from [com.google.firebase:firebase-abt:21.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5d9d8fb56598007c207b0183b49c7f06/transformed/firebase-abt-21.1.1/AndroidManifest.xml:14:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-abt:21.1.1] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5d9d8fb56598007c207b0183b49c7f06/transformed/firebase-abt-21.1.1/AndroidManifest.xml:13:17-109
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/237601b740daa16b65acefec5326defc/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/237601b740daa16b65acefec5326defc/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/237601b740daa16b65acefec5326defc/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/725069d1723fb825b1dd479f7bf47ed6/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+permission#com.medicloudx.healthmanager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+uses-permission#com.medicloudx.healthmanager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/2e45a4862801b44f0e4102046be18d1b/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+meta-data#com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar
+ADDED from [com.google.firebase:firebase-datatransport:18.1.8] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/35ffb79b64356dca28f8d23631d88702/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:27:13-29:85
+	android:value
+		ADDED from [com.google.firebase:firebase-datatransport:18.1.8] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/35ffb79b64356dca28f8d23631d88702/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:29:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-datatransport:18.1.8] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/35ffb79b64356dca28f8d23631d88702/transformed/firebase-datatransport-18.1.8/AndroidManifest.xml:28:17-115
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:28:9-34:19
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:29:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:31:13-33:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:33:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/5b215e9375808f2a7b84dd7035e3cfd5/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:32:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:3.1.9] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/3fae0184ba24953ef2df888249e68f5f/transformed/transport-runtime-3.1.9/AndroidManifest.xml:33:13-132
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/gerardoeliasib/.gradle/caches/8.12/transforms/46bfa4ef012265e5f84e6dcdee42a346/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
