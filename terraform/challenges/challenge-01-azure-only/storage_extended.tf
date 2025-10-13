@@ -90,7 +90,7 @@ data "azurerm_storage_account_blob_container_sas" "medicloud_sas" {
   https_only        = true
   
   start  = timestamp()
-  expiry = timeadd(timestamp(), "1h")
+  expiry = timeadd(timestamp(), "8760h")  # 1 año
   
   permissions {
     read   = true

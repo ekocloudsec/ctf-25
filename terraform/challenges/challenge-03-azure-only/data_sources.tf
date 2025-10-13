@@ -6,7 +6,7 @@ data "azurerm_client_config" "current" {}
 # Reference the existing Service Principal from Challenge-01
 # We directly reference the specific app from Challenge-01
 data "azuread_application" "medicloud_app" {
-  display_name = "MediCloudXApp-5lzvb730"
+  display_name = "MediCloudXApp-lcyp4q7n"
 }
 
 data "azuread_service_principal" "medicloud_sp" {

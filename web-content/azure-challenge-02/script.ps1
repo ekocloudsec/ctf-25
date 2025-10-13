@@ -7,8 +7,8 @@ Write-Host "Initializing connection to research data repositories..." -Foregroun
 
 # Azure Configuration
 $TenantId = "c390256a-8963-4732-b874-85b7b0a4d514"
-$ClientId = "dc261160-652c-4b4f-b300-08429697995e"
-$StorageAccount = "ctf25sa6e290815"
+$ClientId = "9d11b718-c77f-416c-84ee-4d4e5cb79ba6"
+$StorageAccount = "ctf25sa7b3a7ec4"
 
 # Research project configuration
 $ProjectName = "Artemisa Cardiovascular Analysis"
